@@ -4,6 +4,8 @@ import logo_mic from './assets/logo_mic.png'; // Import the image
 import leaf_design from './assets/leafdesign.png'; // Import the image
 import text_sub from './assets/text-sub.png'; // Import the image
 import texture from './assets/texture.png'; // Import the image
+import ipod from './assets/ipod.png'; // Import the image
+import musicnote from './assets/musicnote.png'; // Import the image
 
 const App = () => {
   return (
@@ -21,10 +23,19 @@ const App = () => {
         <img src={text_sub} alt="Connect Create Collaborate" className="h-auto mt-0" />
       </div>
 
+      <div className="flex mt-12"> {/* Increase the margin-top */}
+        <img src={musicnote} alt="textured background" className="absolute right-14 w-60 ml-5 bottom-40" />
+      </div>
+
+      <div className="flex mt-12"> {/* Increase the margin-top */}
+        <img src={ipod} alt="Ipod" className=" absolute left-10 w-60 ml-5 bottom-40" />
+      </div>
+
       {/* Overlay texture background */}
-      <div className="absolute top-20 left-0 w-full h-full bg-opacity-50">
+      <div className="left-0 w-full h-full mt-[-40%]">
         <img src={texture} alt="textured background" className="w-full h-full object-cover" />
       </div>
+
     </div>
   );
 };
