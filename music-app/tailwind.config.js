@@ -3,7 +3,14 @@ module.exports = {
   purge:["./src/**/*.{js,jsx,ts,tsx}","./public/index.html"],
   darkMode:false,
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: {
+        'green-resonate': '#D5DDCF',
+      },
+      fontFamily: {
+        reborn: ["REBORN", "sans-serif"],
+      },    
+    },
   },
   variants: {
     extend:{},
