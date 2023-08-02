@@ -7,6 +7,9 @@ module.exports = {
       backgroundColor: {
         'green-resonate': '#D5DDCF',
       },
+      textColor:{
+        'black-resonate': '#423F32',
+      },
       fontFamily: {
         reborn: ["REBORN", "sans-serif"],
       },    
