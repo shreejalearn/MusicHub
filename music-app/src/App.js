@@ -9,6 +9,9 @@ import musicnote from './assets/musicnote.png'; // Import the image
 
 const App = () => {
   return (
+
+//FIRST PART OF THE HOMEPAGE DESIGN
+
     <div className="bg-green-resonate min-h-screen flex flex-col items-center justify-center relative">
       <img src={headerImage} alt="Music Hub" className="w-1/2 absolute top-0 left-0 ml-5 mt-7" />
       
@@ -35,6 +38,8 @@ const App = () => {
       <div className="left-0 w-full h-full mt-[-40%]">
         <img src={texture} alt="textured background" className="w-full h-full object-cover" />
       </div>
+
+{/* CREATING A NAVIGATION MENU */}
 
     </div>
   );
