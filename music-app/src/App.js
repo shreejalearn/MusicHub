@@ -26,16 +26,16 @@ const App = () => {
         <img src={text_sub} alt="Connect Create Collaborate" className="h-auto mt-0" />
       </div>
 
-      <div className="flex mt-12"> {/* Increase the margin-top */}
-        <img src={musicnote} alt="textured background" className="absolute right-14 w-60 ml-5 bottom-40" />
+      <div className="flex"> {/* Increase the margin-top */}
+        <img src={musicnote} alt="music note" className="absolute right-14 w-60 ml-5 mt-[-10%]" />
       </div>
 
-      <div className="flex mt-12"> {/* Increase the margin-top */}
-        <img src={ipod} alt="Ipod" className=" absolute left-10 w-60 ml-5 bottom-40" />
+      <div className="flex"> {/* Increase the margin-top */}
+        <img src={ipod} alt="Ipod" className=" absolute left-10 w-60 ml-5 mt-[-13%]" />
       </div>
 
       {/* Overlay texture background */}
-      <div className="left-0 w-full h-full mt-[-40%]">
+      <div className="left-0 w-full h-full mt-[-33.5%]">
         <img src={texture} alt="textured background" className="w-full h-full object-cover" />
       </div>
 
