@@ -7,7 +7,10 @@ import texture from './assets/texture.png'; // Import the image
 import ipod from './assets/ipod.png'; // Import the image
 import musicnote from './assets/musicnote.png'; // Import the image
 import cd from './assets/cd.png'; // Import the image
-
+import tape from './assets/tape.png'; // Import the image
+import drums from './assets/drum3.png'; // Import the image
+import recorder from './assets/recorder.png'; // Import the image
+import tape2 from './assets/tape2.png'; // Import the image
 
 const App = () => {
   return (
@@ -41,9 +44,22 @@ const App = () => {
         <img src={texture} alt="textured background" className="w-full h-full object-cover" />
       </div>
 
+      <div className="flex"> {/* Increase the margin-top */}
+        <img src={cd} alt="CD Design" className="h-auto mb-0 ml-[95%] z-10" />
+</div>
+
+<div className="flex"> 
+<img src={tape} alt="Tape Design Aesthetics" className="mb-0 w-1/2 mr-0 ml-[180%] mt-[-50%] z-10" />
+</div>
+
+<div className="flex">
+        <img src={tape2} alt="Tape Design Aesthetics" className="scale-125 ml-[-240%] mt-[-70%]" />
+      </div>
+
+
 {/* CREATING A NAVIGATION MENU */}
 
-<div class="p-10 w-48 min-w-[450px] text-black-resonate bg-yellow-resonate border-black-resonate rounded-lg mb-10 mt-24 mr-[-60%]">
+<div class="p-10 w-48 min-w-[450px] text-black-resonate bg-yellow-resonate border-black-resonate rounded-lg mb-10 mt-[-5%] mr-[-60%]">
   <button
     type="button"
     class="w-full min-w-[200px] border-r border-l text-center px-4 py-3 text-black-resonate text-md font-medium border-b border-t border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
@@ -77,10 +93,17 @@ const App = () => {
 </div>
 
 {/* CREATING SECOND PART OF THE HOMEPAGE */}
-
-<div className="flex"> {/* Increase the margin-top */}
-        <img src={cd} alt="CD Design" className="h-auto" />
+      <div className="flex relative">
+        <img src={recorder} alt="Recorder Design Aesthetics" className="z-10 mt-[-120%] ml-[400%]" />
       </div>
+
+
+      <div className="flex">
+        <img src={drums} alt="Drums" className="ml-[-70%] mt-[-90%] w-auto h-auto" />
+      </div>
+
+
+
 
     </div>
   );
