@@ -1,4 +1,3 @@
-import React from 'react';
 import headerImage from './assets/resonate-left-top.png'; // Import the image
 import logo_mic from './assets/logo_mic.png'; // Import the image
 import leaf_design from './assets/leafdesign.png'; // Import the image
@@ -12,7 +11,7 @@ import drums from './assets/drum3.png'; // Import the image
 import recorder from './assets/recorder.png'; // Import the image
 import tape2 from './assets/tape2.png'; // Import the image
 
-const App = () => {
+const Homepage = () => {
 
   //Menu Button Functionality
 
@@ -143,4 +142,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Homepage;
