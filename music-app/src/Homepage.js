@@ -10,6 +10,8 @@ import tape from './assets/tape.png'; // Import the image
 import drums from './assets/drum3.png'; // Import the image
 import recorder from './assets/recorder.png'; // Import the image
 import tape2 from './assets/tape2.png'; // Import the image
+import React from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Homepage = () => {
 
@@ -34,12 +36,6 @@ const Homepage = () => {
     // Code to execute when the Challenges button is clicked
     console.log('Challenges button clicked');
   };
-
-  const handleAboutUsClick = () => {
-    // Code to execute when the About Us button is clicked
-    console.log('About Us button clicked');
-  };
-
 
   return (
 
@@ -116,13 +112,14 @@ const Homepage = () => {
   >
     Challenges
   </button>
-  <button
-    type="button"
-    class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
-    onClick={handleAboutUsClick}
-  >
-    About Us
-  </button>
+  <Link to="/about" className="block">
+          <button
+            type="button"
+            class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+            >
+            About Us
+          </button>
+        </Link>
 </div>
 
 {/* CREATING SECOND PART OF THE HOMEPAGE */}
