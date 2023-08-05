@@ -6,12 +6,17 @@ module.exports = {
     extend: {
       backgroundColor: {
         'green-resonate': '#D5DDCF',
+        'yellow-resonate': '#F1EBE5',
+        'orange-resonate': '#F4D487',
       },
       textColor:{
         'black-resonate': '#423F32',
       },
       fontFamily: {
         reborn: ["REBORN", "sans-serif"],
+      },
+      borderColor: {
+        'black-resonate': '#423F32', // Replace with your custom color value
       },    
     },
   },
