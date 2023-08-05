@@ -13,6 +13,35 @@ import recorder from './assets/recorder.png'; // Import the image
 import tape2 from './assets/tape2.png'; // Import the image
 
 const App = () => {
+
+  //Menu Button Functionality
+
+  const handleConnectClick = () => {
+    // Code to execute when the Connect button is clicked
+    console.log('Connect button clicked');
+  };
+
+  const handleCreateClick = () => {
+    // Code to execute when the Create button is clicked
+    console.log('Create button clicked');
+  };
+
+  const handleChatClick = () => {
+    // Code to execute when the Chat button is clicked
+    console.log('Chat button clicked');
+  };
+
+  const handleChallengesClick = () => {
+    // Code to execute when the Challenges button is clicked
+    console.log('Challenges button clicked');
+  };
+
+  const handleAboutUsClick = () => {
+    // Code to execute when the About Us button is clicked
+    console.log('About Us button clicked');
+  };
+
+
   return (
 
 //FIRST PART OF THE HOMEPAGE DESIGN
@@ -63,30 +92,35 @@ const App = () => {
   <button
     type="button"
     class="w-full min-w-[200px] border-r border-l text-center px-4 py-3 text-black-resonate text-md font-medium border-b border-t border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+    onClick={handleConnectClick}
   >
     Connect
   </button>
   <button
     type="button"
     class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b  border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+    onClick={handleCreateClick}
   >
     Create
   </button>
   <button
     type="button"
     class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+    onClick={handleChatClick}
   >
     Chat
   </button>
   <button
     type="button"
     class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+    onClick={handleChallengesClick}
   >
     Challenges
   </button>
   <button
     type="button"
     class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+    onClick={handleAboutUsClick}
   >
     About Us
   </button>
