@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         reborn: ["REBORN", "sans-serif"],
+        CG_Reg: ["CG_Reg", "sans-serif"],
       },
       borderColor: {
         'black-resonate': '#423F32', // Replace with your custom color value
