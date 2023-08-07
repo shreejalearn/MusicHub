@@ -22,7 +22,7 @@ const Challenges = () => {
 
 <div class="font-CG_Reg p-10 min-w-[1400px] text-black-resonate bg-yellow2-resonate border-black-resonate rounded-lg">
 
-  <Link to="/about" className="block">
+  <Link to="/coverChallenge" className="block">
           <button
             type="button"
             class="w-full border-r text-3xl min-h-[100px] min-w-[200px] border-l border-t mt-5 bg-green-resonate2 text-[#F1F1E7] text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-[#C47E94] hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
@@ -31,7 +31,7 @@ const Challenges = () => {
           </button>
         </Link>    
 
-    <Link to="/about" className="block">
+    <Link to="/lyricChallenge" className="block">
           <button
             type="button"
             class="w-full border-r bg-yellow3-resonate text-3xl min-h-[100px] min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"

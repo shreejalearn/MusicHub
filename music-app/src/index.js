@@ -7,6 +7,8 @@ import Homepage from './Homepage';
 import AboutUs from './AboutUs';
 import Challenges from './Challenges';
 import Generate from './Generate';
+import CoverChallenge from './CoverChallenge';
+import LyricChallenge from './LyricChallenge';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,6 +18,8 @@ ReactDOM.render(
         <Route path="/about" element={<AboutUs />} />
         <Route path="/challenges" element={<Challenges />} />
         <Route path="/generate" element={<Generate />} />
+        <Route path="/CoverChallenge" element={<CoverChallenge />} />
+        <Route path="/LyricChallenge" element={<LyricChallenge />} />
       </Routes>
     </Router>
   </React.StrictMode>,
