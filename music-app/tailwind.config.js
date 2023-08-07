@@ -7,6 +7,7 @@ module.exports = {
       backgroundColor: {
         'green-resonate': '#D5DDCF',
         'yellow-resonate': '#F1EBE5',
+        'yellow2-resonate': '#F1F1E7',
         'orange-resonate': '#F4D487',
       },
       textColor:{
