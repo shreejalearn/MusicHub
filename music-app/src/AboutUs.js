@@ -26,7 +26,7 @@ const AboutUs = () => {
     {/* Anna Introduction */}
     <h1 className="text-6xl text-[#517D67] font-CG_Reg mt-[5%] ml-[10%]">Anna Ekmekci</h1>
     <img src={headphones} alt="Headphones design" className="w-11 mt-[-5%] ml-[9.95%]" />
-    <p className="font-CG_Reg max-w-[850px] ml-[5%] mt-[2%] overflow-hidden text-2xl text-black-resonate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas erat nec tellus volutpat, quis congue lectus semper. Ut ac rhoncus erat. Morbi ut porttitor lorem. Nullam pulvinar neque urna, vel venenatis mauris posuere in.Donec dictum felis ut mauris ultrices rutrum. Cras id dui nec eros varius tempor. Ut mauris velit, feugiat sed magna a, dictum tristique nisl. In et turpis est.</p>
+    <p className="font-CG_Reg max-w-[850px] ml-[5%] mt-[4%] overflow-hidden text-2xl text-black-resonate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas erat nec tellus volutpat, quis congue lectus semper. Ut ac rhoncus erat. Morbi ut porttitor lorem. Nullam pulvinar neque urna, vel venenatis mauris posuere in.Donec dictum felis ut mauris ultrices rutrum. Cras id dui nec eros varius tempor. Ut mauris velit, feugiat sed magna a, dictum tristique nisl. In et turpis est.</p>
     <img src={piano} alt="Piano design" className=" w-[35rem] ml-[62%] mt-[-20%]" />
 
     {/* Contact */}
