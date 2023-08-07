@@ -24,12 +24,18 @@ const LyricChallenge = () => {
     <img src={retro} alt="retro design" className="w-[85rem] mt-[0%]" />
     
     <div className="flex items-center flex-col"> {/* Center content vertically */}
-        <h1 className="font-reborn text-9xl text-[#979D92] mt-[18%]">Submissions</h1>
+        <h1 className="font-reborn text-9xl text-[#979D92] mt-[16%]">Submissions</h1>
         <textarea
-  className="border-green-500 border-2 p-2 rounded resize-y focus:ring focus:ring-green-300 focus:border-green-500"
-  placeholder="Enter text here"
+  className="mt-[5%] w-[90%] h-[400px] border-4 p-2 rounded resize-y border-green-resonate2 focus:ring-orange-resonate focus:ring- focus:border-yellow-resonate"
+  placeholder="Enter your Lyrics"
 ></textarea>
 
+<button className="bg-[#CB195A] mt-[5%] hover:bg-[#D93E1B] text-white font-bold py-2 px-4 rounded-full font-CG_Reg w-[20%] h-[3%]">
+  Submit
+</button>
+
+<p className="font-CG_Reg max-w-[1190px] mb-[3%] mt-[3%] overflow-hidden text-xl text-black-resonate">"Please note that submissions received after September 1st will be rejected. The selection of winners is at the sole discretion of the judging panel. The prizes for this competition entail a mention on our website and a digital certificate. Submissions will be evaluated based on their adherence to the provided themes and their ability to craft a creative and engaging story within their lyrics. Each category will have 1 winner and possible honoroable mentions (who will get featured on our website)!"
+</p>
 
       </div>
 
