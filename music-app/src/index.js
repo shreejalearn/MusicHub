@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import Homepage from './Homepage';
 import AboutUs from './AboutUs';
 import Challenges from './Challenges';
+import Generate from './Generate';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Route path="/" element={<Homepage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/challenges" element={<Challenges />} />
+        <Route path="/generate" element={<Generate />} />
       </Routes>
     </Router>
   </React.StrictMode>,
