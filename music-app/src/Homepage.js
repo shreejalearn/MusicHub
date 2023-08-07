@@ -22,11 +22,6 @@ const Homepage = () => {
     console.log('Connect button clicked');
   };
 
-  const handleCreateClick = () => {
-    // Code to execute when the Create button is clicked
-    console.log('Create button clicked');
-  };
-
   const handleChatClick = () => {
     // Code to execute when the Chat button is clicked
     console.log('Chat button clicked');
