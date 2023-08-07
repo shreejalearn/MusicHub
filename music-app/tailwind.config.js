@@ -6,8 +6,10 @@ module.exports = {
     extend: {
       backgroundColor: {
         'green-resonate': '#D5DDCF',
+        'green-resonate2': '#979D92',
         'yellow-resonate': '#F1EBE5',
         'yellow2-resonate': '#F1F1E7',
+        'yellow3-resonate': '#FAF5CC',
         'orange-resonate': '#F4D487',
       },
       textColor:{
