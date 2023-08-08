@@ -134,21 +134,23 @@ const chordProgressions = {
 };
 
 const intervals = {
-    "I": 0, "II": 2, "III": 4, "IV": 5, "V": 7, "VI": 9, "VII": 11,
-    "i": 3, "ii": 5, "iii": 7, "iv": 8, "v": 10, "vi": 9, "vii": 14,
-    "I7": 11, "II7": 13, "III7": 15, "IV7": 17, "V7": 19, "VI7": 21, "VII7": 23,
-    "i7": 10, "ii7": 12, "iii7": 14, "iv7": 16, "v7": 18, "vi7": 20, "vii7": 22,
-    "I7m": 10, "II7m": 12, "III7m": 14, "IV7m": 16, "V7m": 18, "VI7m": 20, "VII7m": 22,
-    "i7m": 9, "ii7m": 11, "iii7m": 13, "iv7m": 15, "v7m": 17, "vi7m": 19, "vii7m": 21,
-    "I7M": 11, "II7M": 13, "III7M": 15, "IV7M": 17, "V7M": 19, "VI7M": 21, "VII7M": 23,
-    "i7M": 10, "ii7M": 12, "iii7M": 14, "iv7M": 16, "v7M": 18, "vi7M": 20, "vii7M": 22,
-    "I7dim": 9, "II7dim": 11, "III7dim": 13, "IV7dim": 14, "V7dim": 16, "VI7dim": 18, "VII7dim": 20,
-    "i7dim": 8, "ii7dim": 10, "iii7dim": 12, "iv7dim": 14, "v7dim": 15, "vi7dim": 17, "vii7dim": 19,
-    "Imaj7": 11, "IImaj7": 13, "IIImaj7": 15, "IVmaj7": 17, "Vmaj7": 19, "VImaj7": 21, "VIImaj7": 23,
-    "imaj7": 10, "iimaj7": 12, "iiimaj7": 14, "ivmaj7": 16, "vmaj7": 18, "vimaj7": 20, "viimaj7": 22,
-    "IIm7": 2, "IIIm7": 4, "IVm7": 6, "VIm7": 9, "VII(dim)": 10, "VII(dim)7": 22,
-    "iim7": 1, "iiim7": 3, "ivm7": 5, "vim7": 8, "vii(dim)": 9, "vii(dim)7": 21,
+  "I": 0, "II": 2, "III": 4, "IV": 5, "V": 7, "VI": 9, "VII": 11,
+  "i": 3, "ii": 5, "iii": 7, "iv": 8, "v": 10, "vi": 0, "vii": 12,
+  "I7": 11, "II7": 2, "III7": 4, "IV7": 5, "V7": 7, "VI7": 9, "VII7": 11,
+  "i7": 10, "ii7": 0, "iii7": 2, "iv7": 3, "v7": 5, "vi7": 7, "vii7": 9,
+  "I7m": 11, "II7m": 1, "III7m": 3, "IV7m": 5, "V7m": 6, "VI7m": 8, "VII7m": 10,
+  "i7m": 10, "ii7m": 0, "iii7m": 2, "iv7m": 3, "v7m": 5, "vi7m": 7, "vii7m": 9,
+  "I7M": 11, "II7M": 1, "III7M": 3, "IV7M": 5, "V7M": 7, "VI7M": 9, "VII7M": 11,
+  "i7M": 10, "ii7M": 0, "iii7M": 2, "iv7M": 3, "v7M": 5, "vi7M": 7, "vii7M": 9,
+  "I7dim": 11, "II7dim": 1, "III7dim": 3, "IV7dim": 4, "V7dim": 6, "VI7dim": 8, "VII7dim": 10,
+  "i7dim": 10, "ii7dim": 0, "iii7dim": 2, "iv7dim": 3, "v7dim": 5, "vi7dim": 6, "vii7dim": 8,
+  "Imaj7": 11, "IImaj7": 1, "IIImaj7": 3, "IVmaj7": 5, "Vmaj7": 7, "VImaj7": 9, "VIImaj7": 11,
+  "imaj7": 10, "iimaj7": 0, "iiimaj7": 2, "ivmaj7": 3, "vmaj7": 5, "vimaj7": 7, "viimaj7": 9,
+  "IIm7": 2, "IIIm7": 4, "IVm7": 5, "VIm7": 7, "VII(dim)": 9, "VII(dim)7": 10,
+  "iim7": 1, "iiim7": 3, "ivm7": 4, "vim7": 6, "vii(dim)": 8, "vii(dim)7": 9,
 };
+
+
 
 
 function isMinorKey(keySignature) {
@@ -187,6 +189,7 @@ function getBaseNote(keySignature, interval) {
 }
 
 const Generate = () => {
+  <div className="bg-green-resonate min-h-screen flex flex-col relative overflow-x-hidden"></div>
   const [selectedMood, setSelectedMood] = useState('');
   const [generatedChordProgression, setGeneratedChordProgression] = useState('');
   const [keySignatureInput, setKeySignatureInput] = useState('');
@@ -261,30 +264,39 @@ const Generate = () => {
   };
 
   return (
-    <div>
-      <h2>Generate Chord Progression</h2>
-      <div>
-        <label htmlFor="mood">Select Mood:</label>
-        <select id="mood" value={selectedMood} onChange={handleMoodChange}>
-          <option value="">Select a mood</option>
-          {Array.from(new Set(Object.values(chordProgressions))).map((mood) => (
-            <option key={mood} value={mood}>
-              {mood}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
-        <button onClick={handleGenerateChordProgression}>Generate Chord Progression</button>
-      </div>
-      {generatedChordProgression && (
-        <div>
-          <h3>Generated Chord Progression:</h3>
-          <p>{generatedChordProgression}</p>
+    <div className="bg-green-resonate min-h-screen flex flex-col relative overflow-x-hidden"> 
+    <div className="flex items-center relative"> {/* Increase the margin-top */}
+        <h1 className="font-reborn text-9xl text-black-resonate ml-96 mt-12">Create</h1> {/* TEXT */}
+        <h1 className="text-6xl text-[#517D67] font-CG_Reg mt-[30%] ml-[-32%]">Generate Chord Progression</h1>
+    </div>
+    {/* Chord progression */}
+    <div className="flex">  
+        <div className="flex">
+            <label htmlFor="mood">Select Mood:</label>
+            <select id="mood" value={selectedMood} onChange={handleMoodChange}>
+            <option value="">Select a mood</option>
+            {Array.from(new Set(Object.values(chordProgressions))).map((mood) => (
+                <option key={mood} value={mood}>
+                {mood}
+                </option>
+            ))}
+            </select>
         </div>
-      )}
-
-      <h2>Generate Base Notes of Chords</h2>
+        <div className="flex">
+            <button onClick={handleGenerateChordProgression}>Generate Chord Progression</button>
+        </div>
+        {generatedChordProgression && (
+            <div className="flex">
+            <h3>Generated Chord Progression:</h3>
+            <p>{generatedChordProgression}</p>
+            </div>
+        )}
+    </div>      
+    <div>
+      
+      
+        
+      <h1>Generate Base Notes of Chords</h1>
       <div>
         <label htmlFor="keySignature">Key Signature:</label>
         <input
@@ -316,6 +328,7 @@ const Generate = () => {
           </ul>
         </div>
       )}
+    </div>
     </div>
   );
 };
