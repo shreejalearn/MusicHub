@@ -1,4 +1,4 @@
-const db = require('./db_connection'); // Import your db_connection module
+const db = require('../db/db_connection'); // Import your db_connection module
 
 export const handleUploadFile =  (file) => {
   try {
