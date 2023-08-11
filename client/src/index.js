@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, and Route
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './Homepage';
@@ -9,7 +9,7 @@ import Challenges from './Challenges';
 import Generate from './Generate';
 import CoverChallenge from './CoverChallenge';
 import LyricChallenge from './LyricChallenge';
-import FileUpload from './FileUpload';
+import AlbumChallenge from './AlbumChallenge';
 
 
 ReactDOM.render(
@@ -22,7 +22,6 @@ ReactDOM.render(
         <Route path="/generate" element={<Generate />} />
         <Route path="/CoverChallenge" element={<CoverChallenge />} />
         <Route path="/LyricChallenge" element={<LyricChallenge />} />
-        <Route path="/FileUpload" element={<FileUpload />} />
       </Routes>
     </Router>
   </React.StrictMode>,
