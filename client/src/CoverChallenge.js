@@ -7,13 +7,9 @@ import skyline from './assets/skyline.png'; // Import the image
 import border from './assets/border.png'; // Import the image
 import coverdesign from './assets/coverdesign.png'; // Import the image
 import coverdesign2 from './assets/coverdesign2.png'; // Import the image
-import { handleUploadFile } from './CCUpload';
 
 function CoverChallenge() {
-  const handleUploadClick = async(file) => {
-    try{handleUploadFile(file);}
-    catch(error){console.error('Error uploading file: ',error)}
-  }
+  
   return (
     <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center relative">
         <div className="flex items-center flex-col mt-[14%]"> {/* Center content vertically */}
@@ -39,7 +35,7 @@ function CoverChallenge() {
     <h1 className="text-3xl font-semibold mb-6 text-white">Upload Video or Audio</h1>
     <FileUpload />
     <div className="mt-6">
-        <button className="bg-[#F1F1E7] hover:bg-[#F1EDD2] text-black-resonate font-semibold py-2 px-4 rounded" onClick={handleUploadClick}>
+        <button className="bg-[#F1F1E7] hover:bg-[#F1EDD2] text-black-resonate font-semibold py-2 px-4 rounded">
             Upload
         </button>
     </div>
