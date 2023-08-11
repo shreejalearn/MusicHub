@@ -22,6 +22,7 @@ ReactDOM.render(
         <Route path="/generate" element={<Generate />} />
         <Route path="/CoverChallenge" element={<CoverChallenge />} />
         <Route path="/LyricChallenge" element={<LyricChallenge />} />
+        <Route path="/AlbumChallenge" element={<AlbumChallenge />} />
       </Routes>
     </Router>
   </React.StrictMode>,
