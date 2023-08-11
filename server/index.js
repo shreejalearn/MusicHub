@@ -1,45 +1,59 @@
 const express = require('express');
-const multer = require('multer');
 const path = require('path');
+const multer = require('multer');
+const db = require('./db/db_connection');
+const fileUpload = require('express-fileupload');
+
 const app = express();
-const db = require('./db/db_connection'); // Import your database connection configuration
+
+app.use(fileUpload());
 
 const storage = multer.diskStorage({
-    destination: './uploads/', // Define the upload directory
-    filename: (req, file, cb) => {
-      // Generate a unique filename
-      cb(null, Date.now() + path.extname(file.originalname));
-    }
+  destination: './uploads/',
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  }
 });
+
 const upload = multer({ storage });
 
-app.get('/coverChallenge', (req, res) => {
-  const query = 'SELECT * FROM music_ccchallenge'; // Your SQL query
+// Route for uploading a file
+app.post('/upload', upload.single('file'), (req, res) => {
+  console.log("Received file:", req.file.filename);
 
-  db.query(query, (error, results) => {
+  // Insert the filePath into the database or perform desired actions
+  // Make sure you have the appropriate database connection and query logic here
+
+  const filePath = `/uploads/${req.file.filename}`;
+  const query = 'INSERT INTO music_ccchallenge (file) VALUES (?)';
+  db.query(query, [filePath], (error, results) => {
     if (error) {
       console.error(error);
-      res.status(500).json({ error: 'Internal server error' });
+      res.status(500).json({ error: 'Error saving file path to database' });
       return;
     }
 
-    res.json(results);
+    res.json({ message: 'File uploaded and file path saved to database' });
   });
 });
 
-app.post('/api/upload', upload.single('file'), (req, res) => {
-    const filePath = req.file.path; // Get the file path from the uploaded file
-    const query = 'INSERT INTO music_ccchallenge (file) VALUES (?)'; // query
-  
-    db.query(query, [filePath], (error, results) => {
-      if (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Internal server error' });
-        return;
-      }
-  
-      res.json({ message: 'File uploaded and inserted into the database' });
-    });
+// Route for saving file path to the database
+app.post('/api/saveFilePath', (req, res) => {
+  const { filePath } = req.body;
+
+  // Insert the filePath into the database or perform desired actions
+  // Make sure you have the appropriate database connection and query logic here
+
+  const query = 'INSERT INTO music_ccchallenge (file) VALUES (?)';
+  db.query(query, [filePath], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error saving file path to database' });
+      return;
+    }
+
+    res.json({ message: 'File path saved to database' });
+  });
 });
 
 // Other server configuration and routes
