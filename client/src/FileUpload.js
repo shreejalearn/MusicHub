@@ -12,21 +12,9 @@ function FileUpload() {
     if (file) {
       const formData = new FormData();
       formData.append('file', file);
+      console.log(formData)
 
-      axios.post('/upload', formData)
-        .then(response => {
-          const filePath = response.data.filePath;
-          axios.post('/api/saveFilePath', { filePath })
-            .then(() => {
-              console.log('File path saved to database');
-            })
-            .catch(error => {
-              console.error('Error saving file path:', error);
-            });
-        })
-        .catch(error => {
-          console.error('Error uploading file:', error);
-        });
+      axios.post('http://localhost:5000/upload', formData)
     } else {
       console.error('No file selected');
     }
