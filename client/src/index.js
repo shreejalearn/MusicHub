@@ -10,6 +10,7 @@ import Generate from './Generate';
 import CoverChallenge from './CoverChallenge';
 import LyricChallenge from './LyricChallenge';
 import AlbumChallenge from './AlbumChallenge';
+import FileUpload from './FileUpload';
 
 
 
@@ -24,6 +25,7 @@ ReactDOM.render(
         <Route path="/CoverChallenge" element={<CoverChallenge />} />
         <Route path="/LyricChallenge" element={<LyricChallenge />} />
         <Route path="/AlbumChallenge" element={<AlbumChallenge />} />
+        <Route path="/PastWinners" element={<PastWinners />} />
       </Routes>
     </Router>
   </React.StrictMode>,
