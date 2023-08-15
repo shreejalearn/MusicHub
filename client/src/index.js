@@ -11,6 +11,7 @@ import CoverChallenge from './CoverChallenge';
 import LyricChallenge from './LyricChallenge';
 import AlbumChallenge from './AlbumChallenge';
 import FileUpload from './FileUpload';
+import PastWinners from './PastWinners';
 
 
 
@@ -26,6 +27,7 @@ ReactDOM.render(
         <Route path="/LyricChallenge" element={<LyricChallenge />} />
         <Route path="/AlbumChallenge" element={<AlbumChallenge />} />
         <Route path="/api/upload" element={<FileUpload />} />
+        <Route path="/PastWinners" element={<PastWinners />} />
       </Routes>
     </Router>
   </React.StrictMode>,
