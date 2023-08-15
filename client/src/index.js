@@ -10,8 +10,7 @@ import Generate from './Generate';
 import CoverChallenge from './CoverChallenge';
 import LyricChallenge from './LyricChallenge';
 import AlbumChallenge from './AlbumChallenge';
-import FileUpload from './FileUpload';
-
+import PastWinners from './PastWinners';
 
 
 ReactDOM.render(
