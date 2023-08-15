@@ -17,25 +17,43 @@ app.use(logger('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.urlencoded({ extended: false }));
 
-const storage = multer.diskStorage({
-  destination: './uploads/',
+const ccstorage = multer.diskStorage({
+  destination: './ccuploads/',
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
   },
 });
 
-const upload = multer({ storage });
+const ccupload = multer({ storage:ccstorage });
 
-// Route for uploading a file
-app.post('/upload', upload.single('file'), (req, res) => {
+const lcstorage = multer.diskStorage({
+  destination: './lcuploads/',
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const lcupload = multer({ storage:lcstorage });
+
+const acstorage = multer.diskStorage({
+  destination: './acuploads/',
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const acupload = multer({ storage:acstorage });
+
+app.post('/ccupload', ccupload.single('file'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded' });
   }
 
   console.log('Received file:', req.file.filename);
 
-  const filePath = `/uploads/${req.file.filename}`;
-  const query = 'INSERT INTO music_ccchallenge (file) VALUES (?)';
+  const filePath = `/ccuploads/${req.file.filename}`;
+  console.log(filePath);
+  const query = 'INSERT INTO music_ccuploads (file) VALUES (?)';
   db.query(query, [filePath], (error, results) => {
     if (error) {
       console.error(error);
@@ -46,26 +64,45 @@ app.post('/upload', upload.single('file'), (req, res) => {
   });
 });
 
-// Route for saving file path to the database
-app.post('/api/saveFilePath', (req, res) => {
-  const { filePath } = req.body;
+app.post('/lcupload', lcupload.single('file'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: 'No file uploaded' });
+  }
+
+  console.log('Received file:', req.file.filename);
+
+  const filePath = `/lcuploads/${req.file.filename}`;
   console.log(filePath);
-
-  // Insert the filePath into the database or perform desired actions
-  // Make sure you have the appropriate database connection and query logic here
-
-  const query = `INSERT INTO music_ccchallenge (file) VALUES (?);`
+  const query = 'INSERT INTO music_lcuploads (file) VALUES (?)';
   db.query(query, [filePath], (error, results) => {
     if (error) {
       console.error(error);
-      res.status(500).json({ error: 'Error saving file path to database' });
-      return;
+      return res.status(500).json({ error: 'Error saving file path to database' });
     }
 
-    res.json({ message: 'File path saved to database' });
+    res.json({ message: 'File uploaded and file path saved to database' });
   });
 });
 
+app.post('/acupload', acupload.single('file'), (req, res) => {
+  if (!req.file) {
+    return res.status(400).json({ error: 'No file uploaded' });
+  }
+
+  console.log('Received file:', req.file.filename);
+
+  const filePath = `/acuploads/${req.file.filename}`;
+  console.log(filePath);
+  const query = 'INSERT INTO music_acuploads (file) VALUES (?)';
+  db.query(query, [filePath], (error, results) => {
+    if (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Error saving file path to database' });
+    }
+
+    res.json({ message: 'File uploaded and file path saved to database' });
+  });
+});
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
