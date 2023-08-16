@@ -1,4 +1,8 @@
+import create from './assets/create-text.png'; // Import the image
 import React, { useState } from 'react';
+import createdesign from './assets/createdesign.png'; // Import the image
+import maracas  from './assets/maracas.png'; // Import the image
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const chordProgressions = {
   // Major Chord Progressions
@@ -263,12 +267,16 @@ const Generate = () => {
       
   };
 
+
   return (
-    <div className="bg-green-resonate min-h-screen flex flex-col relative overflow-x-hidden"> 
+    <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center relative overflow-x-hidden"> 
     <div className="flex items-center relative"> {/* Increase the margin-top */}
-        <h1 className="font-reborn text-9xl text-black-resonate ml-96 mt-12">Create</h1> {/* TEXT */}
-        <h1 className="text-6xl text-[#517D67] font-CG_Reg mt-[30%] ml-[-32%]">Generate Chord Progression</h1>
+      <img src={create} alt="create text design" className="mt-[0%] ml-[30%] w-[40rem]" />
+      <img src={createdesign} alt="design" className="ml-[0%] w-[44rem]" />
+
     </div>
+    <img src={maracas} alt="maracas design" className="ml-[-70%] mt-[-35%] w-[25rem]" />
+
     {/* Chord progression */}
     <div className="flex">  
         <div className="flex">
