@@ -13,6 +13,7 @@ import AlbumChallenge from './AlbumChallenge';
 import PastWinners from './PastWinners';
 import Chronicle from './Chronicle';
 import Connect from './Connect';
+import Songlyricgenerator from './songlyricgenerator';
 
 
 
@@ -30,6 +31,7 @@ ReactDOM.render(
         <Route path="/PastWinners" element={<PastWinners />} />
         <Route path="/Chronicle" element={<Chronicle />} />
         <Route path="/Connect" element={<Connect />} />
+        <Route path="/songlyricgenerator" element={<Songlyricgenerator />} />
       </Routes>
     </Router>
   </React.StrictMode>,
