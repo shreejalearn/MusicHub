@@ -269,43 +269,61 @@ const Generate = () => {
 
 
   return (
-    <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center relative overflow-x-hidden"> 
-    <div className="flex items-center relative"> {/* Increase the margin-top */}
-      <img src={create} alt="create text design" className="mt-[0%] ml-[30%] w-[40rem]" />
-      <img src={createdesign} alt="design" className="ml-[0%] w-[44rem]" />
-
-    </div>
-    <img src={maracas} alt="maracas design" className="ml-[-70%] mt-[-35%] w-[25rem]" />
-
-    {/* Chord progression */}
-    <div className="flex">  
-        <div className="flex">
-            <label htmlFor="mood">Select Mood:</label>
-            <select id="mood" value={selectedMood} onChange={handleMoodChange}>
-            <option value="">Select a mood</option>
+    <div className='overflow-x-hidden'>
+      <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center relative overflow-x-hidden scroll-x-hidden">
+        <div className="flex items-center relative"> {/* Increase the margin-top */}
+          <img src={create} alt="create text design" className="mt-[0%] ml-[30%] w-[40rem]" />
+          <img src={createdesign} alt="design" className="ml-[0%] w-[44rem] overflow-x-hidden" />
+        </div>
+        <img src={maracas} alt="maracas design" className="ml-[-50%] mt-[-32%] w-[15rem]" />
+  
+        <h1 className="font-reborn text-5xl text-[#979D92] justify-center mt-[4%] z-20">Generate Chord Progression</h1>
+  
+        {/* Chord progression */}
+        <div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
+          <label htmlFor="mood" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
+            Mood:
+          </label>
+          <select
+            id="mood"
+            value={selectedMood}
+            onChange={handleMoodChange}
+            className="border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#C2899E]"
+          >
+            <option
+              value=""
+              className="text-[#C2899E] font-CG_Reg transition-colors hover:text-[#679B89]"
+            >
+              Select
+            </option>
             {Array.from(new Set(Object.values(chordProgressions))).map((mood) => (
-                <option key={mood} value={mood}>
+              <option
+                key={mood}
+                value={mood}
+                className="text-[#C2899E] font-CG_Reg text-xl transition-colors hover:text-[#679B89]"
+              >
                 {mood}
-                </option>
+              </option>
             ))}
-            </select>
+          </select>
         </div>
-        <div className="flex">
-            <button onClick={handleGenerateChordProgression}>Generate Chord Progression</button>
-        </div>
-        {generatedChordProgression && (
-            <div className="flex">
-            <h3>Generated Chord Progression:</h3>
-            <p>{generatedChordProgression}</p>
+  
+        {/* "Generate Chord Progression" button and generated content */}
+        <div className="flex items-center space-x-2 font-CG_Reg text-black overflow-x-hidden mt-[2.5%]">
+          <button onClick={handleGenerateChordProgression} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#C2899E] bg-[#f7b7ce]">
+            Generate Chord Progression
+          </button>
+          {generatedChordProgression && (
+            <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
+              <p>{generatedChordProgression}</p>
             </div>
-        )}
-    </div>      
-    <div>
-      
-      
-        
-      <h1>Generate Base Notes of Chords</h1>
-      <div>
+          
+          
+          )}
+
+          
+          
+      {/* <div>
         <label htmlFor="keySignature">Key Signature:</label>
         <input
           type="text"
@@ -313,8 +331,8 @@ const Generate = () => {
           value={keySignatureInput}
           onChange={handleKeySignatureChange}
         />
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <label htmlFor="chordProgression">Chord Progression (comma-separated):</label>
         <input
           type="text"
@@ -335,10 +353,14 @@ const Generate = () => {
             ))}
           </ul>
         </div>
-      )}
-    </div>
+      )} */}
+        </div>
+      </div>
     </div>
   );
+        
+      
+        
 };
 
 export default Generate;
