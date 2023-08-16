@@ -310,51 +310,55 @@ const Generate = () => {
   
         {/* "Generate Chord Progression" button and generated content */}
         <div className="flex items-center space-x-2 font-CG_Reg text-black overflow-x-hidden mt-[2.5%]">
-          <button onClick={handleGenerateChordProgression} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#C2899E] bg-[#f7b7ce]">
-            Generate Chord Progression
-          </button>
-          {generatedChordProgression && (
-            <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
-              <p>{generatedChordProgression}</p>
-            </div>
+  <button onClick={handleGenerateChordProgression} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors bg-[#f7b7ce] hover:bg-[#ffe5ed] focus:ring focus:ring-[#C2899E]">
+    Generate Chord Progression
+  </button>
+  {generatedChordProgression && (
+    <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
+      <p>{generatedChordProgression}</p>
+    </div>
+  )}
+</div>
           
-          
-          )}
+          <div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
+  <label htmlFor="keySignature" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
+    Key Signature:
+  </label>
+  <input
+    type="text"
+    id="keySignature"
+    value={keySignatureInput}
+    onChange={handleKeySignatureChange}
+    className="border border-[#CD7417] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#CD7417]"
+  />
+</div>
+<div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
+  <label htmlFor="chordProgression" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
+    Chord Progression (comma-separated):
+  </label>
+  <input
+    type="text"
+    id="chordProgression"
+    value={chordProgressionInput}
+    onChange={handleChordProgressionChange}
+    className="border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#C2899E]"
+  />
+</div>
+<div className="flex items-center space-x-2 font-CG_Reg text-black overflow-x-hidden mt-[2.5%]">
+  <button onClick={handleGenerateBaseNotes} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] hover:bg-[#ffe5ed] focus:ring focus:ring-[#C2899E] bg-[#f7b7ce]">
+    Generate Base Notes
+  </button>
+  {generatedBaseNotes.length > 0 && (
+    <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
+      <ul>
+        {generatedBaseNotes.map((baseNote, index) => (
+          <li key={index}>{baseNote}</li>
+        ))}
+      </ul>
+</div>
+  )}
+</div>
 
-          
-          
-      {/* <div>
-        <label htmlFor="keySignature">Key Signature:</label>
-        <input
-          type="text"
-          id="keySignature"
-          value={keySignatureInput}
-          onChange={handleKeySignatureChange}
-        />
-      </div> */}
-      {/* <div>
-        <label htmlFor="chordProgression">Chord Progression (comma-separated):</label>
-        <input
-          type="text"
-          id="chordProgression"
-          value={chordProgressionInput}
-          onChange={handleChordProgressionChange}
-        />
-      </div>
-      <div>
-        <button onClick={handleGenerateBaseNotes}>Generate Base Notes</button>
-      </div>
-      {generatedBaseNotes.length > 0 && (
-        <div>
-          <h3>Generated Base Notes of Chords:</h3>
-          <ul>
-            {generatedBaseNotes.map((baseNote, index) => (
-              <li key={index}>{baseNote}</li>
-            ))}
-          </ul>
-        </div>
-      )} */}
-        </div>
       </div>
     </div>
   );
