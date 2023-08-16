@@ -263,7 +263,7 @@ const Generate = () => {
       }
     });
     setGeneratedBaseNotes(baseNotes);
-    console.log("Base Notes of Chords:", baseNotes);
+    console.log("Chords:", baseNotes);
       
   };
 
@@ -346,7 +346,7 @@ const Generate = () => {
 </div>
 <div className="flex items-center space-x-2 font-CG_Reg text-black overflow-x-hidden mt-[2.5%]">
   <button onClick={handleGenerateBaseNotes} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] hover:bg-[#ffe5ed] focus:ring focus:ring-[#C2899E] bg-[#f7b7ce]">
-    Generate Base Notes
+    Generate Chords
   </button>
   {generatedBaseNotes.length > 0 && (
     <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
