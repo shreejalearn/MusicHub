@@ -360,6 +360,8 @@ const Generate = () => {
 </div>
 
       </div>
+      <div className='pb-[5%] bg-yellow2-resonate'></div>
+  
     </div>
   );
         
