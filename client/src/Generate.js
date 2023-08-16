@@ -1,4 +1,8 @@
+import create from './assets/create-text.png'; // Import the image
 import React, { useState } from 'react';
+import createdesign from './assets/createdesign.png'; // Import the image
+import maracas  from './assets/maracas.png'; // Import the image
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const chordProgressions = {
   // Major Chord Progressions
@@ -263,74 +267,106 @@ const Generate = () => {
       
   };
 
+
   return (
-    <div className="bg-green-resonate min-h-screen flex flex-col relative overflow-x-hidden"> 
-    <div className="flex items-center relative"> {/* Increase the margin-top */}
-        <h1 className="font-reborn text-9xl text-black-resonate ml-96 mt-12">Create</h1> {/* TEXT */}
-        <h1 className="text-6xl text-[#517D67] font-CG_Reg mt-[30%] ml-[-32%]">Generate Chord Progression</h1>
-    </div>
-    {/* Chord progression */}
-    <div className="flex">  
-        <div className="flex">
-            <label htmlFor="mood">Select Mood:</label>
-            <select id="mood" value={selectedMood} onChange={handleMoodChange}>
-            <option value="">Select a mood</option>
+    <div className='overflow-x-hidden'>
+      <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center relative overflow-x-hidden scroll-x-hidden">
+        <div className="flex items-center relative"> {/* Increase the margin-top */}
+          <img src={create} alt="create text design" className="mt-[0%] ml-[30%] w-[40rem]" />
+          <img src={createdesign} alt="design" className="ml-[0%] w-[44rem] overflow-x-hidden" />
+        </div>
+        <img src={maracas} alt="maracas design" className="ml-[-50%] mt-[-32%] w-[15rem]" />
+  
+        <h1 className="font-reborn text-5xl text-[#979D92] justify-center mt-[4%] z-20">Generate Chord Progression</h1>
+  
+        {/* Chord progression */}
+        <div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
+          <label htmlFor="mood" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
+            Mood:
+          </label>
+          <select
+            id="mood"
+            value={selectedMood}
+            onChange={handleMoodChange}
+            className="border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#C2899E]"
+          >
+            <option
+              value=""
+              className="text-[#C2899E] font-CG_Reg transition-colors hover:text-[#679B89]"
+            >
+              Select
+            </option>
             {Array.from(new Set(Object.values(chordProgressions))).map((mood) => (
-                <option key={mood} value={mood}>
+              <option
+                key={mood}
+                value={mood}
+                className="text-[#C2899E] font-CG_Reg text-xl transition-colors hover:text-[#679B89]"
+              >
                 {mood}
-                </option>
+              </option>
             ))}
-            </select>
+          </select>
         </div>
-        <div className="flex">
-            <button onClick={handleGenerateChordProgression}>Generate Chord Progression</button>
-        </div>
-        {generatedChordProgression && (
-            <div className="flex">
-            <h3>Generated Chord Progression:</h3>
-            <p>{generatedChordProgression}</p>
-            </div>
-        )}
-    </div>      
-    <div>
-      
-      
-        
-      <h1>Generate Base Notes of Chords</h1>
-      <div>
-        <label htmlFor="keySignature">Key Signature:</label>
-        <input
-          type="text"
-          id="keySignature"
-          value={keySignatureInput}
-          onChange={handleKeySignatureChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="chordProgression">Chord Progression (comma-separated):</label>
-        <input
-          type="text"
-          id="chordProgression"
-          value={chordProgressionInput}
-          onChange={handleChordProgressionChange}
-        />
-      </div>
-      <div>
-        <button onClick={handleGenerateBaseNotes}>Generate Base Notes</button>
-      </div>
-      {generatedBaseNotes.length > 0 && (
-        <div>
-          <h3>Generated Base Notes of Chords:</h3>
-          <ul>
-            {generatedBaseNotes.map((baseNote, index) => (
-              <li key={index}>{baseNote}</li>
-            ))}
-          </ul>
-        </div>
-      )}
+  
+        {/* "Generate Chord Progression" button and generated content */}
+        <div className="flex items-center space-x-2 font-CG_Reg text-black overflow-x-hidden mt-[2.5%]">
+  <button onClick={handleGenerateChordProgression} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors bg-[#f7b7ce] hover:bg-[#ffe5ed] focus:ring focus:ring-[#C2899E]">
+    Generate Chord Progression
+  </button>
+  {generatedChordProgression && (
+    <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
+      <p>{generatedChordProgression}</p>
     </div>
+  )}
+</div>
+          
+          <div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
+  <label htmlFor="keySignature" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
+    Key Signature:
+  </label>
+  <input
+    type="text"
+    id="keySignature"
+    value={keySignatureInput}
+    onChange={handleKeySignatureChange}
+    className="border border-[#CD7417] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#CD7417]"
+  />
+</div>
+<div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
+  <label htmlFor="chordProgression" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
+    Chord Progression (comma-separated):
+  </label>
+  <input
+    type="text"
+    id="chordProgression"
+    value={chordProgressionInput}
+    onChange={handleChordProgressionChange}
+    className="border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#C2899E]"
+  />
+</div>
+<div className="flex items-center space-x-2 font-CG_Reg text-black overflow-x-hidden mt-[2.5%]">
+  <button onClick={handleGenerateBaseNotes} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] hover:bg-[#ffe5ed] focus:ring focus:ring-[#C2899E] bg-[#f7b7ce]">
+    Generate Base Notes
+  </button>
+  {generatedBaseNotes.length > 0 && (
+    <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
+      <ul>
+        {generatedBaseNotes.map((baseNote, index) => (
+          <li key={index}>{baseNote}</li>
+        ))}
+      </ul>
+</div>
+  )}
+</div>
+
+      </div>
+      <div className='pb-[5%] bg-yellow2-resonate'></div>
+  
     </div>
   );
+        
+      
+        
 };
 
 export default Generate;

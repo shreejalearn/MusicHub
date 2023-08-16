@@ -11,6 +11,8 @@ import CoverChallenge from './CoverChallenge';
 import LyricChallenge from './LyricChallenge';
 import AlbumChallenge from './AlbumChallenge';
 import PastWinners from './PastWinners';
+import Chronicle from './Chronicle';
+import Connect from './Connect';
 
 
 
@@ -26,6 +28,8 @@ ReactDOM.render(
         <Route path="/LyricChallenge" element={<LyricChallenge />} />
         <Route path="/AlbumChallenge" element={<AlbumChallenge />} />
         <Route path="/PastWinners" element={<PastWinners />} />
+        <Route path="/Chronicle" element={<Chronicle />} />
+        <Route path="/Connect" element={<Connect />} />
       </Routes>
     </Router>
   </React.StrictMode>,

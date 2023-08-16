@@ -14,19 +14,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Homepage = () => {
-
-  //Menu Button Functionality
-
-  const handleConnectClick = () => {
-    // Code to execute when the Connect button is clicked
-    console.log('Connect button clicked');
-  };
-
-  const handleChatClick = () => {
-    // Code to execute when the Chat button is clicked
-    console.log('Chat button clicked');
-  };
-
   return (
 
 //FIRST PART OF THE HOMEPAGE DESIGN
@@ -74,13 +61,15 @@ const Homepage = () => {
 {/* CREATING A NAVIGATION MENU */}
 
 <div class="font-CG_Reg p-10 w-48 min-w-[450px] text-black-resonate bg-yellow-resonate border-black-resonate rounded-lg mb-10 mt-[-5%] mr-[-60%]">
-  <button
-    type="button"
-    class="w-full min-w-[200px] border-r border-l text-center px-4 py-3 text-black-resonate text-md font-medium border-b border-t border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
-    onClick={handleConnectClick}
-  >
-    Connect
-  </button>
+<Link to="/connect" className="block">
+          <button
+            type="button"
+            class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+            >
+            Connect
+          </button>
+        </Link>    
+
 
   <Link to="/generate" className="block">
           <button
@@ -91,13 +80,14 @@ const Homepage = () => {
           </button>
         </Link>    
 
-  <button
-    type="button"
-    class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
-    onClick={handleChatClick}
-  >
-    Chat
-  </button>
+        <Link to="/chronicle" className="block">
+          <button
+            type="button"
+            class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+            >
+            Chronicle
+          </button>
+        </Link>
     <Link to="/challenges" className="block">
           <button
             type="button"
