@@ -92,7 +92,7 @@ function CoverChallenge() {
             onClick={() => {
               setFile(null);
             }}
-            className="bg-[#F1F1E7] hover:bg-[#F1EDD2] text-black-resonate font-semibold py-2 px-4 rounded"
+            className="bg-[#F1F1E7] hover:bg-[#F1EDD2] text-black-resonate font-semibold py-2 px-4 rounded mr-2"
           >Clear</button>
             
             <button

@@ -71,8 +71,9 @@ const LyricChallenge = () => {
     {/* Second Lyric Challenge */}
     <p className="font-CG_Reg max-w-[1190px] mt-[3%] overflow-hidden text-2xl text-black-resonate">(Resonance of Retro Narratives): "Revive past musical trends in modern lyrics. Choose an era like folk storytelling, '80s punk rebellion, or '90s grunge introspection. Craft lyrics that capture the trend's essence with a contemporary twist, exploring its relevance today. Refresh timeless themes for a new perspective."</p>
     <img src={retro} alt="retro design" className="w-[85rem] mt-[0%]" />
-    
-    <h1 className="text-3xl font-semibold mb-6 text-black">Upload PDF</h1>
+
+    <div className="mt-[5%] bg-[#D6C1C1] rounded-lg shadow-lg p-8 w-full max-w-md">
+    <h1 className="text-3xl font-semibold mb-6 text-white">Upload PDF</h1>
     <input type="file" id="fileInput" onChange={handleFileChange} />
         {}
         <div className="mt-6">
@@ -82,7 +83,7 @@ const LyricChallenge = () => {
             onClick={() => {
               setFile(null);
             }}
-            className="bg-[#F1F1E7] hover:bg-[#F1EDD2] text-black-resonate font-semibold py-2 px-4 rounded"
+            className="bg-[#F1F1E7] hover:bg-[#F1EDD2] text-black-resonate font-semibold py-2 px-4 rounded mr-2"
           >Clear</button>
             
             <button
@@ -93,6 +94,7 @@ const LyricChallenge = () => {
           ) : (
             <p>Select a file to upload</p>
           )}
+        </div>
         </div>
 {/* Confirm/Cancel Popup */}
 {showConfirmPopup && (
