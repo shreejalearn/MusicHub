@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, Switch, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Import Router, Routes, and Route
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Homepage from './Homepage';
@@ -14,6 +14,11 @@ import PastWinners from './PastWinners';
 import Chronicle from './Chronicle';
 import Connect from './Connect';
 import Songlyricgenerator from './songlyricgenerator';
+import LoginPage from './LoginPage';
+import SignupPage from './SignupPage';
+import WelcomePage from './WelcomePage';
+import Profile from './Profile';
+
 
 
 
@@ -21,7 +26,8 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Routes>
-        <Route path="/" element={<Homepage />} />
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="/Homepage" element={<Homepage />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/challenges" element={<Challenges />} />
         <Route path="/generate" element={<Generate />} />
@@ -31,6 +37,9 @@ ReactDOM.render(
         <Route path="/PastWinners" element={<PastWinners />} />
         <Route path="/Chronicle" element={<Chronicle />} />
         <Route path="/Connect" element={<Connect />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/Profile" element={<Profile />} />
         <Route path="/songlyricgenerator" element={<Songlyricgenerator />} />
       </Routes>
     </Router>

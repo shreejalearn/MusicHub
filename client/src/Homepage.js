@@ -61,6 +61,14 @@ const Homepage = () => {
 {/* CREATING A NAVIGATION MENU */}
 
 <div class="font-CG_Reg p-10 w-48 min-w-[450px] text-black-resonate bg-yellow-resonate border-black-resonate rounded-lg mb-10 mt-[-5%] mr-[-60%]">
+<Link to="/Profile" className="block">
+          <button
+            type="button"
+            class="w-full border-r min-w-[200px] border-l border-t mt-5 text-black-resonate text-center px-4 py-3 text-md font-medium border-b border-black-resonate hover:bg-orange-resonate hover:text-white focus:z-10 focus:ring-2 focus:ring-amber-400 focus:text-white dark:border-gray-600 dark:hover:bg-gray-600 dark:hover:text-white dark:focus:ring-gray-500 dark:focus:text-white"
+            >
+            Profile
+          </button>
+        </Link>
 <Link to="/connect" className="block">
           <button
             type="button"
@@ -106,7 +114,7 @@ const Homepage = () => {
             About Us
           </button>
         </Link>
-
+    
 </div>
 
 {/* CREATING SECOND PART OF THE HOMEPAGE */}
