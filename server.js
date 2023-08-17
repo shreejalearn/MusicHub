@@ -235,6 +235,71 @@ app.post('/editphone', (req, res) => {
   });
 });
 
+app.post('/pastwinnersac', (req, res) => {
+  const get_past_winners_sql = `
+    SELECT pw.year, ml.name_first, ml.name_last
+    FROM music_pastwinners pw
+    JOIN music_login ml ON pw.winner_id = ml.user_id
+    WHERE pw.challenge = 'ac';
+  `;
+
+  db.query(get_past_winners_sql, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      if (results.length > 0) {
+        res.json({ pastWinners: results });
+      } else {
+        res.status(404).json({ message: 'No past winners found for the given challenge' });
+      }
+    }
+  });
+});
+
+app.post('/pastwinnerscc', (req, res) => {
+  const get_past_winners_sql = `
+    SELECT pw.year, ml.name_first, ml.name_last
+    FROM music_pastwinners pw
+    JOIN music_login ml ON pw.winner_id = ml.user_id
+    WHERE pw.challenge = 'cc';
+  `;
+
+  db.query(get_past_winners_sql, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      if (results.length > 0) {
+        res.json({ pastWinners: results });
+      } else {
+        res.status(404).json({ message: 'No past winners found for the given challenge' });
+      }
+    }
+  });
+});
+
+app.post('/pastwinnerslc', (req, res) => {
+  const get_past_winners_sql = `
+    SELECT pw.year, ml.name_first, ml.name_last
+    FROM music_pastwinners pw
+    JOIN music_login ml ON pw.winner_id = ml.user_id
+    WHERE pw.challenge = 'lc';
+  `;
+
+  db.query(get_past_winners_sql, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      if (results.length > 0) {
+        res.json({ pastWinners: results });
+      } else {
+        res.status(404).json({ message: 'No past winners found for the given challenge' });
+      }
+    }
+  });
+});
 
 
 app.listen(5000, () => {
