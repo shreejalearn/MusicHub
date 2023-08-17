@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import backgroundImg from './assets/loginbg.png';
+import logintext from './assets/logintext.png';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -8,10 +10,18 @@ const LoginPage = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://localhost:5000/login', {
-        username,
-        password
-      }, {headers:{'Content-Type': 'application/json'}});
+      const response = await axios.post(
+        'http://localhost:5000/login',
+        {
+          username,
+          password
+        },
+        {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        }
+      );
 
       if (response.data.message === 'Login successful') {
         localStorage.setItem('username', username);
@@ -26,28 +36,91 @@ const LoginPage = () => {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
-      <div>
-        <label>Username:</label>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
+    <div style={styles.page_container}>
+      <img src={logintext} alt="Login text" style={styles.logintext} />
+      <div style={styles.container}>
+        <div style={styles.inputContainer}>
+          <label>Username:</label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            style={styles.input}
+          />
+        </div>
+        <div style={styles.inputContainer}>
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            style={styles.input}
+          />
+        </div>
+        <button onClick={handleLogin} style={styles.button}>
+          Login
+        </button>
+        {errorMessage && <p style={styles.error}>{errorMessage}</p>}
       </div>
-      <div>
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-      <button onClick={handleLogin}>Login</button>
-      {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
     </div>
   );
+};
+
+const styles = {
+  page_container: {
+    backgroundImage: `url(${backgroundImg})`,
+    backgroundSize: 'cover',
+    height: '100vh', // Adjust to cover the entire viewport
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  logintext: {
+    position: 'absolute',
+    top: '18%', // Adjust to desired position
+    left: '50%',
+    transform: 'translateX(-50%)',
+    width: '200px', // Adjust to image dimensions
+    marginTop: '4%'
+  },
+  container: {
+    backgroundColor: 'rgba(255, 255, 255, 0.8)',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    width: '300px',
+    textAlign: 'center',
+    marginTop: '14%', // Adjust this value for spacing
+  },
+  heading: {
+    fontSize: '24px',
+    marginBottom: '20px'
+  },
+  inputContainer: {
+    marginBottom: '10px',
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'flex-start'
+  },
+  input: {
+    padding: '8px',
+    borderRadius: '4px',
+    border: '1px solid #ccc',
+    width: '100%'
+  },
+  button: {
+    backgroundColor: '#9F9D81',
+    color: '#fff',
+    padding: '10px 15px',
+    borderRadius: '4px',
+    border: 'none',
+    cursor: 'pointer',
+    marginTop: '10px'
+  },
+  error: {
+    color: 'red',
+    marginTop: '10px'
+  }
 };
 
 export default LoginPage;

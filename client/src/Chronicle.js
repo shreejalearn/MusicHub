@@ -10,7 +10,6 @@ const Chronicle = () => {
         <img src={chronicledesign} alt="chronicledesign" className="w-[90rem] mt-[-20%]" />
       </div>
       <div>
-        <img src={blogimage1} alt="blogimage1" className="" />
       </div>
     </div>
   );
