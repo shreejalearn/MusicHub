@@ -98,17 +98,28 @@ const LyricChallenge = () => {
         </div>
 {/* Confirm/Cancel Popup */}
 {showConfirmPopup && (
-        <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white p-8 rounded-lg shadow-lg">
-            <p className="text-xl mb-4">Are you sure you want to upload the file?</p>
-            <div className="flex justify-end">
-              <button onClick={confirmUpload} className="mr-4 text-blue-500 hover:text-blue-700">Confirm</button>
-              <button onClick={cancelUpload} className="text-red-500 hover:text-red-700">Cancel</button>
-            </div>
-          </div>
-        </div>
-      )}
-
+  <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white p-8 rounded-lg shadow-lg">
+      <p className="text-xl text-black-resonate mb-4">
+        Are you sure you want to upload the file?
+      </p>
+      <div className="flex justify-end">
+        <button
+          onClick={confirmUpload}
+          className="mr-4 text-[#9F9D81] hover:text-green-700 font-semibold"
+        >
+          Confirm
+        </button>
+        <button
+          onClick={cancelUpload}
+          className="text-red-700 hover:text-red-900 font-semibold"
+        >
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+)}
 <p className="font-CG_Reg max-w-[1190px] mb-[4%] mt-[3%] overflow-hidden text-xl text-black-resonate">"Please note that submissions received after September 1st will be rejected. Any unsolicited submissions or emails will be deleted unread. The selection of winners is at the sole discretion of the judging panel. The prizes for this competition entail a mention on our website and a digital certificate. Submissions will be evaluated based on their adherence to either theme and their ability to craft a creative and engaging story within their lyrics. Each category will have 1 winner and possible honoroable mentions (who will get featured on our website)!"
 </p>
 
