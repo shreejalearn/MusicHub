@@ -158,38 +158,69 @@ const Lyrics = () => {
   };
 
   return (
-    <div>
-      <h1>Mad Libs - Song Lyrics</h1>
-      <div className="FeelingSelector">
-        <label>Select Mood: </label>
-        <select value={selectedFeeling} onChange={handleFeelingChange}>
-          <option value="">Select a Mood</option>
-          {feelings.map((feeling) => (
-            <option key={feeling.name} value={feeling.name}>
-              {feeling.label}
-            </option>
-          ))}
-        </select>
+    <div className="min-h-screen bg-gray-100 py-8">
+      <h1 className="text-3xl font-semibold text-center mb-4">Mad Libs - Song Lyrics</h1>
+      <div className="flex justify-center mb-4">
+        <div className="w-64">
+          <label htmlFor="feeling" className="block mb-2 font-medium">
+            Select Mood:
+          </label>
+          <select
+            id="feeling"
+            value={selectedFeeling}
+            onChange={handleFeelingChange}
+            className="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-400"
+          >
+            <option value="">Select a Mood</option>
+            {feelings.map((feeling) => (
+              <option key={feeling.name} value={feeling.name}>
+                {feeling.label}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       {selectedFeeling && (
-        <div>
+        <div className="mb-4">
           {originalLyrics[selectedFeeling].placeholders.map((placeholder) => (
-            <div key={placeholder} className="FormRow">
-              <label>{placeholder}: </label>
+            <div key={placeholder} className="mb-2">
+              <label htmlFor={placeholder} className="block mb-1 font-medium">
+                {placeholder}:
+              </label>
               <input
                 type="text"
+                id={placeholder}
                 value={values[placeholder] || ''}
                 onChange={(e) => handleInputChange(placeholder, e.target.value)}
+                className="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-400"
               />
             </div>
           ))}
-          <button onClick={() => setValues({})}>Clear</button>
-          <button onClick={generateLyrics}>Generate Lyrics</button>
+          <div className="flex space-x-4">
+            <button
+              onClick={() => setValues({})}
+              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+            >
+              Clear
+            </button>
+            <button
+              onClick={generateLyrics}
+              className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+            >
+              Generate Lyrics
+            </button>
+          </div>
         </div>
       )}
-      <div className="Lyrics">{lyrics}</div>
+      <div className="text-center">
+        {lyrics && (
+          <div className="mt-4">
+            <h2 className="text-2xl font-semibold mb-2">Generated Lyrics</h2>
+            <pre className="whitespace-pre-wrap">{lyrics}</pre>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
-
 export default Lyrics;
