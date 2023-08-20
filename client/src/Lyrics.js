@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import create from './assets/create-text.png'; // Import the image
-import lyricdesign from './assets/lyricdesign.png'; // Import the image
+import watercolor from './assets/watercolor.png'; // Import the image
+import watercolor2 from './assets/watercolor2.png'; // Import the image
+import watercolor3 from './assets/watercolor3.png'; // Import the image
+import watercolor4 from './assets/watercolor4.png'; // Import the image
 
 const originalLyrics = {
   happy: {
@@ -162,8 +165,11 @@ const Lyrics = () => {
   return (
     <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center justify-center relative py-8">
         <div className="flex items-center relative"> {/* Increase the margin-top */}
-          <img src={create} alt="create text design" className="w-[40rem] mb-[5%]" />
+        <img src={watercolor} alt="watercolor design" className="w-[40rem] ml-[-10%]" />
+          <img src={create} alt="create text design" className="w-[40rem] mb-[5%] ml-[8%]" />
+          <img src={watercolor2} alt="watercolor 2 design" className="w-[40rem] ml-[15%]" />
         </div>
+
         <h1 className="text-4xl font-semibold mb-4 font-reborn text-[#979D92]">Mad Libs - Song Lyrics</h1>
       <div className="flex mb-4 mt-10 z-20 ">
         <div className="w-64">
@@ -211,6 +217,7 @@ const Lyrics = () => {
             >
               Generate Lyrics
             </button>
+
           </div>
         </div>
       )}
@@ -219,6 +226,10 @@ const Lyrics = () => {
           <div className="mt-4">
             <h2 className="text-3xl font-semibold mb-2 text-[#F47263] font-reborn mt-6">Generated Lyrics</h2>
             <pre className="whitespace-pre-wrap text-black-resonate">{lyrics}</pre>
+            <div className="flex">
+      <img src={watercolor3} alt="watercolor 3 design" className="w-[70rem] mr-4 -mt-60 ml-[-5%]" />
+      <img src={watercolor4} alt="watercolor 4 design" className="w-[70rem] -mt-60 ml-[50%]" />
+    </div>
           </div>
         )}
       </div>
