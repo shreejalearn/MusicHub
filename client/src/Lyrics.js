@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import create from './assets/create-text.png'; // Import the image
+import lyricdesign from './assets/lyricdesign.png'; // Import the image
 
 const originalLyrics = {
   happy: {
@@ -158,18 +160,18 @@ const Lyrics = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-8">
-      <h1 className="text-3xl font-semibold text-center mb-4">Mad Libs - Song Lyrics</h1>
-      <div className="flex justify-center mb-4">
+    <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center justify-center relative py-8">
+        <div className="flex items-center relative"> {/* Increase the margin-top */}
+          <img src={create} alt="create text design" className="w-[40rem] mb-[5%]" />
+        </div>
+        <h1 className="text-4xl font-semibold mb-4 font-reborn text-[#979D92]">Mad Libs - Song Lyrics</h1>
+      <div className="flex mb-4 mt-10 z-20 ">
         <div className="w-64">
-          <label htmlFor="feeling" className="block mb-2 font-medium">
-            Select Mood:
-          </label>
           <select
             id="feeling"
             value={selectedFeeling}
             onChange={handleFeelingChange}
-            className="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-400"
+            className="w-full px-3 py-2 border rounded focus:outline-none focus:border-[#FF2273] focus:ring focus:ring-[#FF2273] focus:ring-opacity-50"
           >
             <option value="">Select a Mood</option>
             {feelings.map((feeling) => (
@@ -181,10 +183,10 @@ const Lyrics = () => {
         </div>
       </div>
       {selectedFeeling && (
-        <div className="mb-4">
+        <div className="mb-6">
           {originalLyrics[selectedFeeling].placeholders.map((placeholder) => (
             <div key={placeholder} className="mb-2">
-              <label htmlFor={placeholder} className="block mb-1 font-medium">
+              <label htmlFor={placeholder} className="block mb-1 font-medium text-[#757D6E] justify-center text-center">
                 {placeholder}:
               </label>
               <input
@@ -192,20 +194,20 @@ const Lyrics = () => {
                 id={placeholder}
                 value={values[placeholder] || ''}
                 onChange={(e) => handleInputChange(placeholder, e.target.value)}
-                className="w-full px-3 py-2 border rounded focus:outline-none focus:border-blue-400"
+                className="block w-full px-3 py-2 border rounded focus:outline-none focus:border-[#FF2273] focus:ring focus:ring-[#FF2273] focus:ring-opacity-50"
               />
             </div>
           ))}
-          <div className="flex space-x-4">
+          <div className="flex space-x-4 mt-6">
             <button
               onClick={() => setValues({})}
-              className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+              className="px-4 py-2 bg-[#9f829c] text-white rounded hover:bg-[#d79ab1]"
             >
               Clear
             </button>
             <button
               onClick={generateLyrics}
-              className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600"
+              className="px-4 py-2 bg-[#7FB8A4] text-white rounded hover:bg-[#dabd53]"
             >
               Generate Lyrics
             </button>
@@ -215,8 +217,8 @@ const Lyrics = () => {
       <div className="text-center">
         {lyrics && (
           <div className="mt-4">
-            <h2 className="text-2xl font-semibold mb-2">Generated Lyrics</h2>
-            <pre className="whitespace-pre-wrap">{lyrics}</pre>
+            <h2 className="text-3xl font-semibold mb-2 text-[#F47263] font-reborn mt-6">Generated Lyrics</h2>
+            <pre className="whitespace-pre-wrap text-black-resonate">{lyrics}</pre>
           </div>
         )}
       </div>
