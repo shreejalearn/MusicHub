@@ -1,7 +1,7 @@
 import create from './assets/create-text.png'; // Import the image
 import React, { useState } from 'react';
 import createdesign from './assets/createdesign.png'; // Import the image
-import maracas  from './assets/maracas.png'; // Import the image
+import maracas from './assets/maracas.png'; // Import the image
 import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const chordProgressions = {
@@ -192,133 +192,7 @@ function getBaseNote(keySignature, interval) {
     return baseNote + quality;
 }
 
-const originalLyrics = {
-  happy: {
-    placeholders: [
-        'verb1', 'noun1', 'noun2', 'noun3', 'noun4',
-        'verb2', 'noun5', 'noun6', 'noun7', 'noun8',
-        'noun9', 'verb3', 'verb4', 'adjective1', 'verb5',
-        'direction', 'noun13', 'noun14', 'adjective2', 'verb6','noun10','noun11','noun12'
-    ],
-    //happy Pharrell Williams
-    lyrics: `
-    It might seem crazy what I am 'bout to [verb1]
-    [noun1], she's here, you can take a [noun2]
-    I'm a [noun3] that could go to [noun4]
-    With the air, like I don't care, baby by the way
-    Huh (Because I'm happy)
-    [verb2] along if you feel like a [noun5] without a [noun6]
-    (Because I'm happy)
-    [verb2] along if you feel like [noun7] is the [noun8]
-    (Because I'm happy)
-    [verb2] along if you know what [noun9] is to you
-    (Because I'm happy)
-    [verb2] along if you feel like that's what you wanna do
-    Here come [noun10] talking this and that (Yeah)
-    Well give me [noun11], don't [verb3] back (Yeah)
-    Well I should probably [verb4] you I'll be just [adjective1] (Yeah)
-    No offense to you don't [verb5] your [noun12]
-    Here's why
-    [verb2] along if you feel like a [noun5] without a [noun6]
-    (Because I'm happy)
-    [verb2] along if you feel like [noun7] is the [noun8]
-    (Because I'm happy)
-    [verb2] along if you know what [noun9] is to you
-    (Because I'm happy)
-    [verb2] along if you feel like that's what you wanna do
-    Uh, [verb6] me [direction]
-    Can't [noun13], [verb6] me [direction]
-    My [noun14] too high to [verb6] me [direction]
-    Can't [noun13], [verb6] me [direction], I said
-    [verb6] me [direction], can't [noun13]
-    [verb6] me [direction]
-    My [noun14] too [adjective2] to [verb6] me [direction]
-    Can't nothing, [verb6] me [direction], I said
-    [verb2] along if you feel like a [noun5] without a [noun6]
-    (Because I'm happy)
-    [verb2] along if you feel like [noun7] is the [noun8]
-    (Because I'm happy)
-    [verb2] along if you know what [noun9] is to you
-    (Because I'm happy)
-    [verb2] along if you feel like that's what you wanna do
-    [verb2] along if you feel like a [noun5] without a [noun6]
-    (Because I'm happy)
-    [verb2] along if you feel like [noun7] is the [noun8]
-    (Because I'm happy)
-    [verb2] along if you know what [noun9] is to you
-    (Because I'm happy)
-    [verb2] along if you feel like that's what you wanna do
-    Uh, [verb6] me [direction] (Happy, happy, happy, happy)
-    Can't nothing (Happy, happy, happy, happy)
-    [verb6] me [direction], my level's too high
-    To [verb6] me [direction] (Happy, happy, happy, happy)
-    Can't nothing (Happy, happy, happy, happy)
-    [verb6] me [direction], I said
-    [verb2] along if you feel like a [noun5] without a [noun6]
-    (Because I'm happy)
-    [verb2] along if you feel like [noun7] is the [noun8]
-    (Because I'm happy)
-    [verb2] along if you know what [noun9] is to you
-    (Because I'm happy)
-    [verb2] along if you feel like that's what you wanna do
-    [verb2] along if you feel like a [noun5] without a [noun6]
-    (Because I'm happy)
-    [verb2] along if you feel like [noun7] is the [noun8]
-    (Because I'm happy)
-    [verb2] along if you know what [noun9] is to you
-    (Because I'm happy)
-    [verb2] along if you feel like that's what you wanna do
-    Come on
-    `,
-  },
-  sad: {
-    placeholders: [
-        'noun1','adjective1','verb','adjective2','noun2','noun3',
-        'adjective3','adjective4','adjective5','adjective6',
-        'pronoun','adjective8','adjective9','adjective10','noun4','noun5','noun6','noun7'
-    ],
-      //yesterday, beatles
-    lyrics: `
-      Yesterday,
-      All my [noun1] seemed so [adjective1] away,
-      Now it looks as though they're [verb] to stay,
-      Oh, I [verb] in yesterday.
-
-      Suddenly,
-      I'm not [adjective2] the [noun2] I used to be,
-      There's a [noun3] hanging over me,
-      Oh, [noun3] came suddenly.
-
-      Why [adjective6] [pronoun] had to go,
-      I don't [verb], [pronoun] wouldn't say,
-      I [verb] something [adjective8] wong, now I long for [noun5].
-
-      [adjective3], [noun7] was such an [adjective5] [noun4] to play,
-      Now I need a place to [verb] away,
-      Oh, I [verb] in [noun1].
-
-      Why [adjective6] [pronoun] had to go,
-      I don't [verb] , [pronoun] wouldn't say,
-      I [verb] something [adjective8] wong, now I long for [noun5].
-
-      Yesterday,
-      [noun7] was such an [adjective5] [noun4] to play,
-      Now I need a place to [verb] away,
-      Oh, I [verb] in [noun1].
-
-      Mm-mm-mm-mm-mm-mm-mm.
-    `,
-  },
-};
-
-const feelings = [
-    { name: 'happy', label: 'Happy' },
-    { name: 'sad', label: 'Sad' },
-];
-  
-
 const Generate = () => {
-  <div className="bg-green-resonate min-h-screen flex flex-col relative overflow-x-hidden"></div>
   const [selectedMood, setSelectedMood] = useState('');
   const [generatedChordProgression, setGeneratedChordProgression] = useState('');
   const [keySignatureInput, setKeySignatureInput] = useState('');
@@ -392,40 +266,6 @@ const Generate = () => {
       
   };
 
-
-  const [selectedFeeling, setSelectedFeeling] = useState(null);
-    const [values, setValues] = useState({});
-    const [lyrics, setLyrics] = useState('');
-  
-    const handleFeelingChange = (e) => {
-      setSelectedFeeling(e.target.value);
-      setValues({});
-    };
-  
-    const handleInputChange = (placeholder, value) => {
-      setValues((prevValues) => ({ ...prevValues, [placeholder]: value }));
-    };
-  
-    const generateLyrics = () => {
-      const feelingData = originalLyrics[selectedFeeling];
-  
-      if (!feelingData) {
-        return;
-      }
-  
-      const { placeholders: feelingPlaceholders, lyrics: newLyrics } = feelingData;
-  
-      let generatedLyrics = newLyrics;
-  
-      feelingPlaceholders.forEach((placeholder) => {
-        const replacement = values[placeholder] || `[${placeholder}]`;
-        generatedLyrics = generatedLyrics.replace(new RegExp(`\\[${placeholder}\\]`, 'g'), replacement);
-      });
-  
-      setLyrics(generatedLyrics);
-    };
-
-
   return (
     <div className='overflow-x-hidden'>
       <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center relative overflow-x-hidden scroll-x-hidden">
@@ -468,93 +308,58 @@ const Generate = () => {
   
         {/* "Generate Chord Progression" button and generated content */}
         <div className="flex items-center space-x-2 font-CG_Reg text-black overflow-x-hidden mt-[2.5%]">
-  <button onClick={handleGenerateChordProgression} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors bg-[#f7b7ce] hover:bg-[#ffe5ed] focus:ring focus:ring-[#C2899E]">
-    Generate Chord Progression
-  </button>
-  {generatedChordProgression && (
-    <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
-      <p>{generatedChordProgression}</p>
-    </div>
-  )}
-</div>
-          
-          <div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
-  <label htmlFor="keySignature" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
-    Key Signature:
-  </label>
-  <input
-    type="text"
-    id="keySignature"
-    value={keySignatureInput}
-    onChange={handleKeySignatureChange}
-    className="border border-[#CD7417] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#CD7417]"
-  />
-</div>
-<div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
-  <label htmlFor="chordProgression" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
-    Chord Progression (comma-separated):
-  </label>
-  <input
-    type="text"
-    id="chordProgression"
-    value={chordProgressionInput}
-    onChange={handleChordProgressionChange}
-    className="border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#C2899E]"
-  />
-</div>
-<div className="flex items-center space-x-2 font-CG_Reg text-black overflow-x-hidden mt-[2.5%]">
-  <button onClick={handleGenerateBaseNotes} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] hover:bg-[#ffe5ed] focus:ring focus:ring-[#C2899E] bg-[#f7b7ce]">
-    Generate Chords
-  </button>
-  {generatedBaseNotes.length > 0 && (
-    <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
-      <ul>
-        {generatedBaseNotes.map((baseNote, index) => (
-          <li key={index}>{baseNote}</li>
-        ))}
-      </ul>
-</div>
-  )}
-</div>
-
+          <button onClick={handleGenerateChordProgression} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors bg-[#f7b7ce] hover:bg-[#ffe5ed] focus:ring focus:ring-[#C2899E]">
+            Generate Chord Progression
+          </button>
+          {generatedChordProgression && (
+            <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
+              <p>{generatedChordProgression}</p>
+            </div>
+          )}
+        </div>
+        
+        <div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
+          <label htmlFor="keySignature" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
+            Key Signature:
+          </label>
+          <input
+            type="text"
+            id="keySignature"
+            value={keySignatureInput}
+            onChange={handleKeySignatureChange}
+            className="border border-[#CD7417] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#CD7417]"
+          />
+        </div>
+        <div className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]">
+          <label htmlFor="chordProgression" className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]">
+            Chord Progression (comma-separated):
+          </label>
+          <input
+            type="text"
+            id="chordProgression"
+            value={chordProgressionInput}
+            onChange={handleChordProgressionChange}
+            className="border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] focus:ring focus:ring-[#C2899E]"
+          />
+        </div>
+        <div className="flex items-center space-x-2 font-CG_Reg text-black overflow-x-hidden mt-[2.5%]">
+          <button onClick={handleGenerateBaseNotes} className="text-2xl border border-[#C2899E] rounded px-2 py-1 transition-colors hover:border-[#679B89] hover:bg-[#ffe5ed] focus:ring focus:ring-[#C2899E] bg-[#f7b7ce]">
+            Generate Chords
+          </button>
+          {generatedBaseNotes.length > 0 && (
+            <div className="flex font-CG_Reg text-2xl text-[#6c7565] pl-4">
+              <ul>
+                {generatedBaseNotes.map((baseNote, index) => (
+                  <li key={index}>{baseNote}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+  
       </div>
       <div className='pb-[5%] bg-yellow2-resonate'></div>
-  
-  
-        
-        <h1>Mad Libs - Song Lyrics</h1>
-        <div className="FeelingSelector">
-          <label>Select Mood: </label>
-          <select value={selectedFeeling} onChange={handleFeelingChange}>
-            <option value="">Select a Mood</option>
-            {feelings.map((feeling) => (
-              <option key={feeling.name} value={feeling.name}>
-                {feeling.label}
-              </option>
-            ))}
-          </select>
-        </div>
-        {selectedFeeling && (
-          <div>
-            {originalLyrics[selectedFeeling].placeholders.map((placeholder) => (
-              <div key={placeholder} className="FormRow">
-                <label>{placeholder}: </label>
-                <input
-                  type="text"
-                  value={values[placeholder] || ''}
-                  onChange={(e) => handleInputChange(placeholder, e.target.value)}
-                />
-              </div>
-            ))}
-            <button onClick={() => setValues({})}>Clear</button>
-            <button onClick={generateLyrics}>Generate Lyrics</button>
-          </div>
-        )}
-        <div className="Lyrics">
-          {lyrics && <pre>{lyrics}</pre>}
-        </div>
-      </div>
+    </div>
   );
-};
-
+  };  
 export default Generate;
