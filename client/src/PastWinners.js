@@ -54,7 +54,7 @@ const PastWinners = () => {
             <p key={index}>{winner.name_first} {winner.name_last} ({winner.year})</p>
           ))}
         </div>
-        <div className="mt-8">
+        <div className="mt-8 mb-[20%]">
           <p className="mb-4 font-bold text-xl">Lyrics Challenge Winners:</p>
           {lyricsChallengeWinners.map((winner, index) => (
             <p key={index}>{winner.name_first} {winner.name_last} ({winner.year})</p>

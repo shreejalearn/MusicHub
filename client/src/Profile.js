@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import bgprofile from './assets/bgprofile.png';
-import profilebg2 from './assets/profilebg2.png';
+// import bgprofile from './assets/bgprofile.png';
+// import profilebg2 from './assets/profilebg2.png';
+import bg_profile2 from './assets/bg_profile2.png';
+import profileheading from './assets/profileheading.png';
 
 const Profile = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -61,16 +63,17 @@ const Profile = () => {
 
 return (
   <div className="bg-yellow2-resonate min-h-screen flex flex-col relative overflow-x-hidden">
-    <img src={bgprofile} alt="Background for Profile Tab" className="" />
-    <div className="overflow-x-hidden">
-      <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center relative overflow-x-hidden scroll-x-hidden mt-[5%]">
-        {userProfile && (
-          <div>
+    <div className="relative">
+  <img src={bg_profile2} alt="Profile Background" className="w-full" />
+  <img src={profileheading} alt="Profile Heading" className="absolute top-[12%] left-[17%] right-0 bottom-0 flex items-center w-[62rem] z-20" />
+  {/* <h1 className='absolute top-[50%] left-[45%] right-0 bottom-0 flex items-center font-CG_Reg text-[#CD7417]'>--------------------------</h1> */}
+  {userProfile && (
+          <div className='mt-[-15%]'>
             {/* Display user information */}
             {Object.keys(userProfile).map((field) => (
               <div
                 key={field}
-                className="flex items-center space-x-2 font-CG_Reg text-[#CD7417] overflow-x-hidden mt-[2.5%]"
+                className="flex items-center space-x-1 font-CG_Reg text-[#CD7417] overflow-x-hidden justify-center"
               >
                 {isEditing && editingField === field ? (
                   <>
@@ -107,7 +110,6 @@ return (
             ))}
           </div>
         )}
-      </div>
     </div>
   </div>
 );
