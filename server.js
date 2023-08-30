@@ -133,14 +133,14 @@ app.post("/login", (req, res) => {
 
 const create_user_sql = `
     INSERT INTO music_login 
-        (username, password, email, phone) 
+        (username, password, name, email, phone) 
     VALUES 
-        (?, ?, ?, ?);
+        (?, ?, ?, ?, ?);
 `
 
 app.post("/signup", ( req, res ) => {
-    const { username, password, email, phone } = req.body;
-    db.execute(create_user_sql, [username, password, email, phone], (error, results) => {
+    const { username, password, name, email, phone } = req.body;
+    db.execute(create_user_sql, [username, password, name, email, phone], (error, results) => {
         if (error)
             console.log(error),
             res.status(500).send(error); 
@@ -155,7 +155,7 @@ app.post("/profile", (req, res) => {
   const { username } = req.body;
 
   const get_user_profile_sql = `
-    SELECT username,phone, email
+    SELECT username,name, phone, email, main_instrument, bio, skills, accolades
     FROM music_login 
     WHERE username = ?;
   `;
@@ -166,7 +166,6 @@ app.post("/profile", (req, res) => {
       res.status(500).json({ message: 'An error occurred while processing your request' });
     } else {
       if (results.length > 0) {
-        // Return the first user profile found (assuming no repeat usernames)
         res.json({ user: results[0] });
       } else {
         res.status(404).json({ message: 'User not found' });
@@ -178,7 +177,6 @@ app.post("/profile", (req, res) => {
 app.post('/editusername', (req, res) => {
   const { username, newValue } = req.body;
 
-  // Update the username in the database
   const update_username_sql = `
     UPDATE music_login
     SET username = ?
@@ -198,7 +196,6 @@ app.post('/editusername', (req, res) => {
 app.post('/editemail', (req, res) => {
   const { username, newValue } = req.body;
 
-  // Update the email in the database
   const update_email_sql = `
     UPDATE music_login
     SET email = ?
@@ -218,7 +215,6 @@ app.post('/editemail', (req, res) => {
 app.post('/editphone', (req, res) => {
   const { username, newValue } = req.body;
 
-  // Update the phone in the database
   const update_phone_sql = `
     UPDATE music_login
     SET phone = ?
@@ -235,9 +231,102 @@ app.post('/editphone', (req, res) => {
   });
 });
 
+app.post('/editmain_instrument', (req, res) => {
+  const { username, newValue } = req.body;
+
+  const update_main_instrument_sql = `
+    UPDATE music_login
+    SET main_instrument = ?
+    WHERE username = ?;
+  `;
+
+  db.query(update_main_instrument_sql, [newValue, username], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      res.json({ message: 'Main instrument updated successfully' });
+    }
+  });
+});
+app.post('/editbio', (req, res) => {
+  const { username, newValue } = req.body;
+
+  const update_bio_sql = `
+    UPDATE music_login
+    SET bio = ?
+    WHERE username = ?;
+  `;
+
+  db.query(update_bio_sql, [newValue, username], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      res.json({ message: 'Bio updated successfully' });
+    }
+  });
+});
+app.post('/editname', (req, res) => {
+  const { username, newValue } = req.body;
+
+  const update_name_sql = `
+    UPDATE music_login
+    SET name = ?
+    WHERE username = ?;
+  `;
+
+  db.query(update_name_sql, [newValue, username], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      res.json({ message: 'Name updated successfully' });
+    }
+  });
+});
+
+app.post('/editskills', (req, res) => {
+  const { username, newValue } = req.body;
+
+  const update_skills_sql = `
+    UPDATE music_login
+    SET skills = ?
+    WHERE username = ?;
+  `;
+
+  db.query(update_skills_sql, [newValue, username], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      res.json({ message: 'Skills updated successfully' });
+    }
+  });
+});
+
+app.post('/editaccolades', (req, res) => {
+  const { username, newValue } = req.body;
+
+  const update_accolades_sql = `
+    UPDATE music_login
+    SET accolades = ?
+    WHERE username = ?;
+  `;
+
+  db.query(update_accolades_sql, [newValue, username], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      res.json({ message: 'Accolades updated successfully' });
+    }
+  });
+});
+
 app.post('/pastwinnersac', (req, res) => {
   const get_past_winners_sql = `
-    SELECT pw.year, ml.name_first, ml.name_last
+    SELECT pw.year, ml.name
     FROM music_pastwinners pw
     JOIN music_login ml ON pw.winner_id = ml.user_id
     WHERE pw.challenge = 'ac';
@@ -259,7 +348,7 @@ app.post('/pastwinnersac', (req, res) => {
 
 app.post('/pastwinnerscc', (req, res) => {
   const get_past_winners_sql = `
-    SELECT pw.year, ml.name_first, ml.name_last
+    SELECT pw.year, ml.name
     FROM music_pastwinners pw
     JOIN music_login ml ON pw.winner_id = ml.user_id
     WHERE pw.challenge = 'cc';
@@ -281,7 +370,7 @@ app.post('/pastwinnerscc', (req, res) => {
 
 app.post('/pastwinnerslc', (req, res) => {
   const get_past_winners_sql = `
-    SELECT pw.year, ml.name_first, ml.name_last
+    SELECT pw.year, ml.name
     FROM music_pastwinners pw
     JOIN music_login ml ON pw.winner_id = ml.user_id
     WHERE pw.challenge = 'lc';
@@ -305,7 +394,7 @@ app.post('/getuserinfo', (req, res) => {
   const { username } = req.body;
 
   const get_user_info_sql = `
-    SELECT username, email, phone
+    SELECT username, email, phone, main_instrument, bio, skills, accolades
     FROM music_login
     WHERE username = ?;
   `;
@@ -327,7 +416,7 @@ app.post('/getuserinfo', (req, res) => {
 // Add a new route to fetch random user info
 app.post('/getrandomuserinfo', (req, res) => {
   const getRandomUserSql = `
-    SELECT username, email, phone
+    SELECT username, name, email, phone, main_instrument, bio, skills, accolades
     FROM music_login
     ORDER BY RAND()  -- MySQL function to order rows randomly
     LIMIT 1;          -- Limit the result to 1 row

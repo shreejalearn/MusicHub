@@ -50,8 +50,13 @@ const Connect = () => {
         {userInfo && (
           <div>
             <p>Username: {userInfo.username}</p>
+            <p>Name: {userInfo.name}</p>
             <p>Email: {userInfo.email}</p>
             <p>Phone: {userInfo.phone}</p>
+            <p>Main Instrument: {userInfo.main_instrument}</p>
+            <p>Bio: {userInfo.bio}</p>
+            <p>Skills: {userInfo.skills}</p>
+            <p>Accolades: {userInfo.accolades}</p>
           </div>
         )}
         <button onClick={() => handleArrowClick('left')}>Previous</button>

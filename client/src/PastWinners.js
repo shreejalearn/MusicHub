@@ -45,19 +45,19 @@ const PastWinners = () => {
         <div>
           <p className="mb-4 font-bold text-xl">Album Cover Design Challenge Winners:</p>
           {albumCoverChallengeWinners.map((winner, index) => (
-            <p key={index}>{winner.name_first} {winner.name_last} ({winner.year})</p>
+            <p key={index}>{winner.name} ({winner.year})</p>
           ))}
         </div>
         <div className="mt-8">
           <p className="mb-4 font-bold text-xl">Cover Challenge Winners:</p>
           {coverChallengeWinners.map((winner, index) => (
-            <p key={index}>{winner.name_first} {winner.name_last} ({winner.year})</p>
+            <p key={index}>{winner.name} ({winner.year})</p>
           ))}
         </div>
         <div className="mt-8 mb-[20%]">
           <p className="mb-4 font-bold text-xl">Lyrics Challenge Winners:</p>
           {lyricsChallengeWinners.map((winner, index) => (
-            <p key={index}>{winner.name_first} {winner.name_last} ({winner.year})</p>
+            <p key={index}>{winner.name} ({winner.year})</p>
           ))}
         </div>
       </div>

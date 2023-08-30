@@ -6,6 +6,7 @@ import signuptext from './assets/signuptext.png';
 const SignupPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
@@ -17,6 +18,7 @@ const SignupPage = () => {
         {
           username,
           password,
+          name,
           email,
           phone
         },
@@ -61,6 +63,14 @@ const SignupPage = () => {
           style={styles.input}
         />
       </div>
+      <label>Name:</label>
+        <input
+          type="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          style={styles.input}
+        />
+      </div>
       <div style={styles.inputContainer}>
         <label>Email:</label>
         <input
@@ -84,7 +94,6 @@ const SignupPage = () => {
         </button>
         {errorMessage && <p style={styles.error}>{errorMessage}</p>}
       </div>
-    </div>
   );
 };
 
