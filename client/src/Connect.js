@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios'; // Import Axios
+import Axios from 'axios'; 
 import Carousel from './Carousel';
 import connectdesign from './assets/connectdesign.png';
 
@@ -7,12 +7,14 @@ const Connect = () => {
   const [userInfo, setUserInfo] = useState(null);
   const [excludedUsernames, setExcludedUsernames] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [previousUsersInfo, setPreviousUsersInfo] = useState([]); // Store previous users' info
 
   const fetchRandomUserInfo = async () => {
     try {
       const response = await Axios.post('http://localhost:5000/getrandomuserinfo', {
         excludedUsernames: excludedUsernames
       });
+      setPreviousUsersInfo((prevInfo) => [...prevInfo, userInfo]); // Store current user info in previousUsersInfo
       setUserInfo(response.data.userInfo);
     } catch (error) {
       console.error('Error fetching random user info:', error);
@@ -21,7 +23,11 @@ const Connect = () => {
 
   const handleArrowClick = (direction) => {
     if (direction === 'left') {
-      setCurrentIndex((prevIndex) => (prevIndex === 0 ? 9 : prevIndex - 1));
+      if (previousUsersInfo.length > 0) {
+        const previousUser = previousUsersInfo.pop(); // Remove the last user from history
+        setUserInfo(previousUser); // Set user info to the previous user
+        setPreviousUsersInfo([...previousUsersInfo]); // Update the array of previous users
+      }
     } else if (direction === 'right') {
       setCurrentIndex((prevIndex) => (prevIndex === 9 ? 0 : prevIndex + 1));
     }
@@ -29,10 +35,9 @@ const Connect = () => {
 
   useEffect(() => {
     fetchRandomUserInfo();
-  }, [excludedUsernames, currentIndex]); // Fetch random user info when excluded usernames or currentIndex change
+  }, [excludedUsernames, currentIndex]);
 
   useEffect(() => {
-    // Fetch the currently logged-in user's username from localStorage and add it to excludedUsernames
     const loggedInUsername = localStorage.getItem('username');
     setExcludedUsernames([loggedInUsername]);
   }, []);
