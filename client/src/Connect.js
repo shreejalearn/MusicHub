@@ -24,9 +24,9 @@ const Connect = () => {
   const handleArrowClick = (direction) => {
     if (direction === 'left') {
       if (previousUsersInfo.length > 0) {
-        const previousUser = previousUsersInfo.pop(); // Remove the last user from history
-        setUserInfo(previousUser); // Set user info to the previous user
-        setPreviousUsersInfo([...previousUsersInfo]); // Update the array of previous users
+        const previousUser = previousUsersInfo.pop(); 
+        setUserInfo(previousUser); 
+        setPreviousUsersInfo([...previousUsersInfo]);
       }
     } else if (direction === 'right') {
       setCurrentIndex((prevIndex) => (prevIndex === 9 ? 0 : prevIndex + 1));
