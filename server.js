@@ -301,6 +301,52 @@ app.post('/pastwinnerslc', (req, res) => {
   });
 });
 
+app.post('/getuserinfo', (req, res) => {
+  const { username } = req.body;
+
+  const get_user_info_sql = `
+    SELECT username, email, phone
+    FROM music_login
+    WHERE username = ?;
+  `;
+
+  db.query(get_user_info_sql, [username], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      if (results.length > 0) {
+        res.json({ userInfo: results[0] });
+      } else {
+        res.status(404).json({ message: 'User not found' });
+      }
+    }
+  });
+});
+
+// Add a new route to fetch random user info
+app.post('/getrandomuserinfo', (req, res) => {
+  const getRandomUserSql = `
+    SELECT username, email, phone
+    FROM music_login
+    ORDER BY RAND()  -- MySQL function to order rows randomly
+    LIMIT 1;          -- Limit the result to 1 row
+  `;
+
+  db.query(getRandomUserSql, (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while processing your request' });
+    } else {
+      if (results.length > 0) {
+        res.json({ userInfo: results[0] });
+      } else {
+        res.status(404).json({ message: 'No users found' });
+      }
+    }
+  });
+});
+
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
