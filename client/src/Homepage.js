@@ -10,10 +10,135 @@ import tape from './assets/tape.png'; // Import the image
 import drums from './assets/drum3.png'; // Import the image
 import recorder from './assets/recorder.png'; // Import the image
 import tape2 from './assets/tape2.png'; // Import the image
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
 
+const musicList = [
+    "Explore new music genres regularly.",
+    "Learn to play a musical instrument.",
+    "Attend live concerts for your favorite artists.",
+    "Create a personalized playlist for different moods.",
+    "Try writing your own song lyrics.",
+    "Practice sight-reading sheet music.",
+    "Listen to music from different cultures.",
+    "Study music theory to understand compositions better.",
+    "Join a local choir or ensemble.",
+    "Learn to read and write musical notation.",
+    "Experiment with music production software.",
+    "Support local indie musicians and bands.",
+    "Explore the history of classical music.",
+    "Learn about the influence of music on emotions.",
+    "Create a music-themed scrapbook.",
+    "Interview a musician you admire.",
+    "Try your hand at composing a short jingle.",
+    "Explore the impact of music on mental health.",
+    "Attend music festivals from various genres.",
+    "Research the life of your favorite composer.",
+    "Analyze the lyrics of a song you love.",
+    "Collaborate with other musicians.",
+    "Take up DJing and mixing music.",
+    "Study the evolution of jazz music.",
+    "Explore the physics of sound and acoustics.",
+    "Write a short story inspired by a song.",
+    "Learn about famous music collaborations.",
+    "Create a musical instrument from household items.",
+    "Research the role of music in movies.",
+    "Try your hand at beatboxing.",
+    "Learn to play a song by ear.",
+    "Explore the cultural significance of music.",
+    "Write a letter to your favorite artist.",
+    "Investigate the world of electronic dance music (EDM).",
+    "Record your own cover of a favorite song.",
+    "Attend a music therapy session.",
+    "Discover the art of album cover design.",
+    "Explore the history of hip-hop music.",
+    "Create a music-themed painting or artwork.",
+    "Listen to music from different time periods.",
+    "Join a songwriting workshop.",
+    "Learn about the process of music licensing.",
+    "Attend a music trivia night.",
+    "Research the origins of rock 'n' roll.",
+    "Create a playlist for a road trip.",
+    "Explore the use of music in advertising.",
+    "Write a poem inspired by a song.",
+    "Discover the world of a cappella music.",
+    "Study the role of music in protests.",
+    "Attend an opera or musical theater production.",
+    "Experiment with making your own musical instruments.",
+    "Analyze the structure of a symphony.",
+    "Listen to music from different decades.",
+    "Learn about the benefits of music education.",
+    "Create a mixtape for a friend.",
+    "Explore the history of reggae music.",
+    "Take a music appreciation course.",
+    "Organize a karaoke night with friends.",
+    "Research the influence of music on memory.",
+    "Create a music-themed crossword puzzle.",
+    "Learn about the world's oldest musical instruments.",
+    "Discover the art of music journalism.",
+    "Explore the role of music in religious ceremonies.",
+    "Try your hand at music photography.",
+    "Learn about the connection between math and music.",
+    "Create a themed playlist for a workout.",
+    "Experiment with creating ambient music.",
+    "Analyze the use of motifs in classical compositions.",
+    "Study the influence of music on fashion.",
+    "Create a Spotify playlist for a specific character in a book.",
+    "Explore the history of folk music.",
+    "Take a virtual tour of famous music venues.",
+    "Research the impact of music on productivity.",
+    "Experiment with making DIY percussion instruments.",
+    "Create a playlist for a rainy day.",
+    "Learn about the role of music in video games.",
+    "Study the art of music marketing.",
+    "Attend a music-themed trivia night.",
+    "Explore the world of world music.",
+    "Take up songwriting as a hobby.",
+    "Research the connection between music and dance.",
+    "Create a playlist inspired by a famous artist's life story.",
+    "Discover the art of vocal harmonies.",
+    "Experiment with creating a music-themed board game.",
+    "Analyze the lyrics of protest songs.",
+    "Study the impact of music on sleep.",
+    "Learn about the history of blues music.",
+    "Explore the use of music in therapy for Alzheimer's patients.",
+    "Create a playlist for a summer barbecue.",
+    "Try your hand at composing a lullaby.",
+    "Research the influence of music on fashion trends.",
+    "Attend a music documentary screening.",
+    "Study the cultural significance of rap music.",
+    "Experiment with creating a music-inspired fashion look.",
+    "Analyze the role of music in cultural revolutions.",
+    "Learn about the science of musical intervals.",
+    "Create a playlist for a romantic dinner.",
+    "Explore the use of music in virtual reality experiences.",
+    "Take a deep dive into the history of country music.",
+    "Start a music-related blog or podcast."
+  ];
+  
+
 const Homepage = () => {
+    const [randomMusicTip, setRandomMusicTip] = useState('');
+
+    useEffect(() => {
+        // Function to update the random music tip
+        const updateRandomMusicTip = () => {
+        const randomIndex = Math.floor(Math.random() * musicList.length);
+        setRandomMusicTip(musicList[randomIndex]);
+        };
+
+        // Update the random music tip initially
+        updateRandomMusicTip();
+
+        // Set up a timeout to update it every 24 hours (86400000 milliseconds)
+        const intervalId = setInterval(updateRandomMusicTip, 86400000);
+
+        // Clean up the interval when the component unmounts
+        return () => {
+        clearInterval(intervalId);
+        };
+    }, []);
+
   return (
 
 //FIRST PART OF THE HOMEPAGE DESIGN
@@ -52,10 +177,17 @@ const Homepage = () => {
 <div className="flex"> 
 <img src={tape} alt="Tape Design Aesthetics" className="mb-0 w-1/2 mr-0 ml-[180%] mt-[-50%] z-10" />
 </div>
-
+<div className="text-black-resonate font-CG_Reg text-2xl mt-5">
+        Music Tip: {randomMusicTip}
+      </div>
+<br></br>
+<br></br>
+<br></br>
+<br></br>
 <div className="flex">
         <img src={tape2} alt="Tape Design Aesthetics" className="scale-125 ml-[-240%] mt-[-70%]" />
       </div>
+      
 
 
 {/* CREATING A NAVIGATION MENU */}
