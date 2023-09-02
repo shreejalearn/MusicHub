@@ -7,6 +7,8 @@ import person2 from './assets/person2.png';
 
 import axios from 'axios';
 
+const username = localStorage.getItem('username');
+
 function AlbumChallenge() {
     const [file, setFile] = useState(null);
   const [showConfirmPopup, setShowConfirmPopup] = useState(false);

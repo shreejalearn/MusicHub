@@ -49,8 +49,7 @@ const Connect = () => {
         <img src={connectdesign} alt="connect design" className="w-[90rem] mt-[-8%]" />
         {userInfo && (
           <div>
-            <p>Username: {userInfo.username}</p>
-            <p>Name: {userInfo.name}</p>
+            <h2 className="text-3xl text-[#979D92] z-10">{userInfo.name}</h2>
             <p>Email: {userInfo.email}</p>
             <p>Phone: {userInfo.phone}</p>
             <p>Main Instrument: {userInfo.main_instrument}</p>

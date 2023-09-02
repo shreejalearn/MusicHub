@@ -47,6 +47,69 @@ const acstorage = multer.diskStorage({
 
 const acupload = multer({ storage:acstorage });
 
+
+const pfpstorage = multer.diskStorage({
+  destination: './profilePictures/', // Choose a suitable destination folder
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const pfpupload = multer({ storage: pfpstorage });
+
+
+app.post('/editprofilepicture', pfpupload.single('file'), (req, res) => {
+  const { username } = req.body;
+  if (!req.file) {
+    return res.status(400).json({ error: 'No file uploaded' });
+  }
+
+  console.log('Received file:', req.file.filename);
+
+  const filePath = `/profilePictures/${req.file.filename}`;
+  console.log(filePath);
+  const query = `
+    UPDATE music_login
+    SET pfp = ?
+    WHERE username = ?;
+  `;
+  db.query(query, [filePath, username], (error, results) => {
+    console.log(filePath);
+    if (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Error saving file path to database' });
+    }
+
+    res.json({ message: 'File uploaded and file path saved to database' });
+  });
+});
+app.post('/pfpupload', pfpupload.single('file'), (req, res) => {
+  const { username } = req.body;
+  console.log(username);
+  if (!req.file) {
+    return res.status(400).json({ error: 'No file uploaded' });
+  }
+
+  console.log('Received file:', req.file.filename);
+
+  const filePath = `/profilePictures/${req.file.filename}`;
+  console.log(filePath);
+  const query = `
+    UPDATE music_login
+    SET pfp = ?
+    WHERE username = ?;
+  `;
+  db.query(query, [filePath, username], (error, results) => {
+    console.log(filePath);
+    if (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Error updating profile picture in the database' });
+    }
+
+    res.json({ message: 'Profile picture updated successfully' });
+  });
+});
+
 app.post('/ccupload', ccupload.single('file'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded' });
