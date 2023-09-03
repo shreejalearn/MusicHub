@@ -142,7 +142,7 @@ const Profile = () => {
                 {/* Display the user's profile picture */}
                 <img
                   // src={`../${userProfile.pfp}`}
-                  src={`../${userProfile.pfp}`}
+                  src={`..../${userProfile.pfp}`}
                   alt="Profile"
                   className="mt-4 rounded-full w-24 h-24"
                 />
