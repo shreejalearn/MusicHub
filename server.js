@@ -218,7 +218,7 @@ app.post("/profile", (req, res) => {
   const { username } = req.body;
 
   const get_user_profile_sql = `
-    SELECT username,name, phone, email, main_instrument, bio, skills, accolades
+    SELECT username,name, phone, email, main_instrument, bio, skills, accolades, pfp
     FROM music_login 
     WHERE username = ?;
   `;
@@ -235,6 +235,7 @@ app.post("/profile", (req, res) => {
       }
     }
   });
+  
 });
 
 app.post('/editusername', (req, res) => {
