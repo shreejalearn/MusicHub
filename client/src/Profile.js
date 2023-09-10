@@ -96,61 +96,72 @@ const Profile = () => {
     <div className="bg-yellow2-resonate min-h-screen flex flex-col relative overflow-x-hidden">
       <div className="relative">
         <div>
+          
           <div>
             <img src={bg_profile2} alt="Profile Background" className="w-full" />
             <img src={profileheading} alt="Profile Heading" className="absolute top-[12%] left-[17%] right-0 bottom-0 flex items-center w-[62rem] z-20" />
-            {userProfile && (
-              <div className='mt-[-15%]'>
-                {/* Display user information */}
-                {Object.keys(userProfile).map((field) => (
-                  <div
-                    key={field}
-                    className="flex items-center space-x-1 font-CG_Reg text-[#CD7417] overflow-x-hidden justify-center"
-                  >
-                    {isEditing && editingField === field ? (
-                      <>
-                        <input
-                          type="text"
-                          value={newValue}
-                          onChange={(e) => setNewValue(e.target.value)}
-                          className="border rounded px-2 py-1"
-                        />
-                        <button
-                          onClick={handleSubmitEdit}
-                          className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-1 px-2 rounded"
-                        >
-                          Submit
-                        </button>
-                      </>
-                    ) : (
-                      <>
-                        <label
-                          htmlFor={field}
-                          className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]"
-                        >
-                          {field.charAt(0).toUpperCase() + field.slice(1)}: {userProfile[field]}{' '}
-                          <button
-                            onClick={() => handleEdit(field)}
-                            className="text-[#679B89] hover:text-[#C2899E] transition-colors"
-                          >
-                            Edit
-                          </button>
-                        </label>
-                      </>
-                    )}
-                  </div>
-                ))}
-                
-              </div>
-            )}
-
-            {userProfile && (
+            <div>{userProfile && (
               <img
                 src={profilePictures[userProfile.pfp]}
                 alt="Profile"
-                className="mt-4 rounded-full w-24 h-24"
+                className="mt-4 rounded-full w-40 h-40 items-center"
               />
             )}
+            </div>
+            
+            {userProfile && (
+  <div className='mt-[-15%]'>
+    {/* Display user information */}
+    {Object.keys(userProfile).map((field) => {
+      // Skip the 'pfp' field
+      if (field === 'pfp') {
+        return null; // Skip rendering 'pfp'
+      }
+
+      return (
+        <div
+          key={field}
+          className="flex items-center space-x-1 font-CG_Reg text-[#CD7417] overflow-x-hidden justify-center"
+        >
+          {isEditing && editingField === field ? (
+            <>
+              <input
+                type="text"
+                value={newValue}
+                onChange={(e) => setNewValue(e.target.value)}
+                className="border rounded px-2 py-1"
+              />
+              <button
+                onClick={handleSubmitEdit}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-semibold py-1 px-2 rounded"
+              >
+                Submit
+              </button>
+            </>
+          ) : (
+            <>
+              <label
+                htmlFor={field}
+                className="text-[#679B89] font-CG_Reg text-3xl transition-colors hover:text-[#C2899E]"
+              >
+                {field.charAt(0).toUpperCase() + field.slice(1)}: {userProfile[field]}{' '}
+                <button
+                  onClick={() => handleEdit(field)}
+                  className="text-[#679B89] hover:text-[#C2899E] transition-colors"
+                >
+                  Edit
+                </button>
+              </label>
+            </>
+          )}
+        </div>
+      );
+    })}
+  </div>
+)}
+
+
+            
 
             <div className="justify-center items-center space-x-1 mt-[5%] bg-[#D6C1C1] rounded-lg shadow-lg p-8 w-full max-w-md">
               <h1 className="text-3xl font-semibold mb-6 text-white">Upload Profile Picture</h1>
