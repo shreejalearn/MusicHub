@@ -483,7 +483,7 @@ app.post('/getuserinfo', (req, res) => {
 // Add a new route to fetch random user info
 app.post('/getrandomuserinfo', (req, res) => {
   const getRandomUserSql = `
-    SELECT username, name, email, phone, main_instrument, bio, skills, accolades
+    SELECT username, name, email, phone, main_instrument, bio, skills, accolades, pfp
     FROM music_login
     ORDER BY RAND()  -- MySQL function to order rows randomly
     LIMIT 1;          -- Limit the result to 1 row

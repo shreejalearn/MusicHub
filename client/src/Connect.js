@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Axios from 'axios'; 
 import Carousel from './Carousel';
 import connectdesign from './assets/connectdesign.png';
+import profilePictures from './profilePictures/profilePictures'; // Import the profilePictures object
 
 const Connect = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -48,7 +49,16 @@ const Connect = () => {
         <h1 className="font-reborn text-9xl text-[#979D92] z-20">Connect</h1>
         <img src={connectdesign} alt="connect design" className="w-[90rem] mt-[-8%]" />
         {userInfo && (
+          
           <div>
+            {userInfo && (
+              console.log(userInfo.pfp),
+              <img
+                src={profilePictures[userInfo.pfp]}
+                alt="ProfilePic"
+                className="mt-4 rounded-full w-40 h-40 items-center"
+              />
+            )}
             <h2 className="text-3xl text-[#979D92] z-10">{userInfo.name}</h2>
             <p>Email: {userInfo.email}</p>
             <p>Phone: {userInfo.phone}</p>
