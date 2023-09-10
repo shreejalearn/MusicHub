@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import bg_profile2 from './assets/bg_profile2.png';
 import profileheading from './assets/profileheading.png';
+import profilePictures from './profilePictures/profilePictures'; // Import the profilePictures object
 
 const Profile = () => {
   const [userProfile, setUserProfile] = useState(null);
@@ -74,7 +75,7 @@ const Profile = () => {
 
       // Upload the profile picture to the server
       axios
-        .post('http://localhost:5000/uploadProfilePicture', formData)
+        .post('http://localhost:5000/pfpupload', formData)
         .then((response) => {
           // Update the profile picture in the user profile state
           const filePath = response.data.filePath;
@@ -139,15 +140,18 @@ const Profile = () => {
                     )}
                   </div>
                 ))}
-                {/* Display the user's profile picture */}
-                <img
-                  // src={`../${userProfile.pfp}`}
-                  src={`..../${userProfile.pfp}`}
-                  alt="Profile"
-                  className="mt-4 rounded-full w-24 h-24"
-                />
+                
               </div>
             )}
+
+            {userProfile && (
+              <img
+                src={profilePictures[userProfile.pfp]}
+                alt="Profile"
+                className="mt-4 rounded-full w-24 h-24"
+              />
+            )}
+
             <div className="justify-center items-center space-x-1 mt-[5%] bg-[#D6C1C1] rounded-lg shadow-lg p-8 w-full max-w-md">
               <h1 className="text-3xl font-semibold mb-6 text-white">Upload Profile Picture</h1>
               <input type="file" id="fileInput" onChange={handleFileChange} />
