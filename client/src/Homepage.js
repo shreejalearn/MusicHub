@@ -12,6 +12,7 @@ import recorder from './assets/recorder.png'; // Import the image
 import tape2 from './assets/tape2.png'; // Import the image
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom'; // Import Link for navigation
+import MusicTip from './MusicTip';
 
 const musicList = [
     "Explore new music genres regularly.",
@@ -119,26 +120,29 @@ const musicList = [
 
 const Homepage = () => {
     const [randomMusicTip, setRandomMusicTip] = useState('');
+    const [showMusicTip, setShowMusicTip] = useState(false);
 
     useEffect(() => {
-        // Function to update the random music tip
-        const updateRandomMusicTip = () => {
+      // Function to update the random music tip
+      const updateRandomMusicTip = () => {
         const randomIndex = Math.floor(Math.random() * musicList.length);
         setRandomMusicTip(musicList[randomIndex]);
-        };
-
-        // Update the random music tip initially
-        updateRandomMusicTip();
-
-        // Set up a timeout to update it every 24 hours (86400000 milliseconds)
-        const intervalId = setInterval(updateRandomMusicTip, 86400000);
-
-        // Clean up the interval when the component unmounts
-        return () => {
-        clearInterval(intervalId);
-        };
+      };
+  
+      // Update the random music tip initially
+      updateRandomMusicTip();
+  
+      // Set up a timeout to show the music tip after 5 seconds (5000 milliseconds)
+      const timeoutId = setTimeout(() => {
+        setShowMusicTip(true);
+      }, 5000);
+  
+      // Clean up the timeout when the component unmounts
+      return () => {
+        clearTimeout(timeoutId);
+      };
     }, []);
-
+  
   return (
 
 //FIRST PART OF THE HOMEPAGE DESIGN
@@ -177,9 +181,11 @@ const Homepage = () => {
 <div className="flex"> 
 <img src={tape} alt="Tape Design Aesthetics" className="mb-0 w-1/2 mr-0 ml-[180%] mt-[-50%] z-10" />
 </div>
-<div className="text-black-resonate font-CG_Reg text-2xl mt-5">
-        Music Tip: {randomMusicTip}
-      </div>
+
+{showMusicTip && (
+        <MusicTip tip={randomMusicTip} onClose={() => setShowMusicTip(false)} />
+      )}
+
 <br></br>
 <br></br>
 <br></br>
@@ -192,7 +198,7 @@ const Homepage = () => {
 
 {/* CREATING A NAVIGATION MENU */}
 
-<div class="font-CG_Reg p-10 w-48 min-w-[450px] text-black-resonate bg-yellow-resonate border-black-resonate rounded-lg mb-10 mt-[-5%] mr-[-60%]">
+<div class="font-CG_Reg p-10 w-48 min-w-[450px] text-black-resonate bg-yellow-resonate border-black-resonate rounded-lg mb-10 mt-[-10%] mr-[-60%]">
 <Link to="/Profile" className="block">
           <button
             type="button"
