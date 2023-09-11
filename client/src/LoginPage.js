@@ -6,6 +6,7 @@ import logintext from './assets/logintext.png';
 const LoginPage = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [pfp, setPfp] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleLogin = async () => {
@@ -14,7 +15,8 @@ const LoginPage = () => {
         'http://localhost:5000/login',
         {
           username,
-          password
+          password,
+          pfp
         },
         {
           headers: {
@@ -25,6 +27,7 @@ const LoginPage = () => {
 
       if (response.data.message === 'Login successful') {
         localStorage.setItem('username', username);
+        localStorage.setItem('pfp', pfp);
         window.location.href = '/Homepage';
       } else {
         setErrorMessage('Invalid username or password');

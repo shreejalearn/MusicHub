@@ -10,7 +10,6 @@ const SignupPage = () => {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-
   const handleSignup = async () => {
     try {
       const response = await axios.post(

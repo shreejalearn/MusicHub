@@ -49,7 +49,7 @@ const acupload = multer({ storage:acstorage });
 
 
 const pfpstorage = multer.diskStorage({
-  destination: './profilePictures/', // Choose a suitable destination folder
+  destination: './client/src/profilePictures/', // Choose a suitable destination folder
   filename: (req, file, cb) => {
     cb(null, Date.now() + path.extname(file.originalname));
   },
@@ -66,7 +66,7 @@ app.post('/editprofilepicture', pfpupload.single('file'), (req, res) => {
 
   console.log('Received file:', req.file.filename);
 
-  const filePath = `/profilePictures/${req.file.filename}`;
+  const filePath = `/${req.file.filename}`;
   console.log(filePath);
   const query = `
     UPDATE music_login
@@ -92,7 +92,9 @@ app.post('/pfpupload', pfpupload.single('file'), (req, res) => {
 
   console.log('Received file:', req.file.filename);
 
-  const filePath = `/profilePictures/${req.file.filename}`;
+  // Use the 'path' module to remove the file extension
+  const fileNameWithoutExtension = path.parse(req.file.filename).name;
+  const filePath = `${fileNameWithoutExtension}`;
   console.log(filePath);
   const query = `
     UPDATE music_login
@@ -109,6 +111,7 @@ app.post('/pfpupload', pfpupload.single('file'), (req, res) => {
     res.json({ message: 'Profile picture updated successfully' });
   });
 });
+
 
 app.post('/ccupload', ccupload.single('file'), (req, res) => {
   if (!req.file) {
@@ -480,7 +483,7 @@ app.post('/getuserinfo', (req, res) => {
 // Add a new route to fetch random user info
 app.post('/getrandomuserinfo', (req, res) => {
   const getRandomUserSql = `
-    SELECT username, name, email, phone, main_instrument, bio, skills, accolades
+    SELECT username, name, email, phone, main_instrument, bio, skills, accolades, pfp
     FROM music_login
     ORDER BY RAND()  -- MySQL function to order rows randomly
     LIMIT 1;          -- Limit the result to 1 row
