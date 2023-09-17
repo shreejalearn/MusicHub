@@ -86,7 +86,7 @@ const originalLyrics = {
   },
   sad: {
     placeholders: [
-      'noun1', 'adjective1', 'verb', 'adjective2', 'noun2', 'noun3',
+      'noun1', 'adjective1', 'adverb', 'adjective2', 'noun2', 'noun3',
       'adjective3', 'adjective4', 'adjective5', 'adjective6',
       'pronoun', 'adjective8', 'adjective9', 'adjective10', 'noun4', 'noun5', 'noun6', 'noun7'
     ],
@@ -94,7 +94,7 @@ const originalLyrics = {
     lyrics: `
     Yesterday,
     All my [noun1] seemed so [adjective1] away,
-    Now it looks as though they're [verb] to stay,
+    Now it looks as though they're [adverb] to stay,
     Oh, I [verb] in yesterday.
 
     Suddenly,
