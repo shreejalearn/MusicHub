@@ -70,7 +70,6 @@ const Connect = () => {
         )}
         <button onClick={() => handleArrowClick('left')}>Previous</button>
         <button onClick={() => handleArrowClick('right')}>Next</button>
-        <Carousel />
       </div>
     </div>
   );

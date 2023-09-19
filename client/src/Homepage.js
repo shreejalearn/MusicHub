@@ -132,10 +132,10 @@ const Homepage = () => {
       // Update the random music tip initially
       updateRandomMusicTip();
   
-      // Set up a timeout to show the music tip after 5 seconds (5000 milliseconds)
+      // Set up a timeout to show the music tip after 7 seconds (7000 milliseconds)
       const timeoutId = setTimeout(() => {
         setShowMusicTip(true);
-      }, 5000);
+      }, 7000);
   
       // Clean up the timeout when the component unmounts
       return () => {

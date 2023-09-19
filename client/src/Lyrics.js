@@ -122,11 +122,245 @@ const originalLyrics = {
     Mm-mm-mm-mm-mm-mm-mm.
   `,
   },
+  angry: {
+    placeholders: [
+      'adjective1', 'noun1', 'adjective2', 'noun2', 'verb1',
+      'noun3', 'verb2', 'adjective3', 'noun4', 'adjective4',
+    ],
+    lyrics: `
+    It starts with [a/an] [adjective1] [noun1]
+    All I [verb1]
+    It's so [adjective2]
+    Watch you [verb2]
+    I [verb3] so [adjective3] and got so [adjective4]
+    But in the end, it [verb4] even [verb5]
+    
+    I had to [verb6] to [verb7] it [adjective5]
+    But in the end, it [verb8] even [verb9]
+    
+    One [noun2], I don't know why
+    It [verb10] even [verb11] how [adjective6] you [verb12]
+    
+    Keep that in mind, I [verb13] this [noun3]
+    To [verb14] myself of a [noun4] when I [verb15] so [adjective7]
+    
+    In spite of the way you were [verb16] me
+    Actin' like I was [adjective8] of your [noun5]
+    Remembering all the [noun6] you [verb17] with me
+    I'm surprised it got so [adjective9]
+    
+    Things aren't the [noun7] they were before
+    You wouldn't even [verb18] me anymore
+    Not that you [verb19] me back then
+    But it all comes back to me in the end
+    
+    You kept [noun8] [noun9]
+    And even though I [verb20], it all fell [adjective10]
+    What it meant to me will eventually
+    Be a [noun10] of a [noun11] when I
+    I [verb21] so [adjective11] and got so [adjective12]
+    But in the end, it [verb22] even [verb23]
+    
+    I had to [verb24] to [verb25] it [adjective13]
+    But in the end, it [verb26] even [verb27]
+    
+    One [noun2], I don't know why
+    It [verb10] even [verb11] how [adjective6] you [verb12]
+    
+    Keep that in mind
+    I [verb13] this [noun3] to explain in due [noun12]
+    All I [verb1]
+    
+    Time is a [adjective14] thing
+    Watch it fly by as the [noun13] [verb28]
+    Watch it count down to the [noun14] of the [noun15]
+    The [noun16] [verb29] life away
+    It's so [adjective2]
+    
+    You didn't [verb30] out [preposition] [noun17]
+    Watch the [noun18] go right out the [noun19]
+    Tryin' to [verb31] on, they didn't even [verb32]
+    I [verb33] it all just to [verb34] you [verb2]
+    
+    I kept [noun8] [noun9]
+    And even though I [verb20], it all fell [adjective10]
+    What it meant to me will eventually be a [noun10]
+    Of a [noun4] when I [verb15] so [adjective7]
+        `,
+  },
+  heartbroken: {
+    placeholders: [
+      'plural_noun', 'adjective1', 'adjective2', 'noun1', 'verb1',
+      'noun2', 'noun3', 'verb2', 'noun4', 'noun5', 'adjective3', 
+      'adjective4', 'noun6', 'adjective5', 'noun7', 'noun8', 'verb3',
+      'verb4', 'adjective6', 'adjective7', 'adjective8', 'noun9', 'verb5'
+    ],
+    lyrics: `
+      Ooh
+      [plural_noun] are [adjective1] 
+      Guess they look [adjective2] like me 
+      We miss you on your [noun1], mmm 
+      Still got your things here 
+      And they stare at me like [noun2] 
+      Don't wanna let you [verb1] my head 
+      Just like the [noun3] that I met you 
+      The [noun4] I thought [adjective3] 
+      Said that you [adjective4] me 
+      But that'll last for [noun5] 
+      It's [adjective5] outside 
+      Like when you [verb2] out my life 
+      Why you [verb3] out my life? 
+      I get like this every time 
+      On these [noun6] that feel like you and me 
+      [noun7] [noun8] 
+      'Cause I remember every time 
+      On these [adjective6] that feel like you and me 
+      [noun7] [noun8] 
+      Do you ever think of me? 
+      Yeah
+      (Ooh) I get like this every time
+      I'm [verb4] my hopes up 
+      Like [plural_noun] [verb4] 'til this day 
+      I still see the [noun9] you read, mmm 
+      I'm foolishly [adjective7] 
+      (Foolishly [adjective7]) 
+      Can't get past the taste of your [noun9] 
+      (Taste of your [noun9]) 
+      Don't wanna let you [verb5] my head 
+      Just like the [noun3] that I met you 
+      The [noun4] I thought [adjective3] 
+      Said that you [adjective4] me 
+      But that'll last for [noun5] 
+      It's [adjective5] outside 
+      Like when you [verb2] out my life 
+      Why you [verb3] out my life? (My life) 
+      I get like this every time 
+      On these [noun6] that feel like you and me 
+      [noun7] [noun8] 
+      'Cause I remember every time 
+      On these [adjective6] that feel like you and me 
+      [noun7] [noun8] 
+      Do you ever think of me? 
+      of me 
+      'Cause I think of you, think of you
+    `,
+    },
+    romantic: {
+    placeholders: [
+      'exclamation', 'plural noun', 'adjective1', 'adjective2', 'noun1', 'interjection',
+      'noun2', 'noun3', 'verb1', 'verb2', 'noun4', 'noun5', 'noun6', 'verb3', 'adjective3',
+      'verb4', 'verb5', 'adjective4', 'adjective5', 'noun7', 'noun8', 'pronoun1', 'pronoun2',
+      'noun9', 'verb6', 'verb7', 'adjective6', 'adverb', 'adverb', 'verb8', 'pronoun3',
+      'noun10', 'noun11', 'noun12', 'verb10', 'noun13', 'adverb', 'verb11', 'noun14',
+      'noun15', 'noun14', 'noun15'
+    ],
+      lyrics: `
+    It's a [adjective1] [noun1], we were [verb1] [adjective2] places,
+    You were [noun2] and I was [noun3],
+    It was a [adjective3] [noun4], I was [adjective4] you to the ground,
+    And [verb2] out what [noun5] said.
+
+    'Cause you were [noun2], I was a [noun3],
+    And [noun6] said, "Stay away from [noun7],"
+    And I was [adjective5], [verb3] to [verb4] you,
+    So I [verb5] out a [noun8], and [verb6] to the garden to see you.
+
+    And I [verb5], [noun9] on the staircase,
+    Begging you, "Please, don't go,"
+    And I said,
+
+    [noun2], take me [adjective1],
+    You'll [verb1] to the [adjective2] [noun1] and [verb2] the [noun3],
+    Just [verb4] [noun6], and [verb5] me,
+    [verb6] me, [noun10], just say yes.
+
+    In the moonlight's gentle [adjective6] embrace,
+    We danced like [noun11] in an [noun12] place,
+    Your [adjective7] touch, my heart's quickened pace,
+    In that moment, I knew love's sweet grace.
+
+    Under the [noun13] of a thousand stars,
+    We [verb7] together, forgetting the wars,
+    Your [adjective8] smile, like Venus on Mars,
+    Forever and always, wherever we are.
+
+    [noun2], take me [adjective1],
+    To the [adjective2] [noun1] where dreams are born,
+    With each [noun14], my love is sworn,
+    [verb6] me, [noun10], from dusk 'til morn.
+
+    As the [noun15] shines, our love takes flight,
+    Through the [noun16] of time, like day and night,
+    In your [noun17] arms, everything feels right,
+    Together we'll stand, in love's pure light.
+    `,
+  },
+
+  excited: {
+    placeholders: [
+      'noun1', 'adjective1', 'verb1', 'noun2', 'adjective2',
+      'noun3', 'adjective3', 'verb2', 'adjective4', 'noun4',
+    ],
+    lyrics: `
+    I can't believe it, I'm so [adjective1] today,
+    Like a [noun1] on a [noun2] holiday,
+    Gonna [verb1] with joy, come what may,
+    In this [adjective2] world, I'm here to stay.
+
+    Every moment feels so [adjective3] and [adjective4],
+    I'm [verb2] on top of the world, that's for sure,
+    With a heart that's [noun3] and [noun4] pure,
+    Life's an adventure, and I'll endure.
+    `,
+  },
+  relaxed: {
+    placeholders: [
+      'noun1', 'verb1', 'adjective1', 'noun2', 'verb2',
+      'adjective2', 'noun3', 'verb3', 'adjective3', 'noun4',
+    ],
+    lyrics: `
+    By the [noun1], I [verb1] so [adjective1] and free,
+    Like a gentle [noun2] under the shady tree,
+    I'll [verb2] the breeze, listen to the sea,
+    In this [adjective2] moment, it's just you and me.
+
+    With [noun3] in my heart, I gently [verb3],
+    Life's so [adjective3] and full of ease,
+    As the sun sets beyond the [noun4],
+    I'm at peace, my soul at ease.
+    `,
+  },
+  nostalgic: {
+    placeholders: [
+      'noun1', 'adjective1', 'noun2', 'verb1', 'adjective2',
+      'verb2', 'adjective3', 'noun3', 'noun4', 'adjective4',
+    ],
+    lyrics: `
+    In the [noun1] of my mind, I'm feeling [adjective1],
+    Reminiscing about the days of [noun2],
+    I [verb1] back to when life was [adjective2],
+    Oh, those [verb2] moments, forever in my view.
+
+    With [adjective3] eyes, I see [noun3] and [noun4],
+    A world of [adjective4] memories, not too far,
+    I'll hold onto the past, like an old star,
+    Nostalgia's warmth, like a comforting jar.
+    `,
+  },
+
 };
+
+
 
 const feelings = [
   { name: 'happy', label: 'Happy' },
   { name: 'sad', label: 'Sad' },
+  { name: 'angry', label: 'Angry' },
+  { name: 'heartbroken', label: 'Heartbreak' },
+  { name: 'romantic', label: 'Romantic' },
+  { name: 'excited', label: 'Excited' },
+  { name: 'relaxed', label: 'Relaxed' },
+  { name: 'nostalgic', label: 'Nostalgic' },
 ];
 
 const Lyrics = () => {
@@ -145,22 +379,95 @@ const Lyrics = () => {
 
   const generateLyrics = () => {
     const feelingData = originalLyrics[selectedFeeling];
-
+  
+    if (!feelingData) {
+      // Handle the case where feelingData is undefined
+      setLyrics("Please select a mood.");
+      return;
+    }
+  
+    const { lyrics: newLyrics } = feelingData;
+    const generatedLyrics = feelingData.placeholders.reduce((lyrics, placeholder) => {
+      const replacement = values[placeholder] || `[${placeholder}]`;
+      return lyrics.replace(new RegExp(`\\[${placeholder}\\]`, 'g'), replacement);
+    }, newLyrics);
+  
+    setLyrics(generatedLyrics);
+  };
+  
+  const randomizeAll = () => {
+    const feelingData = originalLyrics[selectedFeeling];
+  
     if (!feelingData) {
       return;
     }
-
-    const { placeholders: feelingPlaceholders, lyrics: newLyrics } = feelingData;
-
-    let generatedLyrics = newLyrics;
-
+  
+    const { placeholders: feelingPlaceholders } = feelingData;
+  
+    const randomValues = {};
+  
     feelingPlaceholders.forEach((placeholder) => {
-      const replacement = values[placeholder] || `[${placeholder}]`;
-      generatedLyrics = generatedLyrics.replace(new RegExp(`\\[${placeholder}\\]`, 'g'), replacement);
+      let randomValue = '';
+      if (placeholder.startsWith('noun')) {
+        // Handle noun placeholders
+        const nouns = ['flower', 'tree', 'bird', 'sun'];
+        randomValue = nouns[Math.floor(Math.random() * nouns.length)];
+      } else if (placeholder.startsWith('verb')) {
+        // Handle verb placeholders
+        const verbs = ['sing', 'dance', 'jump', 'laugh'];
+        randomValue = verbs[Math.floor(Math.random() * verbs.length)];
+      }
+      else if(placeholder.startsWith('adjective')){
+        // Handle adjective placeholders
+        const adjectives = ['happy', 'sad', 'angry', 'romantic', 'excited', 'relaxed', 'nostalgic'];
+        randomValue = adjectives[Math.floor(Math.random() * adjectives.length)];
+      }
+      else if(placeholder.startsWith('direction')){
+        // Handle direction placeholders
+        const directions = ['up', 'down', 'left', 'right'];
+        randomValue = directions[Math.floor(Math.random() * directions.length)];
+      }
+      else if (placeholder.startsWith('adverb')) {
+        // Handle adverb placeholders
+        const adverbs = ['slowly', 'fast', 'loudly', 'quietly'];
+        randomValue = adverbs[Math.floor(Math.random() * adverbs.length)];
+      }
+            else if(placeholder.startsWith('pronoun')){
+        // Handle pronoun placeholders
+        const pronouns = ['he', 'she', 'it', 'they'];
+        randomValue = pronouns[Math.floor(Math.random() * pronouns.length)];
+      }
+      else if(placeholder.startsWith('number')){
+        // Handle number placeholders
+        const numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+        randomValue = numbers[Math.floor(Math.random() * numbers.length)];
+      }
+      else if(placeholder.startsWith('interjection')){
+        // Handle interjection placeholders
+        const interjections = ['wow', 'oh', 'oh no', 'oh my god', 'oh wow', 'oh my goodness'];
+        randomValue = interjections[Math.floor(Math.random() * interjections.length)];
+      }
+      else if(placeholder.startsWith('exclamation')){
+        // Handle exclaamation placeholders
+        const exclamation = ['oh my god', 'oh wow', 'oh my goodness'];
+        randomValue = exclamation[Math.floor(Math.random() * exclamation.length)];
+        
+      }
+      else if(placeholder.startsWith('plural_noun')){
+        // Handle plural noun placeholders
+        const pluralNouns = ['flowers', 'trees', 'birds', 'suns'];
+        randomValue = pluralNouns[Math.floor(Math.random() * pluralNouns.length)];
+      }
+      // Add more conditions for other placeholder types as needed
+  
+      randomValues[placeholder] = randomValue;
     });
-
-    setLyrics(generatedLyrics);
+  
+    setValues(randomValues);
+    generateLyrics();
   };
+  
+  
 
   return (
     <div className="bg-yellow2-resonate min-h-screen flex flex-col items-center justify-center relative py-8">
@@ -217,6 +524,14 @@ const Lyrics = () => {
             >
               Generate Lyrics
             </button>
+
+
+            <button
+          onClick={randomizeAll}
+          className="px-4 py-2 bg-[#F5B1CA] text-white rounded hover:bg-[#FF4579]"
+        >
+          Randomize All
+        </button>
 
           </div>
         </div>

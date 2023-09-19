@@ -19,6 +19,7 @@ import SignupPage from './SignupPage';
 import WelcomePage from './WelcomePage';
 import Profile from './Profile';
 import Lyrics from './Lyrics';
+import BlogPostDetails from './BlogComponents/BlogPostDetails';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -40,6 +41,7 @@ ReactDOM.render(
         <Route path="/Profile" element={<Profile />} />
         <Route path="/songlyricgenerator" element={<Songlyricgenerator />} />
         <Route path="/Lyrics" element={<Lyrics />} />
+        <Route path="/blog/:id" element={<BlogPostDetails />} />
       </Routes>
     </Router>
   </React.StrictMode>,

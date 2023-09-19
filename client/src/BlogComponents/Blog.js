@@ -10,7 +10,7 @@ const Blog = ({ posts }) => {
         <div className="flex flex-wrap justify-center">
           {posts.map((post, index) => (
             <BlogPost
-              key={index}
+              id={index}
               title={post.title}
               content={post.content}
               imageUrl={post.imageUrl}
