@@ -10,10 +10,23 @@ const BlogPostDetails = () => {
   const content = queryParams.get('content');
   const imageUrl = queryParams.get('imageUrl');
 
+  const containerStyle = {
+    maxWidth: '600px',
+    margin: '0 auto',
+    padding: '20px',
+    textAlign: 'center',
+  };
+
+  const imageStyle = {
+    maxWidth: '100%',
+    height: 'auto',
+    marginBottom: '20px',
+  };
+
   return (
-    <div>
+    <div style={containerStyle}>
       <h1>{title}</h1>
-      <img src={imageUrl} alt="Blog Post" />
+      <img src={imageUrl} alt="Blog Post" style={imageStyle} />
       <p>{content}</p>
       {/* Render the rest of the blog post details */}
     </div>
