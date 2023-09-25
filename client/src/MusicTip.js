@@ -6,7 +6,7 @@ const MusicTipPopup = ({ tip, onClose }) => {
       <div className="bg-opacity-50 bg-black absolute inset-0"></div>
       <div className="bg-white p-6 rounded-lg shadow-md z-10">
         <button
-          className="text-gray-600 hover:text-gray-800"
+          className="text-gray-600 ml-[-1%] hover:text-gray-800"
           onClick={onClose}
         >
           <svg
