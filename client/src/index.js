@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Outlet, Switch, Redirect } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -20,6 +20,8 @@ import WelcomePage from './WelcomePage';
 import Profile from './Profile';
 import Lyrics from './Lyrics';
 import BlogPostDetails from './BlogComponents/BlogPostDetails';
+import MessageForum from './MessageForum';
+import MessageList from './MessageList';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -42,10 +44,23 @@ ReactDOM.render(
         <Route path="/songlyricgenerator" element={<Songlyricgenerator />} />
         <Route path="/Lyrics" element={<Lyrics />} />
         <Route path="/blog/:id" element={<BlogPostDetails />} />
+        <Route path="/forum" element={<Forum />} />
       </Routes>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
+  
 );
+
+function Forum() {
+  return (
+    <div>
+      <h1>Forum</h1>
+      <MessageForum />
+      <Outlet /> {/* This will render nested child routes */}
+      <MessageList />
+    </div>
+  );
+  }
 
 reportWebVitals();
