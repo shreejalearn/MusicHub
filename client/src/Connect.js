@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import Axios from 'axios'; 
 import Carousel from './Carousel';
-import connectdesign from './assets/connectdesign.png';
+import connectdesign2 from './assets/connectdesign2.png';
 import profilePictures from './profilePictures/profilePictures'; // Import the profilePictures object
+import radioconnet from './assets/radioconnet.png';
 
 const Connect = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -44,35 +45,42 @@ const Connect = () => {
   }, []);
 
   return (
-    <div className="bg-green-resonate min-h-screen flex flex-col items-center relative">
-      <div className="flex flex-col items-center mt-[10%]">
-        <h1 className="font-reborn text-9xl text-[#979D92] z-20">Connect</h1>
-        <img src={connectdesign} alt="connect design" className="w-[90rem] mt-[-8%]" />
+    <div className="connect-container bg-green-resonate min-h-screen flex flex-col items-center relative">
+
+      <div className="flex flex-col items-center">
+        <h1 className="font-reborn text-9xl text-[#979D92] z-20 mt-[10%]">Connect</h1>
+        <img src={radioconnet} alt="Radio Connect" className="ml-[90%] z-20" />
+
         {userInfo && (
-          <div className="text-center space-y-4 mt-4">
-            <div className="flex flex-col items-center">
-              <img
-                src={profilePictures[userInfo.pfp]}
-                alt="ProfilePic"
-                className="rounded-full w-40 h-40"
-              />
-              <h2 className="text-3xl text-[#979D92] z-10 font-reborn">{userInfo.name}</h2>
+          <div className="w-[1100px] p-4 rounded-lg shadow-lg bg-[#F1F1E7] mt-[-20%] z-10">
+            <div className="text-center space-y-4 mt-4">
+              <div className="flex flex-col items-center">
+                <img
+                  src={profilePictures[userInfo.pfp]}
+                  alt="ProfilePic"
+                  className="rounded-full w-40 h-40 mb-[4%]"
+                />
+                <h2 className="text-5xl text-[#979D92] z-10 font-reborn mb-2">{userInfo.name}</h2>
+              </div>
+              <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#80877a]">Email: {userInfo.email}</p>
+              <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#EF529C]">Phone: {userInfo.phone}</p>
+              <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#80877a]">Main Instrument: {userInfo.main_instrument}</p>
+              <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#EF529C]">Bio: {userInfo.bio}</p>
+              <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#80877a]">Skills: {userInfo.skills}</p>
+              <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#EF529C] pb-[2%]">Accolades: {userInfo.accolades}</p>
             </div>
-            <p className='font-CG_Reg mr-[10%] ml-[10%]'>Email: {userInfo.email}</p>
-            <p className='font-CG_Reg mr-[10%] ml-[10%]'>Phone: {userInfo.phone}</p>
-            <p className='font-CG_Reg mr-[10%] ml-[10%]'>Main Instrument: {userInfo.main_instrument}</p>
-            <p className='font-CG_Reg mr-[10%] ml-[10%]'>Bio: {userInfo.bio}</p>
-            <p className='font-CG_Reg mr-[10%] ml-[10%]'>Skills: {userInfo.skills}</p>
-            <p className='font-CG_Reg mr-[10%] ml-[10%]'>Accolades: {userInfo.accolades}</p>
           </div>
         )}
         <div className="flex space-x-4 mt-4">
-          <button className='font-CG_Reg px-4 py-2 border rounded-full mb-[50%]' onClick={() => handleArrowClick('left')}>Previous</button>
-          <button className='font-CG_Reg px-4 py-2 border rounded-full mb-[50%]' onClick={() => handleArrowClick('right')}>Next</button>
+          <button className="font-CG_Reg px-4 py-2 border rounded-full mb-[50%] bg-white" onClick={() => handleArrowClick('left')}>Previous</button>
+          <button className="font-CG_Reg px-4 py-2 border rounded-full mb-[50%] bg-white" onClick={() => handleArrowClick('right')}>Next</button>
         </div>
+        
       </div>
+      <img src={connectdesign2} alt="Connect Design" className="ml-[-50%] mt-[-25%] mb-[2%] z-20" />
+
     </div>
   );
-};
+  };
 
 export default Connect;
