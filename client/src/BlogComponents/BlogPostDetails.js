@@ -99,9 +99,10 @@ const BlogPostDetails = () => {
     padding: '40px',
     margin: '40px auto',
     textAlign: 'center',
-    backgroundColor: '#e5e8e3',
+    backgroundColor: '#F1F0E8',
     boxShadow: '0px 0px 10px rgba(204, 200, 170, 1)',
-    borderRadius: '8px',
+    borderRadius: '8px'
+  ,
   };
   
   const imageStyle = {
@@ -148,27 +149,6 @@ const BlogPostDetails = () => {
 
 
   // Functions to handle upvoting and downvoting
-  const handleUpvote = () => {
-    if (!hasUpvoted) {
-      setUpvotes(upvotes + 1);
-      setHasUpvoted(true);
-      if (hasDownvoted) {
-        setDownvotes(downvotes - 1);
-        setHasDownvoted(false);
-      }
-    }
-  };
-
-  const handleDownvote = () => {
-    if (!hasDownvoted) {
-      setDownvotes(downvotes + 1);
-      setHasDownvoted(true);
-      if (hasUpvoted) {
-        setUpvotes(upvotes - 1);
-        setHasUpvoted(false);
-      }
-    }
-  };
 
   const voteContainerStyle = {
     display: 'flex',
