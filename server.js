@@ -503,6 +503,41 @@ app.post('/getrandomuserinfo', (req, res) => {
   });
 });
 
+app.post('/sendmessage', (req, res) => {
+  const { content, username } = req.body;
+  const insertMessageQuery = 'INSERT INTO music_messages (content, username) VALUES (?, ?)';
+  db.query(insertMessageQuery, [content, username], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ error: 'Error saving message to the database' });
+    } else {
+      res.json({ message: 'Message saved successfully' });
+    }
+  });
+});
+app.get('/getmessages', (req, res) => {
+  const selectMessagesQuery = 'SELECT * FROM music_messages WHERE timestamp > NOW() - INTERVAL 1 DAY ORDER BY timestamp DESC';
+  db.query(selectMessagesQuery, (error, results) => {
+      if (error) {
+          console.error(error);
+          res.status(500).json({ error: 'Error fetching messages from the database' });
+      } else {
+          res.json({ messages: results });
+      }
+  });
+});
+
+// const deleteOldMessagesQuery = 'DELETE FROM music_messages WHERE timestamp < NOW() - INTERVAL 1 DAY';
+// db.query(deleteOldMessagesQuery, (error, results) => {
+//     if (error) {
+//         console.error(error);
+//     } else {
+//         console.log('Old messages deleted successfully');
+//     }
+// });
+
+
+
 
 app.listen(5000, () => {
   console.log('Server is running on port 5000');
