@@ -4,6 +4,7 @@ import Carousel from './Carousel';
 import connectdesign2 from './assets/connectdesign2.png';
 import profilePictures from './profilePictures/profilePictures'; // Import the profilePictures object
 import radioconnet from './assets/radioconnet.png';
+import connectdesign from './assets/connectdesign.png';
 
 const Connect = () => {
   const [userInfo, setUserInfo] = useState(null);
@@ -49,10 +50,11 @@ const Connect = () => {
 
       <div className="flex flex-col items-center">
         <h1 className="font-reborn text-9xl text-[#979D92] z-20 mt-[10%]">Connect</h1>
-        <img src={radioconnet} alt="Radio Connect" className="ml-[90%] z-20" />
+        <img src={connectdesign} alt="Connect Design" className="w-[100rem] mb-[-10%]" />
+        <img src={radioconnet} alt="Radio Connect" className="ml-[70%] z-20" />
 
         {userInfo && (
-          <div className="w-[1100px] p-4 rounded-lg shadow-lg bg-[#F1F1E7] mt-[-20%] z-10">
+          <div className="w-[1100px] p-4 rounded-lg shadow-lg bg-[#F1F1E7] mt-[-12%] z-10">
             <div className="text-center space-y-4 mt-4">
               <div className="flex flex-col items-center">
                 <img
