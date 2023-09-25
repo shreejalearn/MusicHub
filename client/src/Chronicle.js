@@ -3,7 +3,7 @@ import chronicledesign from './assets/chronicledesign.png';
 import blogimage1 from './assets/blogimage1.png';
 import blogimage2 from './assets/blogimage2.png';
 import blogimagepiano from './assets/blogimagepiano.png';
-import blogimageMIDI from './assets/blogimageMIDI.png';
+import blogimageMIDI from './assets/musictech3.jpg';
 import blogimagesheetmusic from './assets/blogimagesheetmusic.png';
 import blogimagesinging from './assets/blogimagesinging.jpg';
 import blogimagepitch from './assets/blogimagepitch.jpg';

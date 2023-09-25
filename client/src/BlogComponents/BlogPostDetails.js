@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+import danceblog from '../assets/danceblog.png';
+import happyblog from '../assets/happyblog.png';
 
 const BlogPostDetails = () => {
   const { id } = useParams();
@@ -97,7 +99,9 @@ const BlogPostDetails = () => {
   const containerStyle = {
     width: '90%',
     padding: '40px',
-    margin: '40px auto',
+    marginTop: '12%',
+    zIndex: '1',
+    margin: '0px auto',
     textAlign: 'center',
     backgroundColor: '#F1F0E8',
     boxShadow: '0px 0px 10px rgba(204, 200, 170, 1)',
@@ -106,18 +110,16 @@ const BlogPostDetails = () => {
   };
   
   const imageStyle = {
-    maxWidth: '100%',
-    height: 'auto',
+    maxWidth: '900px', // Set a defined width (e.g., 400px)
     display: 'block',
     margin: '0 auto', // Center the image horizontally
     marginBottom: '5%',
-    marginTop: '4%',
+    marginTop: '6%',
     borderRadius: '8px',
     alignSelf: 'center',
     boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
-
   };
-  
+    
   const titleStyle = {
     fontSize: '36px',
     fontWeight: 'bold',
@@ -126,9 +128,9 @@ const BlogPostDetails = () => {
     color: '#979D92',
     textAlign: 'center',
     textShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
+    textDecoration: 'underline', // Add text underline
   };
-
-  const voteButtonStyle = {
+    const voteButtonStyle = {
     border: 'none',
     background: 'none',
     cursor: 'pointer',
@@ -166,6 +168,9 @@ const BlogPostDetails = () => {
   }, [upvotes, title, downvotes]);
 
   return (
+    <div className='flex flex-col'>
+    <img className='w-[40rem] z-10 absolute' src={danceblog} alt="Blog Post"/>
+    <img className='w-[40rem] z-10 absolute ml-[63%]' src={happyblog} alt="Blog Post"/>
     <div style={containerStyle}>
       <h1 className="font-reborn text-9xl" style={titleStyle}>
         {title}
@@ -202,6 +207,7 @@ const BlogPostDetails = () => {
           <span className="font-CG_Reg">{downvotes}</span>
         </div>
       </div>
+    </div>
     </div>
   );
   
