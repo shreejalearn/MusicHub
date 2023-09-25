@@ -1,18 +1,63 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
-
 
 const BlogPostDetails = () => {
   const { id } = useParams();
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
-  
+
   const title = queryParams.get('title');
   const imageUrl = queryParams.get('imageUrl');
 
+  const username = localStorage.getItem('username');
+
+  const initialUpvotes = parseInt(localStorage.getItem(`upvotes-${id}`)) || 0;
+  const initialDownvotes = parseInt(localStorage.getItem(`downvotes-${id}`)) || 0;
+
+  const userUpvoted = localStorage.getItem(`upvoted-${id}-${username}`) === 'true';
+  const userDownvoted = localStorage.getItem(`downvoted-${id}-${username}`) === 'true';
+
+  const [upvotes, setUpvotes] = useState(initialUpvotes);
+  const [downvotes, setDownvotes] = useState(initialDownvotes);
+  const [hasUpvoted, setHasUpvoted] = useState(userUpvoted);
+  const [hasDownvoted, setHasDownvoted] = useState(userDownvoted);
+
+  const handleUpvote = () => {
+    if (!hasUpvoted) {
+      setUpvotes(upvotes + 1);
+      setHasUpvoted(true);
+
+      if (hasDownvoted) {
+        setDownvotes(downvotes - 1);
+        setHasDownvoted(false);
+        localStorage.removeItem(`downvoted-${id}-${username}`);
+      }
+
+      localStorage.setItem(`upvoted-${id}-${username}`, 'true');
+    }
+  };
+
+  const handleDownvote = () => {
+    if (!hasDownvoted) {
+      setDownvotes(downvotes + 1);
+      setHasDownvoted(true);
+
+      if (hasUpvoted) {
+        setUpvotes(upvotes - 1);
+        setHasUpvoted(false);
+        localStorage.removeItem(`upvoted-${id}-${username}`);
+      }
+
+      localStorage.setItem(`downvoted-${id}-${username}`, 'true');
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem(`upvotes-${id}`, upvotes.toString());
+    localStorage.setItem(`downvotes-${id}`, downvotes.toString());
+  }, [upvotes, downvotes, id]);
   const blogPosts = [
     {
       title: 'Welcome!',
@@ -48,16 +93,6 @@ const BlogPostDetails = () => {
     },
   ];
   const selectedBlogPost = blogPosts.find(post => post.title === title);
-
-  // Load upvotes count from localStorage or use 0 if it doesn't exist
-  const initialUpvotes = parseInt(localStorage.getItem(`upvotes-${title}`)) || 0;
-  const initialDownvotes = parseInt(localStorage.getItem(`downvotes-${title}`)) || 0;
-
-  // State variables to track votes and whether the user has voted
-  const [upvotes, setUpvotes] = useState(initialUpvotes);
-  const [downvotes, setDownvotes] = useState(initialDownvotes);
-  const [hasUpvoted, setHasUpvoted] = useState(false);
-  const [hasDownvoted, setHasDownvoted] = useState(false);
 
   const containerStyle = {
     width: '90%',
