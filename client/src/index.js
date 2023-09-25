@@ -55,7 +55,7 @@ ReactDOM.render(
 function Forum() {
   return (
     <div>
-      <h1>Forum</h1>
+<h1 className="text-9xl font-semibold mb-4 font-reborn text-center mt-[5%] text-[#9fa88d] bg-[#f2f2f2]">Forum</h1>
       <MessageForum />
       <Outlet /> {/* This will render nested child routes */}
       <MessageList />
