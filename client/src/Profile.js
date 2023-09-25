@@ -93,11 +93,12 @@ const Profile = () => {
   };
 
   return (
-    <div className="bg-yellow2-resonate min-h-screen flex flex-col relative overflow-x-hidden">
-      <div className="relative">
-        <div>
+    
+    <div className="bg-yellow-resonate min-h-screen flex flex-col items-center relative">
+      <div className="flex items-center flex-col mt-[14%]">
+      <div>
           
-          <div>
+          <div classname="mt-[-15%]">
             <img src={bg_profile2} alt="Profile Background" className="w-full" />
             <img src={profileheading} alt="Profile Heading" className="absolute top-[12%] left-[17%] right-0 bottom-0 flex items-center w-[62rem] z-20" />
             <div>{userProfile && (
@@ -108,6 +109,7 @@ const Profile = () => {
               />
             )}
             </div>
+        
             
             {userProfile && (
   <div className='mt-[-15%]'>
@@ -122,6 +124,7 @@ const Profile = () => {
         <div
           key={field}
           className="flex items-center space-x-1 font-CG_Reg text-[#CD7417] overflow-x-hidden justify-center"
+          style={{ overflowWrap: 'break-word' }}
         >
           {isEditing && editingField === field ? (
             <>
