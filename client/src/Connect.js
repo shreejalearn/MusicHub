@@ -45,31 +45,31 @@ const Connect = () => {
 
   return (
     <div className="bg-green-resonate min-h-screen flex flex-col items-center relative">
-      <div className="flex items-center flex-col mt-[14%]">
+      <div className="flex flex-col items-center mt-10">
         <h1 className="font-reborn text-9xl text-[#979D92] z-20">Connect</h1>
         <img src={connectdesign} alt="connect design" className="w-[90rem] mt-[-8%]" />
         {userInfo && (
-          
-          <div>
-            {userInfo && (
-              console.log(userInfo.pfp),
+          <div className="text-center space-y-4 mt-4">
+            <div className="flex flex-col items-center">
               <img
                 src={profilePictures[userInfo.pfp]}
                 alt="ProfilePic"
-                className="mt-4 rounded-full w-40 h-40 items-center"
+                className="rounded-full w-40 h-40"
               />
-            )}
-            <h2 className="text-3xl text-[#979D92] z-10">{userInfo.name}</h2>
-            <p>Email: {userInfo.email}</p>
-            <p>Phone: {userInfo.phone}</p>
-            <p>Main Instrument: {userInfo.main_instrument}</p>
-            <p>Bio: {userInfo.bio}</p>
-            <p>Skills: {userInfo.skills}</p>
-            <p>Accolades: {userInfo.accolades}</p>
+              <h2 className="text-3xl text-[#979D92] z-10 font-reborn">{userInfo.name}</h2>
+            </div>
+            <p className='font-CG_Reg'>Email: {userInfo.email}</p>
+            <p className='font-CG_Reg'>Phone: {userInfo.phone}</p>
+            <p className='font-CG_Reg'>Main Instrument: {userInfo.main_instrument}</p>
+            <p className='font-CG_Reg'>Bio: {userInfo.bio}</p>
+            <p className='font-CG_Reg'>Skills: {userInfo.skills}</p>
+            <p className='font-CG_Reg'>Accolades: {userInfo.accolades}</p>
           </div>
         )}
-        <button onClick={() => handleArrowClick('left')}>Previous</button>
-        <button onClick={() => handleArrowClick('right')}>Next</button>
+        <div className="flex space-x-4 mt-4">
+          <button className='font-CG_Reg px-4 py-2 border rounded-full' onClick={() => handleArrowClick('left')}>Previous</button>
+          <button className='font-CG_Reg px-4 py-2 border rounded-full' onClick={() => handleArrowClick('right')}>Next</button>
+        </div>
       </div>
     </div>
   );
