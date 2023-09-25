@@ -60,29 +60,57 @@ const BlogPostDetails = () => {
   const [hasDownvoted, setHasDownvoted] = useState(false);
 
   const containerStyle = {
-    maxWidth: '800px',
-    margin: '0 auto',
+    width: '90%',
     padding: '40px',
+    margin: '40px auto',
     textAlign: 'center',
-    backgroundColor: '#f5f5f5',
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
+    backgroundColor: '#e5e8e3',
+    boxShadow: '0px 0px 10px rgba(204, 200, 170, 1)',
     borderRadius: '8px',
   };
+  
+  const imageStyle = {
+    maxWidth: '100%',
+    height: 'auto',
+    display: 'block',
+    margin: '0 auto', // Center the image horizontally
+    marginBottom: '5%',
+    marginTop: '4%',
+    borderRadius: '8px',
+    alignSelf: 'center',
+    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
 
+  };
+  
   const titleStyle = {
     fontSize: '36px',
     fontWeight: 'bold',
     marginBottom: '20px',
-    color: '#333',
+    marginTop: '5%',
+    color: '#979D92',
+    textAlign: 'center',
+    textShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
   };
 
-  const imageStyle = {
-    maxWidth: '100%',
-    height: 'auto',
-    marginBottom: '20px',
-    borderRadius: '8px',
-    boxShadow: '0px 0px 10px rgba(0, 0, 0, 0.2)',
+  const voteButtonStyle = {
+    border: 'none',
+    background: 'none',
+    cursor: 'pointer',
+    fontSize: '24px',
+    color: '#333', // Change the color to your preference
+    margin: '0 10px', // Add horizontal spacing between the buttons
   };
+  
+  // Styles for the icons
+  const iconStyle1 = {
+    marginRight: '8px', // Add some spacing between the icon and text
+    color:'#9EB384'
+  };
+  const iconStyle2 = {
+    marginRight: '8px', // Add some spacing between the icon and text
+    color:'#E19898'
+  }
+
 
   // Functions to handle upvoting and downvoting
   const handleUpvote = () => {
@@ -107,6 +135,15 @@ const BlogPostDetails = () => {
     }
   };
 
+  const voteContainerStyle = {
+    display: 'flex',
+    alignItems: 'center', // Align items vertically in the center
+    marginRight: '10px', // Add some spacing between the buttons and counts
+    flexDirection: 'row', // Arrange items in a row (side by side)
+  };
+  
+  
+
   // Update localStorage with the latest upvotes and downvotes counts whenever they change
   useEffect(() => {
     localStorage.setItem(`upvotes-${title}`, upvotes.toString());
@@ -115,23 +152,44 @@ const BlogPostDetails = () => {
 
   return (
     <div style={containerStyle}>
-      <h1 style={titleStyle}>{title}</h1>
+      <h1 className="font-reborn text-9xl" style={titleStyle}>
+        {title}
+      </h1>
       <img src={imageUrl} alt="Blog Post" style={imageStyle} />
-      {selectedBlogPost && <p>{selectedBlogPost.content}</p>}
-
+      {selectedBlogPost && (
+        <p className="text-1xl font-CG_Reg text-teal-900">
+          {selectedBlogPost.content}
+        </p>
+      )}
+  
       {/* Display vote counts and buttons */}
       <div>
-        <button onClick={handleUpvote} disabled={hasUpvoted}>
-          <FontAwesomeIcon icon={faThumbsUp} /> {/* Upvote icon */}
-        </button>
-        <span>{upvotes}</span>
-        <button onClick={handleDownvote} disabled={hasDownvoted}>
-          <FontAwesomeIcon icon={faThumbsDown} /> {/* Downvote icon */}
-        </button>
-        <span>{downvotes}</span>
+        <div style={voteContainerStyle}>
+          <button
+            className="font-CG_Reg"
+            style={voteButtonStyle}
+            onClick={handleUpvote}
+            disabled={hasUpvoted}
+          >
+            <FontAwesomeIcon icon={faThumbsUp} style={iconStyle1} />
+          </button>
+          <span className="font-CG_Reg">{upvotes}</span>
+        </div>
+        <div style={voteContainerStyle}>
+          <button
+            className="font-CG_Reg"
+            style={voteButtonStyle}
+            onClick={handleDownvote}
+            disabled={hasDownvoted}
+          >
+            <FontAwesomeIcon className='' icon={faThumbsDown} style={iconStyle2} />
+          </button>
+          <span className="font-CG_Reg">{downvotes}</span>
+        </div>
       </div>
     </div>
   );
+  
 };
 
 export default BlogPostDetails;
