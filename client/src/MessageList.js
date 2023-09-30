@@ -53,7 +53,7 @@ const MessageList = () => {
   }, [messages]);
 
   return (
-    <div className="flex justify-center items-center h-screen mt-[8%] mb-[8%]">
+    <div className="flex justify-center items-center h-screen mt-[11%] mb-[8%]">
       <div className="bg-[#f2f2f2] p-4 rounded-lg shadow-md w-[70%]">
         <img src={forumdesign2} alt="Forum Design" className="w-[90%] mt-[-10%]" />
 
@@ -61,7 +61,7 @@ const MessageList = () => {
 
         {/* Notification with new messages count */}
         {showNotification && (
-          <div className="notification bg-green-500 text-white p-2 rounded-md mb-4" onClick={scrollToTop}>
+          <div className="notification bg-[#A0C49D] text-white p-2 rounded-md mb-4" onClick={scrollToTop}>
             New Message{newMessagesCount > 1 ? 's' : ''}: {newMessagesCount}
           </div>
         )}
