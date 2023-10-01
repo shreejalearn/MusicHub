@@ -19,7 +19,19 @@ const AboutUs = () => {
 
     {/* Shreeja Introduction */}
     <div className="flex">  
-        <p className="font-CG_Reg max-w-[850px] ml-[30%] overflow-hidden text-2xl text-black-resonate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas erat nec tellus volutpat, quis congue lectus semper. Ut ac rhoncus erat. Morbi ut porttitor lorem. Nullam pulvinar neque urna, vel venenatis mauris posuere in.Donec dictum felis ut mauris ultrices rutrum. Cras id dui nec eros varius tempor. Ut mauris velit, feugiat sed magna a, dictum tristique nisl. In et turpis est.</p>
+    <p className="font-CG_Reg max-w-[850px] ml-[30%] overflow-hidden text-2xl text-black-resonate">
+  <em>HELLO WORLD.</em>
+  <br />
+    <br />
+
+  Asleep, I am a nightingale, weaving melodies. Asleep, I am a writer dabbling with words on a canvas of dreams. Asleep, I yearn to be the galaxy's dancer, twirling through life's new experiences.
+  <br />
+  Awake, I strive to be an ever-changing melody, a tiny girl with not so tiny dreams.
+  <br />
+  <br />
+  I’m a sophomore in high school and a tech enthusiast with a passion for coding in Python, Java, and JavaScript. I specialize in web development, using React, React Native (mobile development), SQL, HTML, and CSS to craft digital solutions. I've also recently been delving into AI/ML. Currently, I'm expanding my skills in 6502 Assembly language and C++. When not coding, I'm a creative soul! I love singing, songwriting, and design. I'm a published author and run a YouTube channel on singing and teaching mental math. Beyond that, I also am president of the Girls Who Code club at Bergen County Academies: I'm dedicated to spreading my knowledge. Whether it's writing code or creating art, I thrive on innovation and making a positive impact.
+
+</p>
         <img src={singer} alt="Singer design" className="w-96 mt-[-19%]" />
     </div>      
 
@@ -31,7 +43,15 @@ const AboutUs = () => {
 
     {/* Contact */}
     <h1 className="text-6xl text-[#517D67] font-CG_Reg mt-9 ml-[75%]">Contact</h1>
-    <p className="font-CG_Reg ml-[40%] mt-4 max-w-[850px] overflow-hidden text-2xl text-black-resonate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas erat nec tellus volutpat, quis congue lectus semper. Ut ac rhoncus erat. Morbi ut porttitor lorem. Nullam pulvinar neque urna, vel venenatis mauris posuere in.Donec dictum felis ut mauris ultrices rutrum. Cras id dui nec eros varius tempor. Ut mauris velit, feugiat sed magna a, dictum tristique nisl. In et turpis est.</p>
+    <p className="font-CG_Reg ml-[40%] mt-4 max-w-[850px] overflow-hidden text-2xl text-black-resonate">
+    Email: shreeja.das.16@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instagram: @lil_shreej
+    <br />
+    Email: ANNA'S EMAIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ANNA OTHER SOCIAL
+    <br />
+    <br />
+
+    Feel free to reach out to us for any questions, comments, or concerns
+</p>
     <img src={speakers} alt="Speakers design" className="w-[35%] mt-[-20%] ml-[4%]" />   
     </div>
   );
