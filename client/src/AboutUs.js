@@ -38,7 +38,11 @@ const AboutUs = () => {
     {/* Anna Introduction */}
     <h1 className="text-6xl text-[#517D67] font-CG_Reg mt-[5%] ml-[10%]">Anna Ekmekci</h1>
     <img src={headphones} alt="Headphones design" className="w-11 mt-[-5%] ml-[9.95%]" />
-    <p className="font-CG_Reg max-w-[850px] ml-[5%] mt-[4%] overflow-hidden text-2xl text-black-resonate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin egestas erat nec tellus volutpat, quis congue lectus semper. Ut ac rhoncus erat. Morbi ut porttitor lorem. Nullam pulvinar neque urna, vel venenatis mauris posuere in.Donec dictum felis ut mauris ultrices rutrum. Cras id dui nec eros varius tempor. Ut mauris velit, feugiat sed magna a, dictum tristique nisl. In et turpis est.</p>
+    <p className="font-CG_Reg max-w-[850px] ml-[5%] mt-[4%] overflow-hidden text-2xl text-black-resonate"><em>Salutations fellow homo sapiens!</em>
+<br /> 
+<br />
+I am a sophomore at Bergen County Academies, in the Academy for Technology and Computer Science. I love using programming languages such as Python, Java, JavaScript, Lua, and C++ to make cool creations. I also incorporate HTML, CSS, SQL, React, and more to make my visions come to life! I enjoy participating in competitions regarding computer science, from USACO to the Canadian Computing Competition to various hackathons. Now, I am exploring assembly language, machine learning, and quantum computing! Other than coding, I am passionate about playing the piano. By the age of 13, I won several piano competitions and played in Carnegie Hall twice! Recently, I was invited to participate in the ISEP program with Carnegie and performed in concerts in Finland, Sweden, and Estonia.
+</p>
     <img src={piano} alt="Piano design" className=" w-[35rem] ml-[62%] mt-[-20%]" />
 
     {/* Contact */}
@@ -46,7 +50,7 @@ const AboutUs = () => {
     <p className="font-CG_Reg ml-[40%] mt-4 max-w-[850px] overflow-hidden text-2xl text-black-resonate">
     Email: shreeja.das.16@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instagram: @lil_shreej
     <br />
-    Email: ANNA'S EMAIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ANNA OTHER SOCIAL
+    Email: anna.ekmekci@gmail.com&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;::::&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Discord: _definitelyabot
     <br />
     <br />
 
