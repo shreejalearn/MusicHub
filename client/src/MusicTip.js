@@ -2,11 +2,11 @@ import React from 'react';
 
 const MusicTipPopup = ({ tip, onClose }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center z-50">
+    <div className="fixed inset-0 flex items-center justify-center z-50 ">
       <div className="bg-opacity-50 bg-black absolute inset-0"></div>
-      <div className="bg-white p-6 rounded-lg shadow-md z-10">
+      <div className="bg-[#f7f5f5] p-6 rounded-lg shadow-md z-10">
         <button
-          className="text-gray-600 ml-[-1%] hover:text-gray-800"
+          className="text-[#94A684] ml-[-1%] hover:text-[#adad90]"
           onClick={onClose}
         >
           <svg
@@ -23,7 +23,7 @@ const MusicTipPopup = ({ tip, onClose }) => {
             />
           </svg>
         </button>
-        <p>Music Tip of the Day: {tip}</p>
+        <p className='text-[#a88585]'>Music Tip of the Day: {tip}</p>
       </div>
     </div>
   );

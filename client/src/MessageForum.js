@@ -7,7 +7,13 @@ const MessageForum = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
+    // Check if the message is empty
+    if (message.trim() === '') {
+      console.error('Message cannot be empty');
+      return;
+    }
+  
     try {
       await axios.post('http://localhost:5000/sendmessage', {
         content: message,
@@ -15,13 +21,10 @@ const MessageForum = () => {
       });
       setMessage('');
     } catch (error) {
-
-
-
       console.error('Error sending message:', error);
     }
   };
-
+  
   return (
     <div className="flex flex-col items-center p-4 bg-[#F4F4EA]">
       <form onSubmit={handleSubmit} className="flex gap-4">
@@ -32,7 +35,7 @@ const MessageForum = () => {
           onChange={(e) => setMessage(e.target.value)}
           className="p-2 border border-gray-300 rounded flex-grow"
         />
-        <button type="submit" className="bg-[#707f62] text-white px-4 py-2 rounded cursor-pointer hover:bg-blue-600 transition duration-300">
+        <button type="submit" className="bg-[#707f62] text-white px-4 py-2 rounded cursor-pointer hover:bg-[#9fa88a] transition duration-300">
           Send
         </button>
       </form>
