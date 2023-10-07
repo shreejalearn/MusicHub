@@ -26,10 +26,12 @@ const AboutUs = () => {
 
   Asleep, I am a nightingale, weaving melodies. Asleep, I am a writer dabbling with words on a canvas of dreams. Asleep, I yearn to be the galaxy's dancer, twirling through life's new experiences.
   <br />
+  <br />
+
   Awake, I strive to be an ever-changing melody, a tiny girl with not so tiny dreams.
   <br />
   <br />
-  I’m a sophomore in high school and a tech enthusiast with a passion for coding in Python, Java, and JavaScript. I specialize in web development, using React, React Native (mobile development), SQL, HTML, and CSS to craft digital solutions. I've also recently been delving into AI/ML. Currently, I'm expanding my skills in 6502 Assembly language and C++. When not coding, I'm a creative soul! I love singing, songwriting, and design. I'm a published author and run a YouTube channel on singing and teaching mental math. Beyond that, I also am president of the Girls Who Code club at Bergen County Academies: I'm dedicated to spreading my knowledge. Whether it's writing code or creating art, I thrive on innovation and making a positive impact.
+  I’m a sophomore at Bergen County Academies, in the Academy for Technology and Computer Science and a tech enthusiast with a passion for coding in Python, Java, and JavaScript. I specialize in web development, using React, React Native (mobile development), SQL, HTML, and CSS to craft digital solutions. I've also recently been delving into AI/ML. Currently, I'm expanding my skills in 6502 Assembly language, C++, and quantum computing. When not coding, I'm a creative soul! I love singing, songwriting, and design. I'm a published author and run a YouTube channel on singing and teaching mental math. Beyond that, I also am president of the Girls Who Code club: I'm dedicated to spreading my knowledge. Whether it's writing code or creating art, I thrive on innovation and making a positive impact.
 
 </p>
         <img src={singer} alt="Singer design" className="w-96 mt-[-19%]" />

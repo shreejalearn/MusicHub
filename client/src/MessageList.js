@@ -53,7 +53,7 @@ const MessageList = () => {
   }, [messages]);
 
   return (
-    <div className="flex justify-center items-center h-screen mb-[8%]">
+    <div className="flex justify-center items-center h-screen mb-[8%] mt-[10rem]">
       <div className="bg-[#f2f2f2] p-4 rounded-lg shadow-md w-[70%]">
         <img src={forumdesign2} alt="Forum Design" className="w-[90%] mt-[-10%]" />
 
