@@ -547,6 +547,121 @@ app.post('/friendrequest', (req, res) => {
 });
 
 
+app.post('/getfriends', (req, res) => {
+  const { username } = req.body;
+
+  // Assuming you have a 'friends' table in your database
+  const getFriendsQuery = `
+    SELECT DISTINCT f.friend AS username, ml.name, ml.phone, ml.email
+    FROM music_friends f
+    JOIN music_login ml ON f.friend = ml.username
+    WHERE f.user = ?;
+  `;
+
+  db.query(getFriendsQuery, [username], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while fetching friends' });
+    } else {
+      const friends = results.map((row) => ({
+        username: row.username,
+        name: row.name,
+        phone: row.phone,
+        email: row.email,
+      }));
+      console.log(friends);
+      res.json({ friends });
+    }
+  });
+});
+
+app.post('/getfriendrequests', (req, res) => {
+  const { username } = req.body;
+
+  // Assuming you have a 'friends' table in your database
+  const getFriendRequestsQuery = `
+    SELECT f.senderusername AS username, ml.name, ml.main_instrument, ml.bio, ml.skills, ml.accolades
+    FROM music_friendrequest f
+    JOIN music_login ml ON f.senderusername = ml.username
+    WHERE f.receiverusername = ?;
+  `;
+
+  db.query(getFriendRequestsQuery, [username], (error, results) => {
+    if (error) {
+      console.error(error);
+      res.status(500).json({ message: 'An error occurred while fetching friends' });
+    } else {
+      const requests = results.map((row) => ({
+        username: row.username,
+        name: row.name,
+        main_instrument: row.main_instrument,
+        bio: row.bio,
+        skills: row.skills,
+        accolades: row.accolades,
+      }));
+      console.log(requests);
+      res.json({ requests });
+    }
+  });
+});
+
+
+// Accept friend request (acceptfriendrequest route)
+app.post('/acceptfriendrequest', (req, res) => {
+  const { username, friendUsername } = req.body;
+
+  // Delete the friend request from the music_friendrequests table
+  const deleteQuery = `
+    DELETE FROM music_friendrequest
+    WHERE senderusername = ? AND receiverusername = ?;
+  `;
+
+  db.query(deleteQuery, [friendUsername, username], (error, deleteResults) => {
+    if (error) {
+      console.error('Error deleting friend request:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    } else {
+      // Add the friendUsername to the user's list of friends
+      const insertQuery = `
+        INSERT INTO music_friends (user, friend)
+        VALUES (?, ?), (?, ?);
+      `;
+
+      db.query(insertQuery, [username, friendUsername, friendUsername, username], (error, insertResults) => {
+        if (error) {
+          console.error('Error adding friend:', error);
+          res.status(500).json({ message: 'Internal server error' });
+        } else {
+          res.status(200).json({ message: 'Friend request accepted successfully' });
+        }
+      });
+    }
+  });
+});
+
+// Decline friend request (declinefriendrequest route)
+app.post('/declinefriendrequest', (req, res) => {
+  const { username, friendUsername } = req.body;
+
+  // Delete the friend request from the music_friendrequests table
+  const deleteQuery = `
+    DELETE FROM music_friendrequest
+    WHERE senderusername = ? AND receiverusername = ?;
+  `;
+
+  db.query(deleteQuery, [friendUsername, username], (error, deleteResults) => {
+    if (error) {
+      console.error('Error deleting friend request:', error);
+      res.status(500).json({ message: 'Internal server error' });
+    } else {
+      res.status(200).json({ message: 'Friend request declined successfully' });
+    }
+  });
+});
+
+
+
+
 // const deleteOldMessagesQuery = 'DELETE FROM music_messages WHERE timestamp < NOW() - INTERVAL 1 DAY';
 // db.query(deleteOldMessagesQuery, (error, results) => {
 //     if (error) {

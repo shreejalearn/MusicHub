@@ -22,6 +22,7 @@ import Lyrics from './Lyrics';
 import BlogPostDetails from './BlogComponents/BlogPostDetails';
 import MessageForum from './MessageForum';
 import MessageList from './MessageList';
+import Friends from './Friends';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -45,6 +46,8 @@ ReactDOM.render(
         <Route path="/Lyrics" element={<Lyrics />} />
         <Route path="/blog/:id" element={<BlogPostDetails />} />
         <Route path="/forum" element={<Forum />} />
+        <Route path="/friends" element={<Friends />} />
+
       </Routes>
     </Router>
   </React.StrictMode>,
