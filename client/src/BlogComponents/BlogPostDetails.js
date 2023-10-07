@@ -25,6 +25,7 @@ const BlogPostDetails = () => {
   const [downvotes, setDownvotes] = useState(initialDownvotes);
   const [hasUpvoted, setHasUpvoted] = useState(userUpvoted);
   const [hasDownvoted, setHasDownvoted] = useState(userDownvoted);
+  const score = upvotes - downvotes;
 
   const handleUpvote = () => {
     if (!hasUpvoted) {
@@ -620,84 +621,84 @@ Instead of fixating on perfection, let's embrace the journey of learning to sing
     {
       title: 'Piano Time',
       content: (<div>
-        <div>
-          <p style={{ textAlign: 'left' }}>
-            In the realm of piano music, the glissando is a technique that adds a touch of magic to a performance. Like a graceful slide through the musical spectrum, a pianist's glissando involves the swift movement of fingers along the keys, creating a seamless, shimmering effect. In this article, we explore the artistry behind the glissando and its role in creating musical elegance.
-          </p>
-        </div>
-        <div style={{ margin: '3% 0' }}></div>
-      
-        <h2 className="font-bold underline" style={{ textAlign: 'left' }}>The Essence of Glissando</h2>
-        <div style={{ margin: '1% 0' }}></div>
-      
-        <div>
-          <p style={{ textAlign: 'left' }}>
-            The word "glissando" finds its origins in the Italian word "sliding." When a pianist executes a glissando, they essentially glide their fingers across the keys, connecting one note to another in a fluid, continuous motion. This technique can be heard in various musical genres, from classical to jazz, as it adds an element of drama, passion, or whimsy, depending on the context.
-          </p>
-        </div>
-        <div style={{ margin: '3% 0' }}></div>
-      
-        <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Seamless Transitions</h2>
-        <div style={{ margin: '1% 0' }}></div>
-      
-        <div>
-          <p style={{ textAlign: 'left' }}>
-            One of the defining characteristics of a well-executed glissando is its ability to create seamless transitions between notes. Instead of hearing individual pitches, the listener is treated to a captivating and almost ethereal sweep of sound. This seamless flow makes the glissando a powerful tool for conveying emotion and drawing the audience into the music.
-          </p>
-        </div>
-        <div style={{ margin: '3% 0' }}></div>
-      
-        <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Shimmering Effect</h2>
-        <div style={{ margin: '1% 0' }}></div>
-      
-        <div>
-          <p style={{ textAlign: 'left' }}>
-            The shimmering effect produced by a glissando is akin to the play of light on water. As the pianist swiftly moves their fingers, the notes blend into one another, creating a captivating auditory display. This effect can evoke feelings of nostalgia, romance, or even excitement, depending on the speed and context of the glissando.
-          </p>
-        </div>
-        <div style={{ margin: '3% 0' }}></div>
-      
-        <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Expressive Variations</h2>
-        <div style={{ margin: '1% 0' }}></div>
-      
-        <div>
-          <p style={{ textAlign: 'left' }}>
-            The glissando is a versatile technique that can be executed in various ways to suit the mood and style of a composition. Pianists can choose to perform glissandos softly, gently caressing the keys, or with fervor and intensity, adding a touch of drama to the music. These variations in execution allow pianists to express themselves and imbue their performances with their unique artistic flair.
-          </p>
-        </div>
-        <div style={{ margin: '3% 0' }}></div>
-      
-        <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Glissando in Different Genres</h2>
-        <div style={{ margin: '1% 0' }}></div>
-      
-        <div>
-          <p style={{ textAlign: 'left' }}>
-            The glissando is not confined to a single musical genre. It finds its place in classical music, where it can be used to create romantic and evocative moments, as well as in jazz, where it adds a playful and improvisational element to performances. It's also prevalent in contemporary and experimental music, where it can take on avant-garde and innovative forms.
-          </p>
-        </div>
-        <div style={{ margin: '3% 0' }}></div>
-      
-        <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Mastering the Art of Glissando</h2>
-        <div style={{ margin: '1% 0' }}></div>
-      
-        <div>
-          <p style={{ textAlign: 'left' }}>
-            Executing a flawless glissando requires skill, practice, and a deep understanding of the piano's mechanics. Pianists must be mindful of the angle and pressure applied to the keys to achieve the desired effect. Proper finger placement and coordination are essential to maintain control and accuracy during the glide.
-          </p>
-        </div>
-        <div style={{ margin: '3% 0' }}></div>
-      
-        <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Conclusion</h2>
-        <div style={{ margin: '1% 0' }}></div>
-      
-        <div>
-          <p style={{ textAlign: 'left' }}>
-            In the hands of a skilled pianist, the glissando is more than just a technical flourish; it is a tool for conveying emotion, enhancing expression, and adding a touch of enchantment to the music. As the fingers slide gracefully along the keys, the pianist creates a seamless, shimmering effect that captivates the audience and leaves a lasting impression. The glissando is a testament to the artistry and versatility of the piano, showcasing its ability to paint vivid musical landscapes with each stroke of the keys. 🎹🎵
-          </p>
-        </div>
-        <div style={{ margin: '3% 0' }}></div>
-      </div>
-      )
+  <div>
+    <p style={{ textAlign: 'left' }}>
+      In the realm of piano music, the glissando is a technique that adds a touch of magic to a performance. Like a graceful slide through the musical spectrum, a pianist's glissando involves the swift movement of fingers along the keys, creating a seamless, shimmering effect. In this article, we explore the artistry behind the glissando and its role in creating musical elegance.
+    </p>
+  </div>
+  <div style={{ margin: '3% 0' }}></div>
+
+  <h2 className="font-bold underline" style={{ textAlign: 'left' }}>The Essence of Glissando</h2>
+  <div style={{ margin: '1% 0' }}></div>
+
+  <div>
+    <p style={{ textAlign: 'left' }}>
+      The word "glissando" finds its origins in the Italian word "sliding." When a pianist executes a glissando, they essentially glide their fingers across the keys, connecting one note to another in a fluid, continuous motion. This technique can be heard in various musical genres, from classical to jazz, as it adds an element of drama, passion, or whimsy, depending on the context.
+    </p>
+  </div>
+  <div style={{ margin: '3% 0' }}></div>
+
+  <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Seamless Transitions</h2>
+  <div style={{ margin: '1% 0' }}></div>
+
+  <div>
+    <p style={{ textAlign: 'left' }}>
+      One of the defining characteristics of a well-executed glissando is its ability to create seamless transitions between notes. Instead of hearing individual pitches, the listener is treated to a captivating and almost ethereal sweep of sound. This seamless flow makes the glissando a powerful tool for conveying emotion and drawing the audience into the music.
+    </p>
+  </div>
+  <div style={{ margin: '3% 0' }}></div>
+
+  <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Shimmering Effect</h2>
+  <div style={{ margin: '1% 0' }}></div>
+
+  <div>
+    <p style={{ textAlign: 'left' }}>
+      The shimmering effect produced by a glissando is akin to the play of light on water. As the pianist swiftly moves their fingers, the notes blend into one another, creating a captivating auditory display. This effect can evoke feelings of nostalgia, romance, or even excitement, depending on the speed and context of the glissando.
+    </p>
+  </div>
+  <div style={{ margin: '3% 0' }}></div>
+
+  <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Expressive Variations</h2>
+  <div style={{ margin: '1% 0' }}></div>
+
+  <div>
+    <p style={{ textAlign: 'left' }}>
+      The glissando is a versatile technique that can be executed in various ways to suit the mood and style of a composition. Pianists can choose to perform glissandos softly, gently caressing the keys, or with fervor and intensity, adding a touch of drama to the music. These variations in execution allow pianists to express themselves and imbue their performances with their unique artistic flair.
+    </p>
+  </div>
+  <div style={{ margin: '3% 0' }}></div>
+
+  <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Glissando in Different Genres</h2>
+  <div style={{ margin: '1% 0' }}></div>
+
+  <div>
+    <p style={{ textAlign: 'left' }}>
+      The glissando is not confined to a single musical genre. It finds its place in classical music, where it can be used to create romantic and evocative moments, as well as in jazz, where it adds a playful and improvisational element to performances. It's also prevalent in contemporary and experimental music, where it can take on avant-garde and innovative forms.
+    </p>
+  </div>
+  <div style={{ margin: '3% 0' }}></div>
+
+  <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Mastering the Art of Glissando</h2>
+  <div style={{ margin: '1% 0' }}></div>
+
+  <div>
+    <p style={{ textAlign: 'left' }}>
+      Executing a flawless glissando requires skill, practice, and a deep understanding of the piano's mechanics. Pianists must be mindful of the angle and pressure applied to the keys to achieve the desired effect. Proper finger placement and coordination are essential to maintain control and accuracy during the glide.
+    </p>
+  </div>
+  <div style={{ margin: '3% 0' }}></div>
+
+  <h2 className="font-bold underline" style={{ textAlign: 'left' }}>Conclusion</h2>
+  <div style={{ margin: '1% 0' }}></div>
+
+  <div>
+    <p style={{ textAlign: 'left' }}>
+      In the hands of a skilled pianist, the glissando is more than just a technical flourish; it is a tool for conveying emotion, enhancing expression, and adding a touch of enchantment to the music. As the fingers slide gracefully along the keys, the pianist creates a seamless, shimmering effect that captivates the audience and leaves a lasting impression. The glissando is a testament to the artistry and versatility of the piano, showcasing its ability to paint vivid musical landscapes with each stroke of the keys. 🎹🎵
+    </p>
+  </div>
+  <div style={{ margin: '3% 0' }}></div>
+</div>
+)
     },
   ];
   const selectedBlogPost = blogPosts.find(post => post.title === title);

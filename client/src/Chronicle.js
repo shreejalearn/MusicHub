@@ -21,22 +21,29 @@ const Chronicle = () => {
       title: 'Practice, practice, practice!',
       content: "Tip of the Day: Practice doesn't make perfect; it makes progress. Embrace the journey of learning to sing or play an instrument. Small, consistent steps lead to beautiful melodies. 🌟",
       imageUrl: blogimage1,
+      score:5
     },
     {
       title: 'Sheet Music',
       content: "Learning to read sheet music? Focus on one element at a time, like notes or rhythms, until you're comfortable. Slow and steady wins the race in sheet music mastery! 🎵📚"      ,
       imageUrl: blogimagesheetmusic,
+      score:2
+
     },
     {
       title: 'Singing Techniques',
       content: "Mastering singing techniques: Head voice resonates in your upper register, while chest voice feels deeper in your chest. Practice transitioning smoothly between the two for versatile vocals! 🎤🗣️",
       imageUrl: blogimagesinging,
+      score:5
+
     },
 
     {
       title: 'Vocal Pitches 101',
       content:     "Soprano hits the high notes, mezzo balances high and low, while alto adds depth. Tenor soars in the middle, and bass brings the low, grounding tones to harmonize beautifully! 🎸🎼",      
       imageUrl: blogimagepitch,
+      score:1
+
     },
 
     
@@ -45,12 +52,16 @@ const Chronicle = () => {
       content:         "Finding the right tempo is like discovering your music's heartbeat; it sets the groove and mood, so trust your instincts and listen to what feels just right for your piece. 🎶🕺"  
       ,
       imageUrl: blogimagetempo,
+      score:2
+
     },
 
     {
       title: 'MusicTech',
       content:         "Using MIDI for composing offers the digital canvas for your musical imagination, allowing you to effortlessly explore melodies, harmonies, and arrangements with precision and creativity. 🎼🎹",
       imageUrl: blogimageMIDI,
+      score:3
+
     },
 
     
@@ -58,12 +69,14 @@ const Chronicle = () => {
       title: 'Piano Time',
       content:            "A pianist's glissando is like a musical slide, played by swiftly running your fingers along the keys from one note to another, creating a seamless, shimmering effect. 🎹🎵 " ,
       imageUrl: blogimagepiano,
+      score:10
     },
-
 
 
     // Add more blog posts here
   ];
+
+  blogPosts.sort((a, b) => b.score - a.score);
 
   return (
     <div className="bg-green-resonate min-h-screen flex flex-col items-center relative">
