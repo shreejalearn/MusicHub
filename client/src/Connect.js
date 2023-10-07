@@ -64,8 +64,6 @@ const Connect = () => {
                 />
                 <h2 className="text-5xl text-[#979D92] z-10 font-reborn mb-2">{userInfo.name}</h2>
               </div>
-              <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#80877a]">Email: {userInfo.email}</p>
-              <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#EF529C]">Phone: {userInfo.phone}</p>
               <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#80877a]">Main Instrument: {userInfo.main_instrument}</p>
               <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#EF529C]">Bio: {userInfo.bio}</p>
               <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#80877a]">Skills: {userInfo.skills}</p>
