@@ -64,7 +64,76 @@ const BlogPostDetails = () => {
   const blogPosts = [
     {
       title: 'Welcome!',
-      content: 'This is the longer content for the "Welcome!" blog post. It contains more details about the topic.',
+      content: (
+        <div>
+  <h1>Welcome to Resonate!</h1>
+  <div style={{ margin: '3% 0' }}>
+          </div>
+
+  <p>
+    Are you a music enthusiast looking for a place to connect, create, and celebrate the power of music? Look no further than Resonate, your one-stop destination for all things musical! Whether you're a songwriter, a performer, or just someone who loves to jam, Resonate has something special for you.
+  </p>
+  <div style={{ margin: '2% 0' }}>
+          </div>
+
+  
+  <div className="features">
+    <div className="feature">
+      <h2>🔗 Connect</h2>
+      <p>
+        Our Connect page is where the magic happens. Connect with fellow music lovers, collaborate on projects, and build a network of like-minded individuals who share your passion for music. Discover new talent and create unforgettable musical experiences together.
+      </p>
+    </div>
+    <div style={{ margin: '1% 0' }}>
+          </div>
+
+    <div className="feature">
+      <h2>📝 Craft Lyrics</h2>
+      <p>
+        Stuck in a lyrical rut? Our lyric generator is here to help. Spark your creativity and let the words flow with our handy tool. Whether you're writing a love ballad or a rock anthem, you'll find inspiration at your fingertips.
+      </p>
+    </div>
+    <div style={{ margin: '1% 0' }}>
+          </div>
+
+    <div className="feature">
+      <h2>🎸 Explore Chords</h2>
+      <p>
+        Dive into the world of chords and harmonies with Resonate. Explore chord progressions, experiment with different sounds, and elevate your music to new heights. Whether you're a seasoned musician or a beginner, our chord resources have got you covered.
+      </p>
+    </div>
+    <div style={{ margin: '1% 0' }}>
+          </div>
+
+    <div className="feature">
+      <h2>📚 Dive into Blogs</h2>
+      <p>
+        Immerse yourself in the world of music with our blogs. From artist spotlights to industry insights and everything in between, our curated content is your gateway to all things musical. Stay informed, inspired, and in tune with the latest trends.
+      </p>
+    </div>
+    <div style={{ margin: '1% 0' }}>
+          </div>
+
+    <div className="feature">
+      <h2>🏆 Rise to the Challenge</h2>
+      <p>
+        Are you up for a challenge? Join our Album, Cover, and Lyric Challenges to showcase your talent and compete with fellow musicians. Show the world what you're made of and earn recognition for your musical prowess.
+      </p>
+    </div>
+    <div style={{ margin: '3% 0' }}>
+          </div>
+  </div>
+  <p>
+    Resonate is more than just a platform; it's a community of passionate music lovers who understand the incredible power of music. So, whether you're here to connect, create, or simply celebrate the universal language of melodies, Resonate is here to amplify your musical journey.
+  </p>
+  <div style={{ margin: '1% 0' }}>
+          </div>
+  <p>
+    Join us today and let's make beautiful music together! 🎶🌟
+  </p>
+</div>
+
+      ),
     },
     {
       title: 'Practice, practice, practice!',
