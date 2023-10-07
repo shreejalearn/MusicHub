@@ -410,52 +410,52 @@ const Lyrics = () => {
       let randomValue = '';
       if (placeholder.startsWith('noun')) {
         // Handle noun placeholders
-        const nouns = ['flower', 'tree', 'bird', 'sun'];
+        const nouns = ['flower', 'tree', 'bird', 'sun', 'moon', 'ocean', 'love', 'dream', 'river', 'star', 'smile', 'heart', 'rainbow', 'butterfly', 'cloud', 'meadow', 'kiss', 'mountain', 'whisper', 'rain', 'song', 'dance', 'wind', 'fire', 'night', 'day', 'magic', 'hope', 'sunset', 'light', 'shadow', 'wave', 'child', 'home', 'road', 'journey', 'world', 'peace', 'friend', 'time', 'season', 'moment', 'laughter', 'teardrop', 'sorrow', 'wonder', 'silence', 'garden', 'memory'];
         randomValue = nouns[Math.floor(Math.random() * nouns.length)];
       } else if (placeholder.startsWith('verb')) {
         // Handle verb placeholders
-        const verbs = ['sing', 'dance', 'jump', 'laugh'];
+        const verbs = ['sing', 'dance', 'jump', 'laugh', 'cry', 'love', 'dream', 'fly', 'smile', 'whisper', 'shine', 'scream', 'believe', 'hope', 'wander', 'run', 'play', 'sway', 'kiss', 'touch', 'remember', 'forgive', 'embrace', 'cherish', 'breathe', 'melt', 'listen', 'strum', 'strive', 'rejoice', 'live', 'linger', 'swim', 'capture', 'fall', 'rise', 'glow', 'float', 'travel', 'explode', 'blossom', 'stumble', 'explore', 'sigh', 'awaken', 'illuminate', 'inspire', 'vanish'];
         randomValue = verbs[Math.floor(Math.random() * verbs.length)];
       }
       else if(placeholder.startsWith('adjective')){
         // Handle adjective placeholders
-        const adjectives = ['happy', 'sad', 'angry', 'romantic', 'excited', 'relaxed', 'nostalgic'];
+        const adjectives = ['happy', 'sad', 'angry', 'romantic', 'excited', 'relaxed', 'nostalgic', 'lonely', 'peaceful', 'mysterious', 'passionate', 'enchanted', 'tender', 'euphoric', 'magical', 'bittersweet', 'gentle', 'melancholic', 'serene', 'radiant', 'whimsical', 'sensational', 'eternal', 'radiant', 'captivating', 'mesmerizing', 'ethereal', 'vibrant', 'captivating', 'graceful', 'intoxicating', 'blissful', 'soothing', 'hypnotic', 'timeless', 'elusive', 'transcendent', 'soulful', 'enchanting', 'alluring', 'dazzling', 'mystical', 'effervescent', 'inspiring', 'dreamy', 'endless', 'haunting'];
         randomValue = adjectives[Math.floor(Math.random() * adjectives.length)];
       }
       else if(placeholder.startsWith('direction')){
         // Handle direction placeholders
-        const directions = ['up', 'down', 'left', 'right'];
+        const directions = ['up', 'down', 'left', 'right', 'inside', 'outside', 'above', 'below', 'around', 'near', 'far', 'forward', 'backward', 'over', 'under', 'between', 'through', 'beyond', 'within', 'without', 'beside', 'underneath', 'along', 'across', 'away', 'towards', 'into', 'onto', 'beneath', 'upward', 'downward', 'sideways', 'north', 'south', 'east', 'west', 'high', 'low', 'here', 'there', 'everywhere', 'nowhere', 'somewhere', 'anywhere', 'anyhow', 'someway', 'somehow', 'elsewhere', 'together', 'apart'];
         randomValue = directions[Math.floor(Math.random() * directions.length)];
       }
       else if (placeholder.startsWith('adverb')) {
         // Handle adverb placeholders
-        const adverbs = ['slowly', 'fast', 'loudly', 'quietly'];
+        const adverbs = ['slowly', 'fast', 'loudly', 'quietly', 'gently', 'passionately', 'carefully', 'softly', 'wildly', 'deeply', 'suddenly', 'gracefully', 'fiercely', 'sweetly', 'intensely', 'smoothly', 'lightly', 'tenderly', 'boldly', 'freely', 'silently', 'tightly', 'vividly', 'elegantly', 'sharply', 'urgently', 'beautifully', 'peacefully', 'painfully', 'serenely', 'vibrantly', 'urgently', 'magically', 'delicately', 'steadily', 'urgently', 'restlessly', 'dreamily', 'endlessly', 'eagerly', 'patiently', 'recklessly', 'whimsically', 'relentlessly', 'gracelessly', 'gratefully', 'passively'];
         randomValue = adverbs[Math.floor(Math.random() * adverbs.length)];
       }
             else if(placeholder.startsWith('pronoun')){
         // Handle pronoun placeholders
-        const pronouns = ['he', 'she', 'it', 'they'];
+        const pronouns = ['he', 'she', 'it', 'they', 'I', 'you', 'we', 'me', 'us', 'him', 'her', 'them', 'my', 'your', 'our', 'mine', 'yours', 'ours', 'his', 'hers', 'theirs', 'its', 'this', 'that', 'these', 'those', 'who', 'whom', 'whose', 'which', 'what', 'whichever', 'whatever', 'whoever', 'where', 'when', 'why', 'how', 'wherever', 'whenever', 'however', 'anyone', 'someone', 'everyone', 'nobody', 'somebody', 'everybody'];
         randomValue = pronouns[Math.floor(Math.random() * pronouns.length)];
       }
       else if(placeholder.startsWith('number')){
         // Handle number placeholders
-        const numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+        const numbers = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'twenty two'];
         randomValue = numbers[Math.floor(Math.random() * numbers.length)];
       }
       else if(placeholder.startsWith('interjection')){
         // Handle interjection placeholders
-        const interjections = ['wow', 'oh', 'oh no', 'oh my god', 'oh wow', 'oh my goodness'];
+        const interjections = ['wow', 'oh', 'oh no', 'oh my god', 'oh wow', 'oh my goodness', 'hey', 'yeah', 'whoa', 'oh dear', 'oh dear me', 'hurray', 'alas', 'ouch', 'aha', 'oops', 'bravo', 'oh dear', 'gosh', 'uh-huh', 'oh la la', 'phew', 'shh', 'yikes', 'well', 'uh-oh', 'yay', 'shoo', 'hey there', 'hello', 'hi', 'hey now', 'hmm', 'oh boy', 'hush', 'go on', 'hurrah', 'ha-ha', 'no way', 'bingo', 'indeed', 'oh la la', 'voila', 'wowza', 'ahoy', 'ta-da', 'ta-ta', 'aha', 'yippee'];
         randomValue = interjections[Math.floor(Math.random() * interjections.length)];
       }
       else if(placeholder.startsWith('exclamation')){
         // Handle exclaamation placeholders
-        const exclamation = ['oh my god', 'oh wow', 'oh my goodness'];
+        const exclamation = ['wow', 'oh', 'oh no', 'oh my god', 'oh wow', 'oh my goodness', 'hey', 'yeah', 'whoa', 'oh dear', 'oh dear me', 'hurray', 'alas', 'ouch', 'aha', 'oops', 'bravo', 'oh dear', 'gosh', 'uh-huh', 'oh la la', 'phew', 'shh', 'yikes', 'well', 'uh-oh', 'yay', 'shoo', 'hey there', 'hello', 'hi', 'hey now', 'hmm', 'oh boy', 'hush', 'go on', 'hurrah', 'ha-ha', 'no way', 'bingo', 'indeed', 'oh la la', 'voila', 'wowza', 'ahoy', 'ta-da', 'ta-ta', 'aha', 'yippee'];
         randomValue = exclamation[Math.floor(Math.random() * exclamation.length)];
         
       }
       else if(placeholder.startsWith('plural_noun')){
         // Handle plural noun placeholders
-        const pluralNouns = ['flowers', 'trees', 'birds', 'suns'];
+        const pluralNouns = ['flowers', 'trees', 'birds', 'suns', 'stars', 'waves', 'hearts', 'dreams', 'mountains', 'rivers', 'oceans', 'clouds', 'kisses', 'smiles', 'teardrops', 'whispers', 'friends', 'moments', 'journeys', 'worlds', 'seasons', 'memories', 'rainbows', 'butterflies', 'meadows', 'gardens', 'raindrops', 'shadows', 'fires', 'hopes', 'suns', 'moons', 'waves', 'dreams', 'clouds', 'stars', 'leaves', 'waves', 'sounds', 'echoes', 'nights', 'days', 'passions', 'reflections', 'adventures', 'kisses'];
         randomValue = pluralNouns[Math.floor(Math.random() * pluralNouns.length)];
       }
       // Add more conditions for other placeholder types as needed
