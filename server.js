@@ -527,6 +527,26 @@ app.get('/getmessages', (req, res) => {
   });
 });
 
+app.post('/friendrequest', (req, res) => {
+  const { senderUsername, receiverUsername } = req.body;
+
+
+  const insertFriendRequestSql = `
+    INSERT INTO music_friendrequest (senderusername, receiverusername)
+    VALUES (?, ?);
+  `;
+
+  db.query(insertFriendRequestSql, [senderUsername, receiverUsername], (error, results) => {
+    if (error) {
+      console.error(error);
+      return res.status(500).json({ error: 'Error sending friend request' });
+    }
+
+    res.json({ message: 'Friend request sent successfully' });
+  });
+});
+
+
 // const deleteOldMessagesQuery = 'DELETE FROM music_messages WHERE timestamp < NOW() - INTERVAL 1 DAY';
 // db.query(deleteOldMessagesQuery, (error, results) => {
 //     if (error) {

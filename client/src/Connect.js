@@ -11,7 +11,7 @@ const Connect = () => {
   const [excludedUsernames, setExcludedUsernames] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [previousUsersInfo, setPreviousUsersInfo] = useState([]); // Store previous users' info
-
+  const [friendRequestSent, setFriendRequestSent] = useState(false);
   const fetchRandomUserInfo = async () => {
     try {
       const response = await Axios.post('http://localhost:5000/getrandomuserinfo', {
@@ -33,6 +33,21 @@ const Connect = () => {
       }
     } else if (direction === 'right') {
       setCurrentIndex((prevIndex) => (prevIndex === 9 ? 0 : prevIndex + 1));
+    }
+  };
+  const sendFriendRequest = async () => {
+    try {
+      const loggedInUsername = localStorage.getItem('username');
+      if (loggedInUsername && userInfo.username) {
+        await Axios.post('http://localhost:5000/friendrequest', {
+          senderUsername: loggedInUsername,
+          receiverUsername: userInfo.username,
+        });
+        console.log('Friend request sent successfully');
+        setFriendRequestSent(true);
+      }
+    } catch (error) {
+      console.error('Error sending friend request:', error);
     }
   };
 
@@ -68,9 +83,18 @@ const Connect = () => {
               <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#EF529C]">Bio: {userInfo.bio}</p>
               <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#80877a]">Skills: {userInfo.skills}</p>
               <p className="font-CG_Reg mr-[10%] ml-[10%] text-[#EF529C] pb-[2%]">Accolades: {userInfo.accolades}</p>
+              <button
+              className="font-CG_Reg px-4 py-2 border rounded-full mb-[50%] bg-white"
+              onClick={sendFriendRequest}
+              disabled={friendRequestSent} // Disable the button if the request has been sent
+            >
+              {friendRequestSent ? 'Sent!' : 'Send Friend Request'}
+            </button>
             </div>
+            
           </div>
         )}
+        
         <div className="flex space-x-4 mt-4">
           <button className="font-CG_Reg px-4 py-2 border rounded-full mb-[50%] bg-white" onClick={() => handleArrowClick('left')}>Previous</button>
           <button className="font-CG_Reg px-4 py-2 border rounded-full mb-[50%] bg-white" onClick={() => handleArrowClick('right')}>Next</button>
