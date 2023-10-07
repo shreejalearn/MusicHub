@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-// import FileUpload from './FileUpload';
-import neon from './assets/neon.png'; // Import the image
-import headphonesColor from './assets/headphonesColor.png'; // Import the image
-import playbar from './assets/playbar.png'; // Import the image
-import skyline from './assets/skyline.png'; // Import the image
-import border from './assets/border.png'; // Import the image
-import coverdesign from './assets/coverdesign.png'; // Import the image
-import coverdesign2 from './assets/coverdesign2.png'; // Import the image
+import neon from './assets/neon.png'; 
+import headphonesColor from './assets/headphonesColor.png'; 
+import playbar from './assets/playbar.png'; 
+import skyline from './assets/skyline.png'; 
+import border from './assets/border.png'; 
+import coverdesign from './assets/coverdesign.png'; 
+import coverdesign2 from './assets/coverdesign2.png'; 
 import axios from 'axios';
 
 
@@ -24,7 +23,7 @@ function CoverChallenge() {
 
   const handleUpload = () => {
     if (file) {
-      setShowConfirmPopup(true); // Show the confirm popup
+      setShowConfirmPopup(true); 
     } else {
       console.error('No file selected');
     }
@@ -36,8 +35,8 @@ function CoverChallenge() {
 
     axios.post('http://localhost:5000/ccupload', formData)
       .then(() => {
-        setFile(null); // Clear the uploaded file
-        setShowConfirmPopup(false); // Hide the confirm popup
+        setFile(null); 
+        setShowConfirmPopup(false);
       })
       .catch((error) => {
         console.error('Error uploading file:', error);
@@ -47,15 +46,15 @@ function CoverChallenge() {
 
   const cancelUpload = () => {
     setFile(null);
-    setShowConfirmPopup(false); // Hide the confirm popup
+    setShowConfirmPopup(false); 
   };
 
   useEffect(() => {
-    // This code will run whenever the 'file' state changes
+    
     if (file === null) {
       const inputElement = document.getElementById('fileInput');
       if (inputElement) {
-        inputElement.value = ''; // Clear the input value
+        inputElement.value = ''; 
       }
     }
   }, [file]);
