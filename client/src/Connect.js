@@ -17,7 +17,11 @@ const Connect = () => {
       const response = await Axios.post('http://localhost:5000/getrandomuserinfo', {
         excludedUsernames: excludedUsernames
       });
-      setPreviousUsersInfo((prevInfo) => [...prevInfo, userInfo]); // Store current user info in previousUsersInfo
+
+      // Reset friendRequestSent to false when fetching the next user info
+      setFriendRequestSent(false);
+
+      setPreviousUsersInfo((prevInfo) => [...prevInfo, userInfo]);
       setUserInfo(response.data.userInfo);
     } catch (error) {
       console.error('Error fetching random user info:', error);
