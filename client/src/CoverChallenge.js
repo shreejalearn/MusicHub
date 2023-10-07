@@ -130,7 +130,7 @@ function CoverChallenge() {
   </div>
 )}
 
-      <p className="font-CG_Reg mb-[4%] max-w-[1300px] overflow-hidden text-2xl text-black-resonate mt-[5%]">Please note that submissions received after September 1st will be rejected. Any unsolicited submissions or emails will be deleted unread. The selection of winners is at the sole discretion of the judging panel. The prizes for this competition entail a mention on our website and a digital certificate. Submissions will be evaluated based on their adherence to either theme and their ability to craft a creative and powerful story in their video/audio clip. Each category will have 1 winner and possible honoroable mentions (who will get featured on our website)!
+      <p className="font-CG_Reg mb-[4%] max-w-[1300px] overflow-hidden text-2xl text-black-resonate mt-[5%]">Please note that submissions received after December 1st will be rejected. Any unsolicited submissions or emails will be deleted unread. The selection of winners is at the sole discretion of the judging panel. The prizes for this competition entail a mention on our website and a digital certificate. Submissions will be evaluated based on their adherence to either theme and their ability to craft a creative and powerful story in their video/audio clip. Each category will have 1 winner and possible honoroable mentions (who will get featured on our website)!
 </p>
 
     </div>
