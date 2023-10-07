@@ -481,27 +481,27 @@ app.post('/getuserinfo', (req, res) => {
 });
 
 // Add a new route to fetch random user info
-app.post('/getrandomuserinfo', (req, res) => {
-  const getRandomUserSql = `
+app.get('/getrandomusers', (req, res) => {
+  const getRandomUsersSql = `
     SELECT username, name, email, phone, main_instrument, bio, skills, accolades, pfp
     FROM music_login
-    ORDER BY RAND()  -- MySQL function to order rows randomly
-    LIMIT 1;          -- Limit the result to 1 row
+    ORDER BY RAND(); -- MySQL function to order rows randomly
   `;
 
-  db.query(getRandomUserSql, (error, results) => {
+  db.query(getRandomUsersSql, (error, results) => {
     if (error) {
       console.error(error);
       res.status(500).json({ message: 'An error occurred while processing your request' });
     } else {
       if (results.length > 0) {
-        res.json({ userInfo: results[0] });
+        res.json({ users: results });
       } else {
         res.status(404).json({ message: 'No users found' });
       }
     }
   });
 });
+
 
 app.post('/sendmessage', (req, res) => {
   const { content, username } = req.body;
