@@ -6,6 +6,8 @@ const cors = require('cors');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const bcrypt=require('bcrypt');
+const { spawn } = require('child_process');
+
 
 const corsOptions = {
   origin: 'http://localhost:3000',
@@ -58,6 +60,7 @@ const pfpstorage = multer.diskStorage({
 const pfpupload = multer({ storage: pfpstorage });
 
 
+
 app.post('/editprofilepicture', pfpupload.single('file'), (req, res) => {
   const { username } = req.body;
   if (!req.file) {
@@ -66,7 +69,7 @@ app.post('/editprofilepicture', pfpupload.single('file'), (req, res) => {
 
   console.log('Received file:', req.file.filename);
 
-  const filePath = `/${req.file.filename}`;
+  const filePath = path.parse(req.file.filename).name; // Get rid of leading slash and extension
   console.log(filePath);
   const query = `
     UPDATE music_login
@@ -80,21 +83,33 @@ app.post('/editprofilepicture', pfpupload.single('file'), (req, res) => {
       return res.status(500).json({ error: 'Error saving file path to database' });
     }
 
-    res.json({ message: 'File uploaded and file path saved to database' });
+    // Execute the external script here
+    const childProcess = spawn('node', ['./generateProfilePictures.js']);
+
+    childProcess.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
+    });
+
+    childProcess.stderr.on('data', (data) => {
+      console.error(`stderr: ${data}`);
+    });
+
+    childProcess.on('close', (code) => {
+      console.log(`Child process exited with code ${code}`);
+      res.json({ message: 'File uploaded, file path saved to database, and external script executed' });
+    });
   });
 });
+
 app.post('/pfpupload', pfpupload.single('file'), (req, res) => {
   const { username } = req.body;
-  console.log(username);
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded' });
   }
 
   console.log('Received file:', req.file.filename);
 
-  // Use the 'path' module to remove the file extension
-  const fileNameWithoutExtension = path.parse(req.file.filename).name;
-  const filePath = `${fileNameWithoutExtension}`;
+  const filePath = path.parse(req.file.filename).name; // Get rid of leading slash and extension
   console.log(filePath);
   const query = `
     UPDATE music_login
@@ -105,13 +120,26 @@ app.post('/pfpupload', pfpupload.single('file'), (req, res) => {
     console.log(filePath);
     if (error) {
       console.error(error);
-      return res.status(500).json({ error: 'Error updating profile picture in the database' });
+      return res.status(500).json({ error: 'Error saving file path to database' });
     }
 
-    res.json({ message: 'Profile picture updated successfully' });
+    // Execute the external script here
+    const childProcess = spawn('node', ['./generateProfilePictures.js']);
+
+    childProcess.stdout.on('data', (data) => {
+      console.log(`stdout: ${data}`);
+    });
+
+    childProcess.stderr.on('data', (data) => {
+      console.error(`stderr: ${data}`);
+    });
+
+    childProcess.on('close', (code) => {
+      console.log(`Child process exited with code ${code}`);
+      res.json({ message: 'File uploaded, file path saved to database, and external script executed' });
+    });
   });
 });
-
 
 app.post('/ccupload', ccupload.single('file'), (req, res) => {
   if (!req.file) {
