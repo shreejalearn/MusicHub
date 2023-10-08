@@ -123,7 +123,7 @@ const Profile = () => {
                 return (
                   <div
                     key={field}
-                    className="flex items-center space-x-1 font-CG_Reg text-[#CD7417] overflow-x-hidden justify-center "
+                    className="flex items-center space-x-1 font-CG_Reg text-[#CD7417] overflow-x-hidden justify-center my-[3%]" // Added 'my-3' for vertical spacing
                     style={{ overflowWrap: 'break-word' }}
                   >
                     {isEditing && editingField === field ? (
@@ -177,6 +177,7 @@ const Profile = () => {
       </div>
     </div>
   );
+
 };
 
 export default Profile;
