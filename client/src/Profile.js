@@ -97,7 +97,7 @@ const Profile = () => {
     <div className="bg-yellow-resonate min-h-screen flex flex-col items-center relative" style={{ backgroundImage: `url(${bgProfile3})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="flex items-center flex-col mt-[14%]">
         <div className='ml-[30%]'>
-          <div className="mt-[-18%] items-center ">
+          <div className="mt-[-18%] items-center">
             <img src={profileheading} alt="Profile Heading" className="flex items-center w-[300rem] mt-[-15%] ml-[-25%]" />
             <img src={lineDesign} alt="Line Design" className="flex items-center w-[500rem] ml-[-20%] mt-[-40%]" />
             <div className="mt-[-25%] ml-[7%]">
@@ -123,7 +123,7 @@ const Profile = () => {
                 return (
                   <div
                     key={field}
-                    className="flex items-center space-x-1 font-CG_Reg text-[#CD7417] overflow-x-hidden justify-center"
+                    className="flex items-center space-x-1 font-CG_Reg text-[#CD7417] overflow-x-hidden justify-center "
                     style={{ overflowWrap: 'break-word' }}
                   >
                     {isEditing && editingField === field ? (

@@ -81,7 +81,7 @@ const Friends = () => {
   };
 
   return (
-    <div className="flex justify-center items-center pt-[5%] bg-[#fafafa]" style={{ backgroundImage: `url(${design})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7 }}>
+    <div className="flex justify-center items-center pt-[5%] bg-[#fafafa] pb-[5%]" style={{ backgroundImage: `url(${design})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.7 }}>
 
       <div className="bg-[#F4F4F1] shadow-md p-8 rounded-lg w-[80%] z-20">
         <h1 className="text-2xl text-[#979D92] font-semibold mb-6 font-reborn">My Friends</h1>
