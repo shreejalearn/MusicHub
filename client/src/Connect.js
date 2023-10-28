@@ -14,8 +14,11 @@ const Connect = () => {
     try {
       const response = await Axios.get('http://localhost:5000/getrandomusers');
 
-      // Shuffle the users array to ensure a different order each time
-      const shuffledUsers = response.data.users.sort(() => Math.random() - 0.5);
+      const loggedInUsername = localStorage.getItem('username');
+
+      const filteredUsers = response.data.users.filter(user => user.username !== loggedInUsername);
+
+      const shuffledUsers = filteredUsers.sort(() => Math.random() - 0.5);
       setUsers(shuffledUsers);
     } catch (error) {
       console.error('Error fetching random users:', error);
