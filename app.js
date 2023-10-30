@@ -9,7 +9,7 @@ const connection = mysql.createConnection({
   database: 'webapp_9MF_annekm26',
   connectTimeout: 10000,
 });
-
+// 
 // Connect to the database
 connection.connect((err) => {
   if (err) {

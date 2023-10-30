@@ -20,6 +20,9 @@ const profilePictures = {1694386680124: require('./1694386680124.jpg'),
 1698463249364: require('./1698463249364.png'),
 1698463546892: require('./1698463546892.png'),
 1698463635754: require('./1698463635754.png'),
+1698537228012: require('./1698537228012.jpg'),
+1698537317311: require('./1698537317311.jpg'),
+1698537649640: require('./1698537649640.png'),
 default: require('./default.jpg'),
 pic: require('./pic.png'),}; 
 export default profilePictures;

@@ -9,7 +9,7 @@ import blogimagesinging from './assets/blogimagesinging.jpg';
 import blogimagepitch from './assets/blogimagepitch.jpg';
 import blogimagetempo from './assets/blogimagetempo.jpg';
 import Blog from './BlogComponents/Blog';
-
+// 
 const Chronicle = () => {
   const blogPosts = [
     {

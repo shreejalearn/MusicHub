@@ -9,7 +9,7 @@ const Connect = () => {
   const [users, setUsers] = useState([]); // Store all random users
   const [currentIndex, setCurrentIndex] = useState(0);
   const [friendRequestSent, setFriendRequestSent] = useState(false);
-
+// 
   const fetchRandomUsers = async () => {
     try {
       const response = await Axios.get('http://localhost:5000/getrandomusers');

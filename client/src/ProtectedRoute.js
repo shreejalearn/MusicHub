@@ -13,3 +13,4 @@ function ProtectedRoute({ user, component: Component, ...rest }) {
 }
 
 export default ProtectedRoute;
+// 

@@ -4,7 +4,7 @@ import design_album from './assets/design_album.png';
 import side_design_album from './assets/side_design_album.png';
 import person from './assets/person.png';
 import person2 from './assets/person2.png';
-
+//
 import axios from 'axios';
 
 const username = localStorage.getItem('username');

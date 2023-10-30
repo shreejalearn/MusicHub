@@ -16,7 +16,7 @@ const chordProgressions = {
   "I - IV - vi - V": "Happy",
   "I - IV - ii - V - I": "Happy",
   "I - vi - IV - V - vi - IV - I": "Happy",
-  
+  // 
   // Minor Chord Progressions
   "i - iv - v": "Sad",
   "i - VI - III - VII": "Sad",

@@ -4,7 +4,7 @@ import watercolor from './assets/watercolor.png'; // Import the image
 import watercolor2 from './assets/watercolor2.png'; // Import the image
 import watercolor3 from './assets/watercolor3.png'; // Import the image
 import watercolor4 from './assets/watercolor4.png'; // Import the image
-
+// 
 const originalLyrics = {
   happy: {
     placeholders: [

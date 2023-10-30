@@ -4,7 +4,7 @@ import music_notes from './assets/music-notes.png'; // Import the image
 import music_listener from './assets/music_listener.png'; // Import the image
 import music_notes_colorful from './assets/music_notes_colorful.png'; // Import the image
 import { Link } from 'react-router-dom'; // Import Link for navigation
-
+// 
 const Challenges = () => {
   return (
     //Design

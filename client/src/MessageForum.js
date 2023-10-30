@@ -7,7 +7,7 @@ const MessageForum = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
+  // 
     // Check if the message is empty
     if (message.trim() === '') {
       console.error('Message cannot be empty');

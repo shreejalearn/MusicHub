@@ -279,7 +279,7 @@ const Homepage = () => {
         </Link>
     
 </div>
-
+{/*  */}
 {/* CREATING SECOND PART OF THE HOMEPAGE */}
       <div className="flex relative">
         <img src={recorder} alt="Recorder Design Aesthetics" className="z-10 mt-[-120%] ml-[400%]" />

@@ -162,7 +162,7 @@ const Profile = () => {
               })}
             </div>
           )}
-
+{/*  */}
           <div className="justify-center items-center space-x-1 mt-5 bg-[#D6C1C1] rounded-lg shadow-lg p-8 w-full max-w-md ml-[5%] mb-[10%]">
             <h1 className="text-3xl font-semibold mb-6 text-white">Upload Profile Picture</h1>
             <input type="file" id="fileInput" onChange={handleFileChange} />

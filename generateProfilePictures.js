@@ -14,7 +14,7 @@ const allowedExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg'];
 const imageFiles = files.filter((file) =>
   allowedExtensions.includes(path.extname(file).toLowerCase())
 );
-
+// 
 // Generate the export statements dynamically
 const exportStatements = imageFiles
   .map((file) => {

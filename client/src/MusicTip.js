@@ -1,5 +1,5 @@
 import React from 'react';
-
+// 
 const MusicTipPopup = ({ tip, onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 ">

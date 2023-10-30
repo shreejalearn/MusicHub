@@ -22,3 +22,4 @@ const BlogPost = ({ id, title, content, imageUrl }) => {
 };
 
 export default BlogPost;
+//

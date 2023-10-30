@@ -24,7 +24,7 @@ const LyricChallenge = () => {
       console.error('No file selected');
     }
   };
-
+// 
   const confirmUpload = () => {
     const formData = new FormData();
     formData.append('file', file);

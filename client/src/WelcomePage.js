@@ -61,7 +61,7 @@ const Homepage = () => {
 {/* CREATING A NAVIGATION MENU */}
 
 <div class="font-CG_Reg p-10 w-48 min-w-[450px] text-black-resonate bg-yellow-resonate border-black-resonate rounded-lg mb-10 mt-[-5%] mr-[-60%]">
-
+{/*  */}
   <Link to="/signup" className="block">
           <button
             type="button"

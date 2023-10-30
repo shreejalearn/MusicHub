@@ -51,7 +51,7 @@ const Friends = () => {
           username: loggedInUsername,
           friendUsername: request.username,
         });
-
+// 
         // Remove the accepted request from the friendRequests state
         setFriendRequests((prevRequests) => prevRequests.filter((req) => req.username !== request.username));
 

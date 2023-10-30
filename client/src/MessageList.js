@@ -9,7 +9,7 @@ const MessageList = () => {
   const [showNotification, setShowNotification] = useState(false);
   const [newMessagesCount, setNewMessagesCount] = useState(0);
   const messageListRef = useRef(null);
-
+// 
   const fetchMessages = async () => {
     try {
       const response = await axios.get('http://localhost:5000/getmessages');

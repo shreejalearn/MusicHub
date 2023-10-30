@@ -10,7 +10,7 @@ fs.readdir(imageFolder, (err, files) => {
     console.error(err);
     return;
   }
-
+// 
   // Filter files to include only image files (e.g., .jpg, .png)
   const imageFiles = files.filter(file => /\.(jpg|png|jpeg|gif|svg)$/i.test(file));
 
